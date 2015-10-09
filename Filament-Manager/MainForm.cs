@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,17 @@ using System.Windows.Forms;
 
 namespace Filament_Manager
 {
-    public partial class Form1 : Form
+    public partial class MainForm : MetroForm
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+            
+        }
+
+        private void lnlClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
