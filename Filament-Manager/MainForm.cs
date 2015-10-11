@@ -21,13 +21,15 @@ namespace Filament_Manager
         public MainForm()
         {
             InitializeComponent();
+            loadSetting();
+            
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
             cbFactory.SelectedIndex = 0;
             DataGridPrintJob();
             DataGridFilament();
-
-            this.cbEncodeType.SelectedIndex = 0;
-            this.cbBarcodeAlign.SelectedIndex = 0;
-            this.cbLabelLocation.SelectedIndex = 0;
 
             this.cbRotateFlip.DataSource = System.Enum.GetNames(typeof(RotateFlipType));
 
@@ -39,13 +41,11 @@ namespace Filament_Manager
                 i++;
             }//foreach
             this.cbRotateFlip.SelectedIndex = i;
-
-            this.btnBackColor.BackColor = this.b.BackColor;
-            this.btnForeColor.BackColor = this.b.ForeColor;
         }
-                
+
         private void lnlClose_Click(object sender, EventArgs e)
         {
+            saveSettings();
             this.Close();
         }
 
@@ -63,6 +63,7 @@ namespace Filament_Manager
             catch (Exception ex)
             {
                 MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                Sqlconnection.Close();
             }
             
         }
@@ -84,7 +85,7 @@ namespace Filament_Manager
                     try
                     {
                         Sqlconnection.Open();
-                        string query = "INSERT INTO printJob (Barcode, Factory, Color, Brutto, Netto, Time) VALUES ('" + txtGenBarcode.Text + "','" + cbFactory.Text + "','" + txtColor.Text + "','" + txtBrutto.Text + "','" + txtNetto.Text + "','" + DateTime.Now + "')";
+                        string query = "INSERT INTO Filament (Barcode, Factory, Color, Brutto, Netto, Time) VALUES ('" + txtGenBarcode.Text + "','" + cbFactory.Text + "','" + txtColor.Text + "','" + txtBrutto.Text + "','" + txtNetto.Text + "','" + DateTime.Now + "')";
                         SqlDataAdapter SDA = new SqlDataAdapter(query, Sqlconnection);
                         SDA.SelectCommand.ExecuteNonQuery();
                         Sqlconnection.Close();
@@ -93,6 +94,7 @@ namespace Filament_Manager
                     catch(Exception ex)
                     {
                         MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        Sqlconnection.Close();
                     }
                     
                 }
@@ -140,6 +142,7 @@ namespace Filament_Manager
                 catch (Exception ex)
                 {
                     MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    Sqlconnection.Close();
                 }
             }            
         }
@@ -170,6 +173,29 @@ namespace Filament_Manager
             }//using
         }
 
+        private void btnSaveBarcode_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "BMP (*.bmp)|*.bmp|GIF (*.gif)|*.gif|JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|TIFF (*.tif)|*.tif";
+            sfd.FilterIndex = 4;
+            sfd.AddExtension = true;
+            sfd.FileName = "Barcode_" + txtGenBarcode.Text;
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                BarcodeLib.SaveTypes savetype = BarcodeLib.SaveTypes.UNSPECIFIED;
+                switch (sfd.FilterIndex)
+                {
+                    case 1: /* BMP */  savetype = BarcodeLib.SaveTypes.BMP; break;
+                    case 2: /* GIF */  savetype = BarcodeLib.SaveTypes.GIF; break;
+                    case 3: /* JPG */  savetype = BarcodeLib.SaveTypes.JPG; break;
+                    case 4: /* PNG */  savetype = BarcodeLib.SaveTypes.PNG; break;
+                    case 5: /* TIFF */ savetype = BarcodeLib.SaveTypes.TIFF; break;
+                    default: break;
+                }
+                b.SaveImage(sfd.FileName, savetype);
+            }
+        }
+
         private void DataGridPrintJob()
         {
             try
@@ -185,6 +211,7 @@ namespace Filament_Manager
             catch(Exception ex)
             {
                 MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                Sqlconnection.Close();
             }
             
         }
@@ -203,6 +230,7 @@ namespace Filament_Manager
             catch(Exception ex)
             {
                 MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                Sqlconnection.Close();
             }
             
         }
@@ -280,5 +308,37 @@ namespace Filament_Manager
             }
             
         }
+        private void saveSettings()
+        {
+            Properties.Settings.Default.checkLabel = chkGenerateLabel.Checked;
+            Properties.Settings.Default.lablLocation = cbBarcodeAlign.SelectedIndex;
+            Properties.Settings.Default.btnForColor = btnForeColor.BackColor;
+            Properties.Settings.Default.btnBackColor = btnBackColor.BackColor;
+            Properties.Settings.Default.barcodeHeight = Convert.ToInt32(this.txtHeight.Text.Trim());
+            Properties.Settings.Default.barcodeWidth = Convert.ToInt32(this.txtWidth.Text.Trim());
+            Properties.Settings.Default.barcodeTyp = cbEncodeType.SelectedIndex;
+            Properties.Settings.Default.labelpos = cbLabelLocation.SelectedIndex;
+            Properties.Settings.Default.Save();
+        }
+
+        private void loadSetting()
+        {
+            chkGenerateLabel.Checked = Properties.Settings.Default.checkLabel;
+            cbBarcodeAlign.SelectedIndex = Properties.Settings.Default.lablLocation;
+            btnForeColor.BackColor = Properties.Settings.Default.btnForColor;
+            btnBackColor.BackColor = Properties.Settings.Default.btnBackColor;
+            txtWidth.Text = Convert.ToString(Properties.Settings.Default.barcodeWidth);
+            txtHeight.Text = Convert.ToString(Properties.Settings.Default.barcodeHeight);
+            cbEncodeType.SelectedIndex = Properties.Settings.Default.barcodeTyp;
+            cbLabelLocation.SelectedIndex = Properties.Settings.Default.labelpos;
+          
+
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            saveSettings();
+        }
     }
+    
 }
