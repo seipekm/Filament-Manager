@@ -15,10 +15,12 @@ namespace Filament_Manager
     public partial class MainForm : MetroForm
     {
         SqlConnection CON = new SqlConnection("Data Source=localhost;Initial Catalog=FilamentManager;Integrated Security=True");
+        BarcodeLib.Barcode b = new BarcodeLib.Barcode();
 
         public MainForm()
         {
             InitializeComponent();
+            cbFactory.SelectedIndex = 0;
             DataGridFill();
 
         }
@@ -47,6 +49,20 @@ namespace Filament_Manager
             SDA.Fill(DATA);
             gvFilament.DataSource = DATA;
             CON.Close();
+        }
+
+        private void btnFilaAdd_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnGenBarcode_Click(object sender, EventArgs e)
+        {
+            string lastID = "";
+            CON.Open();
+            string query = "SELECT MAX(ID) FROM ";
+
+            txtBarcode.Text = txtColor.Text + "_" + lastID + "_" + cbFactory.Text;
         }
     }
 }
