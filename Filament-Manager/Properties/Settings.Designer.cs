@@ -118,5 +118,29 @@ namespace Filament_Manager.Properties {
                 this["labelpos"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrinterIP {
+            get {
+                return ((string)(this["PrinterIP"]));
+            }
+            set {
+                this["PrinterIP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrinterApiKey {
+            get {
+                return ((string)(this["PrinterApiKey"]));
+            }
+            set {
+                this["PrinterApiKey"] = value;
+            }
+        }
     }
 }
