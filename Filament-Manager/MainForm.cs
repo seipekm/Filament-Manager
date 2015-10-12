@@ -22,6 +22,7 @@ namespace Filament_Manager
         {
             InitializeComponent();
             loadSetting();
+            metroTabControl1.SelectedIndex = 0;
             
         }
 
