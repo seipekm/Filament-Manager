@@ -22,8 +22,7 @@ namespace Filament_Manager
         {
             InitializeComponent();
             loadSetting();
-            metroTabControl1.SelectedIndex = 0;
-            
+                        
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -31,17 +30,7 @@ namespace Filament_Manager
             cbFactory.SelectedIndex = 0;
             DataGridPrintJob();
             DataGridFilament();
-
-            this.cbRotateFlip.DataSource = System.Enum.GetNames(typeof(RotateFlipType));
-
-            int i = 0;
-            foreach (object o in cbRotateFlip.Items)
-            {
-                if (o.ToString().Trim().ToLower() == "rotatenoneflipnone")
-                    break;
-                i++;
-            }//foreach
-            this.cbRotateFlip.SelectedIndex = i;
+            metroTabControl1.SelectedIndex = 0;
         }
 
         private void lnlClose_Click(object sender, EventArgs e)
@@ -332,7 +321,18 @@ namespace Filament_Manager
             txtHeight.Text = Convert.ToString(Properties.Settings.Default.barcodeHeight);
             cbEncodeType.SelectedIndex = Properties.Settings.Default.barcodeTyp;
             cbLabelLocation.SelectedIndex = Properties.Settings.Default.labelpos;
-          
+
+            this.cbRotateFlip.DataSource = System.Enum.GetNames(typeof(RotateFlipType));
+
+            int i = 0;
+            foreach (object o in cbRotateFlip.Items)
+            {
+                if (o.ToString().Trim().ToLower() == "rotatenoneflipnone")
+                    break;
+                i++;
+            }//foreach
+            this.cbRotateFlip.SelectedIndex = i;
+
 
         }
 
