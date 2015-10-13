@@ -1,10 +1,10 @@
 ﻿using MetroFramework;
 using MetroFramework.Forms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,21 +15,25 @@ namespace Filament_Manager
 {
     public partial class MainForm : MetroForm
     {
-        SqlConnection Sqlconnection = new SqlConnection("Data Source=localhost;Initial Catalog=FilamentManager;Integrated Security=True");
+        private MySqlConnection Sqlconnection;
         BarcodeLib.Barcode b = new BarcodeLib.Barcode();
 
         public MainForm()
-        {
+        {                      
             InitializeComponent();
             loadSetting();
-                        
+            string ConnectionString = "server=" + txtHost.Text + ";user=" + txtUser.Text + ";database=" +
+            txtDB.Text + ";password=" + txtPassword.Text + ";";
+
+            Sqlconnection = new MySqlConnection(ConnectionString);
+
         }
 
-        private void MainForm_Shown(object sender, EventArgs e)
+        public void MainForm_Shown(object sender, EventArgs e)
         {
             cbFactory.SelectedIndex = 0;
-            DataGridPrintJob();
-            DataGridFilament();
+            //DataGridPrintJob();
+            //DataGridFilament();
             metroTabControl1.SelectedIndex = 0;
         }
 
@@ -45,7 +49,7 @@ namespace Filament_Manager
             {
                 Sqlconnection.Open();
                 string query = "INSERT INTO printJob (barcode, printID, Filament, printWeight, dateTime) VALUES ('" + txtBarcode.Text + "','" + txtPrintID.Text + "','" + txtFilament.Text + "','" + txtPrintWeight.Text + "','" + DateTime.Now + "')";
-                SqlDataAdapter SDA = new SqlDataAdapter(query, Sqlconnection);
+                MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
                 SDA.SelectCommand.ExecuteNonQuery();
                 Sqlconnection.Close();
                 DataGridPrintJob();
@@ -76,7 +80,7 @@ namespace Filament_Manager
                     {
                         Sqlconnection.Open();
                         string query = "INSERT INTO Filament (Barcode, Factory, Color, Brutto, Netto, Time) VALUES ('" + txtGenBarcode.Text + "','" + cbFactory.Text + "','" + txtColor.Text + "','" + txtBrutto.Text + "','" + txtNetto.Text + "','" + DateTime.Now + "')";
-                        SqlDataAdapter SDA = new SqlDataAdapter(query, Sqlconnection);
+                        MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
                         SDA.SelectCommand.ExecuteNonQuery();
                         Sqlconnection.Close();
                         DataGridFilament();
@@ -103,10 +107,10 @@ namespace Filament_Manager
                 try
                 {
                     int lastID;
-                    SqlCommand cmd = new SqlCommand("SELECT TOP 1 ID FROM Filament ORDER BY ID DESC", Sqlconnection);
+                    MySqlCommand cmd = new MySqlCommand("SELECT TOP 1 ID FROM Filament ORDER BY ID DESC", Sqlconnection);
                     Sqlconnection.Open();
 
-                    SqlDataReader reader = cmd.ExecuteReader();
+                    MySqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -192,7 +196,7 @@ namespace Filament_Manager
             {
                 Sqlconnection.Open();
                 string query = "SELECT * FROM printJob";
-                SqlDataAdapter SDA = new SqlDataAdapter(query, Sqlconnection);
+                MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
                 DataTable DATA = new DataTable();
                 SDA.Fill(DATA);
                 gvFilament.DataSource = DATA;
@@ -211,7 +215,7 @@ namespace Filament_Manager
             {
                 Sqlconnection.Open();
                 string query = "SELECT * FROM Filament";
-                SqlDataAdapter SDA = new SqlDataAdapter(query, Sqlconnection);
+                MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
                 DataTable DATA = new DataTable();
                 SDA.Fill(DATA);
                 gvFi.DataSource = DATA;
@@ -308,6 +312,10 @@ namespace Filament_Manager
             Properties.Settings.Default.barcodeWidth = Convert.ToInt32(this.txtWidth.Text.Trim());
             Properties.Settings.Default.barcodeTyp = cbEncodeType.SelectedIndex;
             Properties.Settings.Default.labelpos = cbLabelLocation.SelectedIndex;
+            Properties.Settings.Default.DBAdress = txtHost.Text;
+            Properties.Settings.Default.DB = txtDB.Text;
+            Properties.Settings.Default.User = txtUser.Text;
+            Properties.Settings.Default.password = txtPassword.Text;
             Properties.Settings.Default.Save();
         }
 
@@ -321,6 +329,11 @@ namespace Filament_Manager
             txtHeight.Text = Convert.ToString(Properties.Settings.Default.barcodeHeight);
             cbEncodeType.SelectedIndex = Properties.Settings.Default.barcodeTyp;
             cbLabelLocation.SelectedIndex = Properties.Settings.Default.labelpos;
+            txtHost.Text = Properties.Settings.Default.DBAdress;
+            txtDB.Text = Properties.Settings.Default.DB;
+            txtUser.Text = Properties.Settings.Default.User;
+            txtPassword.Text = Properties.Settings.Default.password;
+
 
             this.cbRotateFlip.DataSource = System.Enum.GetNames(typeof(RotateFlipType));
 
@@ -339,6 +352,34 @@ namespace Filament_Manager
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             saveSettings();
+        }
+
+        private void btnConTest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Sqlconnection.Open();
+                MetroMessageBox.Show(this, "Verbindung OK", "Erfolgreich", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                System.Threading.Thread.Sleep(5000);
+                Console.Write("Connect");
+                Sqlconnection.Close();
+
+            }
+            catch(MySqlException ex)
+            {
+                switch(ex.Number)
+                {
+                    case 0:
+                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        Sqlconnection.Close();
+                        break;
+
+                    case 1045:
+                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        Sqlconnection.Close();
+                        break;
+                }
+            }
         }
     }
     
