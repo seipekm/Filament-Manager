@@ -84,7 +84,7 @@ namespace Filament_Manager
                     try
                     {
                         Sqlconnection.Open();
-                        string query = "INSERT INTO Filament (Barcode, Factory, Color, Brutto, Netto, Time) VALUES ('" + txtGenBarcode.Text + "','" + cbFactory.Text + "','" + txtColor.Text + "','" + txtBrutto.Text + "','" + txtNetto.Text + "','" + DateTime.Now + "')";
+                        string query = "INSERT INTO Filament (Barcode, Factory, Color, Brutto, Netto, Time) VALUES ('" + txtGenBarcode.Text + "','" + cbFactory.Text + "','" + txtColor.Text + "','" + txtBrutto.Text + "','" + txtNetto.Text + "','" + Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd") + "')";
                         MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
                         SDA.SelectCommand.ExecuteNonQuery();
                         Sqlconnection.Close();
@@ -257,6 +257,35 @@ namespace Filament_Manager
             }
         }
 
+        private void btnFilaUpdate_Click(object sender, EventArgs e)
+        {
+            Sqlconnection.Open();
+            string query = "UPDATE Filament SET Barcode='" + txtGenBarcode.Text + "',Factory='" + cbFactory.Text + "',Color='" + txtColor.Text + "',Brutto='" + txtBrutto.Text + "',Netto='" + txtNetto.Text + "',Time='" + Convert.ToDateTime(DateTime.Now).ToString("yyyy-MM-dd") + "' WHERE Barcode='" + txtGenBarcode.Text + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
+            SDA.SelectCommand.ExecuteNonQuery();
+            Sqlconnection.Close();
+            DataGridFilament();
+        }
+
+        private void btnFilaDelete_Click(object sender, EventArgs e)
+        {
+            Sqlconnection.Open();
+            string query = "DELETE FROM Filament WHERE Barcode='" + txtGenBarcode.Text + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
+            SDA.SelectCommand.ExecuteNonQuery();
+            Sqlconnection.Close();
+            DataGridFilament();
+        }
+
+        private void gvFi_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            txtGenBarcode.Text = gvFi.SelectedRows[0].Cells[1].Value.ToString();
+            cbFactory.Text = gvFi.SelectedRows[0].Cells[2].Value.ToString();
+            txtColor.Text = gvFi.SelectedRows[0].Cells[3].Value.ToString();
+            txtBrutto.Text = gvFi.SelectedRows[0].Cells[4].Value.ToString();
+            txtNetto.Text = gvFi.SelectedRows[0].Cells[5].Value.ToString();
+        }
+
         private void SqlCon()
         {
             string ConnectionString = "server=" + txtHost.Text + ";user=" + txtUser.Text + ";database=" +
@@ -421,7 +450,7 @@ namespace Filament_Manager
 
 
         }
-                
+               
     }
     
 }
