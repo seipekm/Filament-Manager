@@ -53,7 +53,7 @@ namespace Filament_Manager
             try
             {
                 Sqlconnection.Open();
-                string query = "INSERT INTO printJob (barcode, printID, Filament, printWeight, dateTime) VALUES ('" + txtBarcode.Text + "','" + txtPrintID.Text + "','" + txtFilament.Text + "','" + txtPrintWeight.Text + "','" + DateTime.Now + "')";
+                string query = "INSERT INTO PrintJob (Barcode, PrintID, Filament, PrintWeight, Time) VALUES ('" + txtBarcode.Text + "','" + txtPrintID.Text + "','" + txtFilament.Text + "','" + txtPrintWeight.Text + "','" + DateTime.Now + "')";
                 MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
                 SDA.SelectCommand.ExecuteNonQuery();
                 Sqlconnection.Close();
@@ -114,7 +114,7 @@ namespace Filament_Manager
                 
                 try
                 {
-                    cmd = new MySqlCommand("SELECT TOP 1 ID FROM Filament ORDER BY ID DESC", Sqlconnection);
+                    cmd = new MySqlCommand("SELECT ID FROM Filament ORDER BY ID DESC LIMIT 1", Sqlconnection);
                 }
                 catch(MySqlException ex)
                 {
@@ -263,7 +263,7 @@ namespace Filament_Manager
             try
             {
                 Sqlconnection.Open();
-                string query = "SELECT * FROM printJob";
+                string query = "SELECT * FROM PrintJob";
                 MySqlDataAdapter SDA = new MySqlDataAdapter(query, Sqlconnection);
                 DataTable DATA = new DataTable();
                 SDA.Fill(DATA);
