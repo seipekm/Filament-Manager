@@ -16,25 +16,30 @@ namespace Filament_Manager
     public partial class MainForm : MetroForm
     {
         private MySqlConnection Sqlconnection;
+        private MySqlCommand cmd;
         BarcodeLib.Barcode b = new BarcodeLib.Barcode();
 
         public MainForm()
         {                      
             InitializeComponent();
             loadSetting();
-            string ConnectionString = "server=" + txtHost.Text + ";user=" + txtUser.Text + ";database=" +
-            txtDB.Text + ";password=" + txtPassword.Text + ";";
-
-            Sqlconnection = new MySqlConnection(ConnectionString);
-
+            SqlCon();
+            
         }
 
         public void MainForm_Shown(object sender, EventArgs e)
         {
             cbFactory.SelectedIndex = 0;
-            //DataGridPrintJob();
-            //DataGridFilament();
             metroTabControl1.SelectedIndex = 0;
+            try
+            {
+                DataGridPrintJob();
+                DataGridFilament();
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
 
         private void lnlClose_Click(object sender, EventArgs e)
@@ -98,16 +103,28 @@ namespace Filament_Manager
 
         private void btnGenBarcode_Click(object sender, EventArgs e)
         {
+            
+
             if(txtColor.Text =="" || cbFactory.Text == "Auswählen...")
             {
                 MetroMessageBox.Show(this, "Es wurde nicht alles ausgefüllt", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
+                
+                try
+                {
+                    cmd = new MySqlCommand("SELECT TOP 1 ID FROM Filament ORDER BY ID DESC", Sqlconnection);
+                }
+                catch(MySqlException ex)
+                {
+                    MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+
                 try
                 {
                     int lastID;
-                    MySqlCommand cmd = new MySqlCommand("SELECT TOP 1 ID FROM Filament ORDER BY ID DESC", Sqlconnection);
+                    
                     Sqlconnection.Open();
 
                     MySqlDataReader reader = cmd.ExecuteReader();
@@ -187,6 +204,57 @@ namespace Filament_Manager
                     default: break;
                 }
                 b.SaveImage(sfd.FileName, savetype);
+            }
+        }
+
+        private void btnConStringSave_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DBAdress = txtHost.Text;
+            Properties.Settings.Default.DB = txtDB.Text;
+            Properties.Settings.Default.User = txtUser.Text;
+            Properties.Settings.Default.password = txtPassword.Text;
+            Properties.Settings.Default.Save();
+            SqlCon();
+        }
+
+        private void SqlCon()
+        {
+            string ConnectionString = "server=" + txtHost.Text + ";user=" + txtUser.Text + ";database=" +
+            txtDB.Text + ";password=" + txtPassword.Text + ";";
+
+            Sqlconnection = new MySqlConnection(ConnectionString);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            saveSettings();
+        }
+
+        private void btnConTest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Sqlconnection.Open();
+                MetroMessageBox.Show(this, "Verbindung OK", "Erfolgreich", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                System.Threading.Thread.Sleep(5000);
+                Console.Write("Connect");
+                Sqlconnection.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        Sqlconnection.Close();
+                        break;
+
+                    case 1045:
+                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        Sqlconnection.Close();
+                        break;
+                }
             }
         }
 
@@ -312,10 +380,6 @@ namespace Filament_Manager
             Properties.Settings.Default.barcodeWidth = Convert.ToInt32(this.txtWidth.Text.Trim());
             Properties.Settings.Default.barcodeTyp = cbEncodeType.SelectedIndex;
             Properties.Settings.Default.labelpos = cbLabelLocation.SelectedIndex;
-            Properties.Settings.Default.DBAdress = txtHost.Text;
-            Properties.Settings.Default.DB = txtDB.Text;
-            Properties.Settings.Default.User = txtUser.Text;
-            Properties.Settings.Default.password = txtPassword.Text;
             Properties.Settings.Default.Save();
         }
 
@@ -348,39 +412,7 @@ namespace Filament_Manager
 
 
         }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            saveSettings();
-        }
-
-        private void btnConTest_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Sqlconnection.Open();
-                MetroMessageBox.Show(this, "Verbindung OK", "Erfolgreich", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                System.Threading.Thread.Sleep(5000);
-                Console.Write("Connect");
-                Sqlconnection.Close();
-
-            }
-            catch(MySqlException ex)
-            {
-                switch(ex.Number)
-                {
-                    case 0:
-                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                        Sqlconnection.Close();
-                        break;
-
-                    case 1045:
-                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                        Sqlconnection.Close();
-                        break;
-                }
-            }
-        }
+                
     }
     
 }
