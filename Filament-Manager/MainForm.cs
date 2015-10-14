@@ -24,13 +24,13 @@ namespace Filament_Manager
             InitializeComponent();
             loadSetting();
             SqlCon();
-            
+            cbFactory.SelectedIndex = 0;
+            metroTabControl1.SelectedIndex = 0;
+
         }
 
         public void MainForm_Shown(object sender, EventArgs e)
         {
-            cbFactory.SelectedIndex = 0;
-            metroTabControl1.SelectedIndex = 0;
             try
             {
                 DataGridPrintJob();
@@ -103,59 +103,66 @@ namespace Filament_Manager
 
         private void btnGenBarcode_Click(object sender, EventArgs e)
         {
-            
-
-            if(txtColor.Text =="" || cbFactory.Text == "Auswählen...")
+            if(txtGenBarcode.Text == "")
             {
-                MetroMessageBox.Show(this, "Es wurde nicht alles ausgefüllt", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                if (txtColor.Text == "" || cbFactory.Text == "Auswählen...")
+                {
+                    MetroMessageBox.Show(this, "Es wurde nicht alles ausgefüllt", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+                else
+                {
+
+                    try
+                    {
+                        cmd = new MySqlCommand("SELECT ID FROM Filament ORDER BY ID DESC LIMIT 1", Sqlconnection);
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
+
+                    try
+                    {
+                        int lastID;
+
+                        Sqlconnection.Open();
+
+                        MySqlDataReader reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            int nextID;
+                            if (reader.GetInt32(0) == 0)
+                            {
+                                nextID = 1;
+                                break;
+                            }
+                            else
+                            {
+                                lastID = reader.GetInt32(0);
+                                nextID = lastID + 1;
+
+                            }
+                            txtGenBarcode.Text = txtColor.Text + "_" + nextID + "_" + cbFactory.Text;
+
+                        }
+                        Sqlconnection.Close();
+                        BarcodeGenerator();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        Sqlconnection.Close();
+                    }
+                }
             }
             else
             {
-                
-                try
-                {
-                    cmd = new MySqlCommand("SELECT ID FROM Filament ORDER BY ID DESC LIMIT 1", Sqlconnection);
-                }
-                catch(MySqlException ex)
-                {
-                    MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
+                BarcodeGenerator();
+            }
 
-                try
-                {
-                    int lastID;
-                    
-                    Sqlconnection.Open();
-
-                    MySqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        int nextID;
-                        if (reader.GetInt32(0) == 0)
-                        {
-                            nextID = 1;
-                            break;
-                        }
-                        else
-                        {
-                            lastID = reader.GetInt32(0);
-                            nextID = lastID + 1;
-
-                        }
-                        txtGenBarcode.Text = txtColor.Text + "_" + nextID + "_" + cbFactory.Text;
-                        
-                    }
-                    Sqlconnection.Close();
-                    BarcodeGenerator();
-
-                }
-                catch (Exception ex)
-                {
-                    MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                    Sqlconnection.Close();
-                }
-            }            
+            
         }
 
         private void btnForeColor_Click(object sender, EventArgs e)
@@ -217,14 +224,6 @@ namespace Filament_Manager
             SqlCon();
         }
 
-        private void SqlCon()
-        {
-            string ConnectionString = "server=" + txtHost.Text + ";user=" + txtUser.Text + ";database=" +
-            txtDB.Text + ";password=" + txtPassword.Text + ";";
-
-            Sqlconnection = new MySqlConnection(ConnectionString);
-        }
-
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             saveSettings();
@@ -258,6 +257,14 @@ namespace Filament_Manager
             }
         }
 
+        private void SqlCon()
+        {
+            string ConnectionString = "server=" + txtHost.Text + ";user=" + txtUser.Text + ";database=" +
+            txtDB.Text + ";password=" + txtPassword.Text + ";";
+
+            Sqlconnection = new MySqlConnection(ConnectionString);
+        }
+                        
         private void DataGridPrintJob()
         {
             try
@@ -277,6 +284,7 @@ namespace Filament_Manager
             }
             
         }
+
         private void DataGridFilament()
         {
             try
@@ -370,6 +378,7 @@ namespace Filament_Manager
             }
             
         }
+
         private void saveSettings()
         {
             Properties.Settings.Default.checkLabel = chkGenerateLabel.Checked;
