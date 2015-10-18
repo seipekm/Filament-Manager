@@ -1,11 +1,14 @@
 ﻿using MetroFramework;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +20,8 @@ namespace Filament_Manager
     {
         private MySqlConnection Sqlconnection;
         private MySqlCommand cmd;
+        private delegate bool DelBackup(string filename);
+
         BarcodeLib.Barcode b = new BarcodeLib.Barcode();
 
         public MainForm()
@@ -24,9 +29,14 @@ namespace Filament_Manager
             InitializeComponent();
             loadSetting();
             SqlCon();
+            initStyle();
             cbFactory.SelectedIndex = 0;
             metroTabControl1.SelectedIndex = 0;
+        }
 
+        public void _tile_Click(object sender, EventArgs e)
+        {
+            StyleManager.Style = (MetroColorStyle)((MetroTile)sender).Tag;
         }
 
         public void MainForm_Shown(object sender, EventArgs e)
@@ -286,6 +296,75 @@ namespace Filament_Manager
             txtNetto.Text = gvFi.SelectedRows[0].Cells[5].Value.ToString();
         }
 
+        private void txtBrutto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBrutto.Text == "")
+            {
+
+            }
+            else
+            {
+                int Brutto = Convert.ToInt32(txtBrutto.Text);
+                int Sum = Brutto - 250;
+
+                txtNetto.Text = Convert.ToString(Sum);
+            }
+
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            bool _close = false;
+
+
+            string _filename = txtDB.Text + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+
+            SaveFileDialog _dia = new SaveFileDialog();
+            _dia.Title = "Backup Database";
+            _dia.Filter = "SQL files (*.sql)|*.sql";
+            _dia.FileName = _filename;
+            _dia.DefaultExt = "*.sql";
+            _dia.InitialDirectory = string.Empty;
+            if (_dia.ShowDialog() == DialogResult.OK && !String.IsNullOrEmpty(_dia.FileName.Trim()))
+            {
+                _filename = _dia.FileName;
+            }
+            else
+            {
+                _close = true;
+            }
+            _dia.Dispose();
+            _dia = null;
+
+            if (_close) return;
+
+            DelBackup _del = new DelBackup(DoBackup);
+            IAsyncResult _asc = _del.BeginInvoke(_filename, null, _del);
+
+
+
+            if (_del.EndInvoke(_asc))
+            {
+                MetroMessageBox.Show(this, "Backup was written successfully!", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _close = true;
+            }
+            else
+            {
+                Size _size = this.Size;
+                MetroMessageBox.Show(this, "Please check if supporting backup tools were present at the application's current path", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Size = _size;
+            }
+
+            _del = null;
+            _asc = null;
+
+            if (_close)
+            {
+                DialogResult = DialogResult.OK;
+
+            }
+        }
+
         private void SqlCon()
         {
             string ConnectionString = "server=" + txtHost.Text + ";user=" + txtUser.Text + ";database=" +
@@ -418,6 +497,7 @@ namespace Filament_Manager
             Properties.Settings.Default.barcodeWidth = Convert.ToInt32(this.txtWidth.Text.Trim());
             Properties.Settings.Default.barcodeTyp = cbEncodeType.SelectedIndex;
             Properties.Settings.Default.labelpos = cbLabelLocation.SelectedIndex;
+            Properties.Settings.Default.styleColor = msmMain.Style;
             Properties.Settings.Default.Save();
         }
 
@@ -435,6 +515,7 @@ namespace Filament_Manager
             txtDB.Text = Properties.Settings.Default.DB;
             txtUser.Text = Properties.Settings.Default.User;
             txtPassword.Text = Properties.Settings.Default.password;
+            msmMain.Style = Properties.Settings.Default.styleColor;
 
 
             this.cbRotateFlip.DataSource = System.Enum.GetNames(typeof(RotateFlipType));
@@ -450,7 +531,81 @@ namespace Filament_Manager
 
 
         }
-               
+
+        private void initStyle()
+        {
+            this.StyleManager = msmMain;
+
+            for (int i = 3; i < 15; i++)
+            {
+                MetroTile _tile = new MetroTile();
+                _tile.Size = new Size(30, 30);
+                _tile.Tag = i;
+                _tile.Style = (MetroColorStyle)i;
+                _tile.Click += _tile_Click;
+                flpSettings.Controls.Add(_tile);
+            }
+        }
+
+        private bool DoBackup(string filename)
+        {
+            string _batfile = "";
+            bool _return = true;
+            string _sqlfile = Path.GetFileName(filename).Replace(Path.GetExtension(filename), ".sql");
+            _sqlfile = Application.StartupPath + "\\Maker\\" + _sqlfile;
+
+            if (!Directory.Exists(Application.StartupPath + "\\Maker"))
+            {
+                Directory.CreateDirectory(Application.StartupPath + "\\Maker");
+            }
+
+            _batfile = Application.StartupPath + "\\Maker\\batmake.bat";
+
+            try
+            {
+                if (File.Exists(_sqlfile)) File.Delete(_sqlfile);
+            }
+            catch (Exception)
+            {
+            }
+
+            StreamWriter _sw = File.CreateText(_batfile);
+            _sw.WriteLine(@"""" + Application.StartupPath + @"\Resources\mysqldump"" --host=" + txtHost.Text + " --port=" + 3306 + " --user=" + txtUser.Text + " --password=" + txtPassword.Text + " " + txtDB.Text + " --routines > " + @"""" + _sqlfile + @"""");
+            _sw.Close();
+            _sw.Dispose();
+
+            Process _bu = new Process();
+            _bu.StartInfo.FileName = _batfile;
+            _bu.StartInfo.CreateNoWindow = true;
+            _bu.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            _bu.StartInfo.RedirectStandardError = true;
+            _bu.StartInfo.UseShellExecute = false;
+            _bu.Start();
+
+            while (!_bu.HasExited)
+            {
+                //Application.DoEvents();
+            }
+
+            _bu.Dispose();
+            _bu = null;
+
+            if (!File.Exists(_sqlfile))
+            {
+                _return = false;
+            }
+            else
+            {
+                File.Copy(_sqlfile, filename);
+            }
+
+            File.Delete(_sqlfile);
+            File.Delete(_batfile);
+
+            return _return;
+        }
+
+        
     }
     
 }

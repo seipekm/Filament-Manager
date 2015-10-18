@@ -190,5 +190,17 @@ namespace Filament_Manager.Properties {
                 this["password"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Default")]
+        public global::MetroFramework.MetroColorStyle styleColor {
+            get {
+                return ((global::MetroFramework.MetroColorStyle)(this["styleColor"]));
+            }
+            set {
+                this["styleColor"] = value;
+            }
+        }
     }
 }

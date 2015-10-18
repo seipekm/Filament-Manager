@@ -44,5 +44,8 @@
     <Setting Name="password" Type="System.String" Scope="User">
       <Value Profile="(Default)">root</Value>
     </Setting>
+    <Setting Name="styleColor" Type="MetroFramework.MetroColorStyle" Scope="User">
+      <Value Profile="(Default)">Default</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
