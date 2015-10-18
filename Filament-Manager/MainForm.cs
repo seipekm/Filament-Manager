@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -482,7 +483,7 @@ namespace Filament_Manager
             }
             catch(Exception ex)
             {
-                MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -498,6 +499,7 @@ namespace Filament_Manager
             Properties.Settings.Default.barcodeTyp = cbEncodeType.SelectedIndex;
             Properties.Settings.Default.labelpos = cbLabelLocation.SelectedIndex;
             Properties.Settings.Default.styleColor = msmMain.Style;
+            Properties.Settings.Default.FullScreen = ctFullScreen.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -516,6 +518,7 @@ namespace Filament_Manager
             txtUser.Text = Properties.Settings.Default.User;
             txtPassword.Text = Properties.Settings.Default.password;
             msmMain.Style = Properties.Settings.Default.styleColor;
+            ctFullScreen.Checked = Properties.Settings.Default.FullScreen;
 
 
             this.cbRotateFlip.DataSource = System.Enum.GetNames(typeof(RotateFlipType));
@@ -605,7 +608,80 @@ namespace Filament_Manager
             return _return;
         }
 
-        
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateCheckInfo info;
+            if(ApplicationDeployment.IsNetworkDeployed)
+            {
+                ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
+                try
+                {
+                    info = ad.CheckForDetailedUpdate();
+                }
+                catch (DeploymentDownloadException dde)
+                {
+                    MetroMessageBox.Show(this, "The new Version of the application can't be downloaded at this time.\n\nPlease check you Network connection or try again later. Error: "+
+                        dde.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                catch(InvalidDeploymentException ide)
+                {
+                    MetroMessageBox.Show(this, "Can't check for a new version of the application. The ClickOnce deployment is currupt. Please redeploy the application and try again . Error: " +
+                        ide.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                catch(InvalidOperationException ioe)
+                {
+                    MetroMessageBox.Show(this, "This application can't be update. it's likely not a ClickOnce application .Error: " +
+                        ioe.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if(info.UpdateAvailable)
+                {
+                    if (MetroMessageBox.Show(this, "A newer version is available. Would you like to update it now?", "MESSAGE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            ad.Update();
+                            Application.Restart();
+                        }
+                        catch (Exception ex)
+                        {
+                            MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MetroMessageBox.Show(this, "You are running the latest version",
+                        "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                }
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Fehler",
+                        "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+        }
+
+        private void ctFullScreen_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ctFullScreen.Checked)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            
+        }
     }
     
 }

@@ -60,7 +60,15 @@
             this.btnFilaAdd = new MetroFramework.Controls.MetroLink();
             this.btnGenBarcode = new MetroFramework.Controls.MetroLink();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.btnUpdate = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnBackup = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnRestore = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.flpSettings = new System.Windows.Forms.FlowLayoutPanel();
             this.MySqlSetting = new System.Windows.Forms.GroupBox();
             this.btnConStringSave = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnConTest = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
@@ -91,14 +99,10 @@
             this.cbEncodeType = new MetroFramework.Controls.MetroComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lnlClose = new MetroFramework.Controls.MetroLink();
-            this.flpSettings = new System.Windows.Forms.FlowLayoutPanel();
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnBackup = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.btnRestore = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.ctFullScreen = new MetroFramework.Controls.MetroToggle();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvFilament)).BeginInit();
@@ -106,11 +110,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvFi)).BeginInit();
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.MySqlSetting.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -686,8 +691,20 @@
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
             // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel13.Location = new System.Drawing.Point(548, 260);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(111, 25);
+            this.metroLabel13.TabIndex = 2;
+            this.metroLabel13.Text = "coming soon";
+            // 
             // metroTabPage4
             // 
+            this.metroTabPage4.Controls.Add(this.groupBox4);
+            this.metroTabPage4.Controls.Add(this.btnUpdate);
             this.metroTabPage4.Controls.Add(this.groupBox3);
             this.metroTabPage4.Controls.Add(this.groupBox1);
             this.metroTabPage4.Controls.Add(this.MySqlSetting);
@@ -703,6 +720,84 @@
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Image = null;
+            this.btnUpdate.Location = new System.Drawing.Point(3, 528);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(229, 35);
+            this.btnUpdate.TabIndex = 31;
+            this.btnUpdate.Text = "Check for Update";
+            this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.btnBackup);
+            this.groupBox3.Controls.Add(this.btnRestore);
+            this.groupBox3.Location = new System.Drawing.Point(498, 200);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(241, 144);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Backup/Restore";
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Enabled = false;
+            this.btnBackup.Image = null;
+            this.btnBackup.Location = new System.Drawing.Point(6, 36);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(229, 35);
+            this.btnBackup.TabIndex = 30;
+            this.btnBackup.Text = "Backup";
+            this.btnBackup.UseSelectable = true;
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Enabled = false;
+            this.btnRestore.Image = null;
+            this.btnRestore.Location = new System.Drawing.Point(6, 77);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(229, 40);
+            this.btnRestore.TabIndex = 29;
+            this.btnRestore.Text = "Restore";
+            this.btnRestore.UseSelectable = true;
+            this.btnRestore.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.metroLabel12);
+            this.groupBox1.Controls.Add(this.flpSettings);
+            this.groupBox1.Location = new System.Drawing.Point(498, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(241, 190);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Style";
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(6, 18);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(42, 19);
+            this.metroLabel12.TabIndex = 29;
+            this.metroLabel12.Text = "Color";
+            // 
+            // flpSettings
+            // 
+            this.flpSettings.BackColor = System.Drawing.Color.Transparent;
+            this.flpSettings.Location = new System.Drawing.Point(6, 40);
+            this.flpSettings.Name = "flpSettings";
+            this.flpSettings.Size = new System.Drawing.Size(229, 143);
+            this.flpSettings.TabIndex = 4;
             // 
             // MySqlSetting
             // 
@@ -1192,85 +1287,41 @@
             this.lnlClose.UseSelectable = true;
             this.lnlClose.Click += new System.EventHandler(this.lnlClose_Click);
             // 
-            // flpSettings
-            // 
-            this.flpSettings.BackColor = System.Drawing.Color.Transparent;
-            this.flpSettings.Location = new System.Drawing.Point(6, 40);
-            this.flpSettings.Name = "flpSettings";
-            this.flpSettings.Size = new System.Drawing.Size(229, 143);
-            this.flpSettings.TabIndex = 4;
-            // 
             // msmMain
             // 
             this.msmMain.Owner = this;
             // 
-            // groupBox1
+            // groupBox4
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.metroLabel12);
-            this.groupBox1.Controls.Add(this.flpSettings);
-            this.groupBox1.Location = new System.Drawing.Point(498, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(241, 190);
-            this.groupBox1.TabIndex = 29;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Style";
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox4.Controls.Add(this.ctFullScreen);
+            this.groupBox4.Controls.Add(this.metroLabel14);
+            this.groupBox4.Location = new System.Drawing.Point(745, 4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(241, 190);
+            this.groupBox4.TabIndex = 30;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Style";
             // 
-            // metroLabel12
+            // metroLabel14
             // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(6, 18);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(42, 19);
-            this.metroLabel12.TabIndex = 29;
-            this.metroLabel12.Text = "Color";
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.Location = new System.Drawing.Point(93, 38);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(72, 19);
+            this.metroLabel14.TabIndex = 29;
+            this.metroLabel14.Text = "Full Screen";
             // 
-            // groupBox3
+            // ctFullScreen
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.btnBackup);
-            this.groupBox3.Controls.Add(this.btnRestore);
-            this.groupBox3.Location = new System.Drawing.Point(498, 200);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(241, 144);
-            this.groupBox3.TabIndex = 30;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Backup/Restore";
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.Enabled = false;
-            this.btnBackup.Image = null;
-            this.btnBackup.Location = new System.Drawing.Point(6, 36);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(229, 35);
-            this.btnBackup.TabIndex = 30;
-            this.btnBackup.Text = "Backup";
-            this.btnBackup.UseSelectable = true;
-            this.btnBackup.UseVisualStyleBackColor = true;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.Enabled = false;
-            this.btnRestore.Image = null;
-            this.btnRestore.Location = new System.Drawing.Point(6, 77);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(229, 40);
-            this.btnRestore.TabIndex = 29;
-            this.btnRestore.Text = "Restore";
-            this.btnRestore.UseSelectable = true;
-            this.btnRestore.UseVisualStyleBackColor = true;
-            // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel13.Location = new System.Drawing.Point(548, 260);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(111, 25);
-            this.metroLabel13.TabIndex = 2;
-            this.metroLabel13.Text = "coming soon";
+            this.ctFullScreen.AutoSize = true;
+            this.ctFullScreen.Location = new System.Drawing.Point(7, 40);
+            this.ctFullScreen.Name = "ctFullScreen";
+            this.ctFullScreen.Size = new System.Drawing.Size(80, 17);
+            this.ctFullScreen.TabIndex = 30;
+            this.ctFullScreen.Text = "Aus";
+            this.ctFullScreen.UseSelectable = true;
+            this.ctFullScreen.CheckedChanged += new System.EventHandler(this.ctFullScreen_CheckedChanged);
             // 
             // MainForm
             // 
@@ -1295,14 +1346,16 @@
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
             this.metroTabPage4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.MySqlSetting.ResumeLayout(false);
             this.MySqlSetting.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1371,6 +1424,10 @@
         private MetroFramework.Controls.MetroTextBox.MetroTextButton btnBackup;
         private MetroFramework.Controls.MetroTextBox.MetroTextButton btnRestore;
         private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnUpdate;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private MetroFramework.Controls.MetroToggle ctFullScreen;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
     }
 }
 
