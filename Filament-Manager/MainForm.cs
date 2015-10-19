@@ -3,6 +3,7 @@ using MetroFramework.Controls;
 using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 using System;
+using System.Deployment;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,10 @@ namespace Filament_Manager
             initStyle();
             cbFactory.SelectedIndex = 0;
             metroTabControl1.SelectedIndex = 0;
+            if(ApplicationDeployment.IsNetworkDeployed)
+            {
+                lbVersion.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            }
         }
 
         public void _tile_Click(object sender, EventArgs e)
@@ -245,8 +250,7 @@ namespace Filament_Manager
             try
             {
                 Sqlconnection.Open();
-                MetroMessageBox.Show(this, "Verbindung OK", "Erfolgreich", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                System.Threading.Thread.Sleep(5000);
+                MetroMessageBox.Show(this, "Verbindung OK", "Erfolgreich", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Console.Write("Connect");
                 Sqlconnection.Close();
 
@@ -256,12 +260,12 @@ namespace Filament_Manager
                 switch (ex.Number)
                 {
                     case 0:
-                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Sqlconnection.Close();
                         break;
 
                     case 1045:
-                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Sqlconnection.Close();
                         break;
                 }
@@ -313,57 +317,17 @@ namespace Filament_Manager
 
         }
 
-        private void btnBackup_Click(object sender, EventArgs e)
+        private void ctFullScreen_CheckedChanged(object sender, EventArgs e)
         {
-            bool _close = false;
-
-
-            string _filename = txtDB.Text + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-
-            SaveFileDialog _dia = new SaveFileDialog();
-            _dia.Title = "Backup Database";
-            _dia.Filter = "SQL files (*.sql)|*.sql";
-            _dia.FileName = _filename;
-            _dia.DefaultExt = "*.sql";
-            _dia.InitialDirectory = string.Empty;
-            if (_dia.ShowDialog() == DialogResult.OK && !String.IsNullOrEmpty(_dia.FileName.Trim()))
+            if (ctFullScreen.Checked)
             {
-                _filename = _dia.FileName;
+                this.WindowState = FormWindowState.Maximized;
             }
             else
             {
-                _close = true;
-            }
-            _dia.Dispose();
-            _dia = null;
-
-            if (_close) return;
-
-            DelBackup _del = new DelBackup(DoBackup);
-            IAsyncResult _asc = _del.BeginInvoke(_filename, null, _del);
-
-
-
-            if (_del.EndInvoke(_asc))
-            {
-                MetroMessageBox.Show(this, "Backup was written successfully!", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _close = true;
-            }
-            else
-            {
-                Size _size = this.Size;
-                MetroMessageBox.Show(this, "Please check if supporting backup tools were present at the application's current path", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Size = _size;
+                this.WindowState = FormWindowState.Normal;
             }
 
-            _del = null;
-            _asc = null;
-
-            if (_close)
-            {
-                DialogResult = DialogResult.OK;
-
-            }
         }
 
         private void SqlCon()
@@ -549,139 +513,8 @@ namespace Filament_Manager
                 flpSettings.Controls.Add(_tile);
             }
         }
-
-        private bool DoBackup(string filename)
-        {
-            string _batfile = "";
-            bool _return = true;
-            string _sqlfile = Path.GetFileName(filename).Replace(Path.GetExtension(filename), ".sql");
-            _sqlfile = Application.StartupPath + "\\Maker\\" + _sqlfile;
-
-            if (!Directory.Exists(Application.StartupPath + "\\Maker"))
-            {
-                Directory.CreateDirectory(Application.StartupPath + "\\Maker");
-            }
-
-            _batfile = Application.StartupPath + "\\Maker\\batmake.bat";
-
-            try
-            {
-                if (File.Exists(_sqlfile)) File.Delete(_sqlfile);
-            }
-            catch (Exception)
-            {
-            }
-
-            StreamWriter _sw = File.CreateText(_batfile);
-            _sw.WriteLine(@"""" + Application.StartupPath + @"\Resources\mysqldump"" --host=" + txtHost.Text + " --port=" + 3306 + " --user=" + txtUser.Text + " --password=" + txtPassword.Text + " " + txtDB.Text + " --routines > " + @"""" + _sqlfile + @"""");
-            _sw.Close();
-            _sw.Dispose();
-
-            Process _bu = new Process();
-            _bu.StartInfo.FileName = _batfile;
-            _bu.StartInfo.CreateNoWindow = true;
-            _bu.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            _bu.StartInfo.RedirectStandardError = true;
-            _bu.StartInfo.UseShellExecute = false;
-            _bu.Start();
-
-            while (!_bu.HasExited)
-            {
-                //Application.DoEvents();
-            }
-
-            _bu.Dispose();
-            _bu = null;
-
-            if (!File.Exists(_sqlfile))
-            {
-                _return = false;
-            }
-            else
-            {
-                File.Copy(_sqlfile, filename);
-            }
-
-            File.Delete(_sqlfile);
-            File.Delete(_batfile);
-
-            return _return;
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            UpdateCheckInfo info;
-            if(ApplicationDeployment.IsNetworkDeployed)
-            {
-                ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
-                try
-                {
-                    info = ad.CheckForDetailedUpdate();
-                }
-                catch (DeploymentDownloadException dde)
-                {
-                    MetroMessageBox.Show(this, "The new Version of the application can't be downloaded at this time.\n\nPlease check you Network connection or try again later. Error: "+
-                        dde.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                catch(InvalidDeploymentException ide)
-                {
-                    MetroMessageBox.Show(this, "Can't check for a new version of the application. The ClickOnce deployment is currupt. Please redeploy the application and try again . Error: " +
-                        ide.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                catch(InvalidOperationException ioe)
-                {
-                    MetroMessageBox.Show(this, "This application can't be update. it's likely not a ClickOnce application .Error: " +
-                        ioe.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if(info.UpdateAvailable)
-                {
-                    if (MetroMessageBox.Show(this, "A newer version is available. Would you like to update it now?", "MESSAGE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        try
-                        {
-                            ad.Update();
-                            Application.Restart();
-                        }
-                        catch (Exception ex)
-                        {
-                            MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        MetroMessageBox.Show(this, "You are running the latest version",
-                        "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
-                }
-            }
-            else
-            {
-                MetroMessageBox.Show(this, "Fehler",
-                        "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-        }
-
-        private void ctFullScreen_CheckedChanged(object sender, EventArgs e)
-        {
-            if(ctFullScreen.Checked)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            
-        }
+                       
+        
     }
     
 }
