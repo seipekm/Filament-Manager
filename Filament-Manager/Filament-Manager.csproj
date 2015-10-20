@@ -33,7 +33,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -62,7 +62,7 @@
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>windows_client.ico</ApplicationIcon>
+    <ApplicationIcon>3d_printer.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -135,14 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Filament-Manager_1_TemporaryKey.pfx" />
     <None Include="Filament-Manager_TemporaryKey.pfx" />
     <None Include="packages.config" />
@@ -151,6 +146,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -161,56 +161,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image1.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icon1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\appbar.barcode.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\appbar.barcode1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\appbar.barcode2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Barcode.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Barcode1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ok.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ok1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Rotate Left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Rotate Left1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cancel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cancel1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\print.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="3d-printer-icon-1024x1024.ico" />
+    <Content Include="3d_printer.ico" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\barcode.png" />
+    <None Include="Resources\barcode_adding.png" />
+    <Content Include="Resources\barcode_scanner.png" />
+    <None Include="Resources\barcode_scanner1.png" />
     <Content Include="Resources\mysqldump.exe" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\restart.png" />
+    <None Include="Resources\saveing.png" />
+    <None Include="Resources\search.png" />
+    <Content Include="Resources\shutdown.png" />
+    <None Include="Resources\shutdown1.png" />
     <Content Include="windows_client.ico" />
   </ItemGroup>
   <ItemGroup>

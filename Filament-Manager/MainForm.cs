@@ -513,8 +513,7 @@ namespace Filament_Manager
                 flpSettings.Controls.Add(_tile);
             }
         }
-                       
-        
+
     }
     
 }

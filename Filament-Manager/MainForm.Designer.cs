@@ -38,10 +38,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.btnSearch = new MetroFramework.Controls.MetroLink();
+            this.btnScan = new MetroFramework.Controls.MetroLink();
+            this.btnAdd = new MetroFramework.Controls.MetroLink();
             this.gvFilament = new MetroFramework.Controls.MetroGrid();
-            this.btnFilamentAdd = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.btnSearch = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.btnScan = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.txtPrintWeight = new MetroFramework.Controls.MetroTextBox();
             this.txtFilament = new MetroFramework.Controls.MetroTextBox();
             this.txtPrintID = new MetroFramework.Controls.MetroTextBox();
@@ -50,7 +50,6 @@
             this.gbBarcode = new System.Windows.Forms.GroupBox();
             this.txtGenBarcode = new MetroFramework.Controls.MetroTextBox();
             this.cbFactory = new MetroFramework.Controls.MetroComboBox();
-            this.gvFi = new MetroFramework.Controls.MetroGrid();
             this.txtNetto = new MetroFramework.Controls.MetroTextBox();
             this.txtBrutto = new MetroFramework.Controls.MetroTextBox();
             this.txtColor = new MetroFramework.Controls.MetroTextBox();
@@ -99,17 +98,17 @@
             this.cbBarcodeAlign = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.cbEncodeType = new MetroFramework.Controls.MetroComboBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lnlClose = new MetroFramework.Controls.MetroLink();
-            this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.lbVersion = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.lnlClose = new MetroFramework.Controls.MetroLink();
+            this.gvFi = new MetroFramework.Controls.MetroGrid();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvFilament)).BeginInit();
             this.metroTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvFi)).BeginInit();
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -117,8 +116,9 @@
             this.groupBox1.SuspendLayout();
             this.MySqlSetting.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
             this.metroTabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvFi)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -133,17 +133,17 @@
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(10);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 4;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1212, 614);
             this.metroTabControl1.TabIndex = 4;
             this.metroTabControl1.UseSelectable = true;
             // 
             // metroTabPage1
             // 
-            this.metroTabPage1.Controls.Add(this.gvFilament);
-            this.metroTabPage1.Controls.Add(this.btnFilamentAdd);
             this.metroTabPage1.Controls.Add(this.btnSearch);
             this.metroTabPage1.Controls.Add(this.btnScan);
+            this.metroTabPage1.Controls.Add(this.btnAdd);
+            this.metroTabPage1.Controls.Add(this.gvFilament);
             this.metroTabPage1.Controls.Add(this.txtPrintWeight);
             this.metroTabPage1.Controls.Add(this.txtFilament);
             this.metroTabPage1.Controls.Add(this.txtPrintID);
@@ -160,6 +160,49 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Image = global::Filament_Manager.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.ImageSize = 30;
+            this.btnSearch.Location = new System.Drawing.Point(307, 75);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.NoFocusImage = global::Filament_Manager.Properties.Resources.search;
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
+            this.btnSearch.TabIndex = 35;
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseSelectable = true;
+            // 
+            // btnScan
+            // 
+            this.btnScan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnScan.Image = global::Filament_Manager.Properties.Resources.barcode_scanner;
+            this.btnScan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnScan.ImageSize = 30;
+            this.btnScan.Location = new System.Drawing.Point(307, 3);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.NoFocusImage = global::Filament_Manager.Properties.Resources.barcode_scanner;
+            this.btnScan.Size = new System.Drawing.Size(30, 30);
+            this.btnScan.TabIndex = 34;
+            this.btnScan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnScan.UseSelectable = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Image = global::Filament_Manager.Properties.Resources.plus;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.ImageSize = 50;
+            this.btnAdd.Location = new System.Drawing.Point(13, 147);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.NoFocusImage = global::Filament_Manager.Properties.Resources.plus;
+            this.btnAdd.Size = new System.Drawing.Size(50, 50);
+            this.btnAdd.TabIndex = 33;
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseSelectable = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gvFilament
             // 
@@ -192,7 +235,7 @@
             this.gvFilament.EnableHeadersVisualStyles = false;
             this.gvFilament.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gvFilament.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gvFilament.Location = new System.Drawing.Point(0, 240);
+            this.gvFilament.Location = new System.Drawing.Point(0, 203);
             this.gvFilament.Name = "gvFilament";
             this.gvFilament.ReadOnly = true;
             this.gvFilament.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -206,45 +249,8 @@
             this.gvFilament.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gvFilament.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gvFilament.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvFilament.Size = new System.Drawing.Size(1204, 326);
+            this.gvFilament.Size = new System.Drawing.Size(1204, 363);
             this.gvFilament.TabIndex = 17;
-            // 
-            // btnFilamentAdd
-            // 
-            this.btnFilamentAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilamentAdd.Image = null;
-            this.btnFilamentAdd.Location = new System.Drawing.Point(13, 147);
-            this.btnFilamentAdd.Name = "btnFilamentAdd";
-            this.btnFilamentAdd.Size = new System.Drawing.Size(119, 30);
-            this.btnFilamentAdd.TabIndex = 16;
-            this.btnFilamentAdd.Text = "HINZUFÜGEN";
-            this.btnFilamentAdd.UseSelectable = true;
-            this.btnFilamentAdd.UseVisualStyleBackColor = true;
-            this.btnFilamentAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Image = null;
-            this.btnSearch.Location = new System.Drawing.Point(307, 75);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(107, 30);
-            this.btnSearch.TabIndex = 15;
-            this.btnSearch.Text = "SUCHE";
-            this.btnSearch.UseSelectable = true;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnScan
-            // 
-            this.btnScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScan.Image = null;
-            this.btnScan.Location = new System.Drawing.Point(307, 3);
-            this.btnScan.Name = "btnScan";
-            this.btnScan.Size = new System.Drawing.Size(107, 30);
-            this.btnScan.TabIndex = 14;
-            this.btnScan.Text = "SCAN";
-            this.btnScan.UseSelectable = true;
-            this.btnScan.UseVisualStyleBackColor = true;
             // 
             // txtPrintWeight
             // 
@@ -431,7 +437,6 @@
             this.txtGenBarcode.MaxLength = 32767;
             this.txtGenBarcode.Name = "txtGenBarcode";
             this.txtGenBarcode.PasswordChar = '\0';
-            this.txtGenBarcode.ReadOnly = true;
             this.txtGenBarcode.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtGenBarcode.SelectedText = "";
             this.txtGenBarcode.SelectionLength = 0;
@@ -458,57 +463,6 @@
             this.cbFactory.Size = new System.Drawing.Size(288, 29);
             this.cbFactory.TabIndex = 24;
             this.cbFactory.UseSelectable = true;
-            // 
-            // gvFi
-            // 
-            this.gvFi.AllowUserToAddRows = false;
-            this.gvFi.AllowUserToDeleteRows = false;
-            this.gvFi.AllowUserToResizeColumns = false;
-            this.gvFi.AllowUserToResizeRows = false;
-            this.gvFi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvFi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gvFi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gvFi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.gvFi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvFi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.gvFi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvFi.DefaultCellStyle = dataGridViewCellStyle5;
-            this.gvFi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gvFi.EnableHeadersVisualStyles = false;
-            this.gvFi.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.gvFi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gvFi.Location = new System.Drawing.Point(0, 240);
-            this.gvFi.MultiSelect = false;
-            this.gvFi.Name = "gvFi";
-            this.gvFi.ReadOnly = true;
-            this.gvFi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvFi.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.gvFi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.gvFi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvFi.Size = new System.Drawing.Size(1204, 326);
-            this.gvFi.TabIndex = 23;
-            this.gvFi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gvFi_MouseDoubleClick);
             // 
             // txtNetto
             // 
@@ -610,12 +564,13 @@
             // 
             // btnSaveBarcode
             // 
-            this.btnSaveBarcode.Image = global::Filament_Manager.Properties.Resources.Save1;
+            this.btnSaveBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveBarcode.Image = global::Filament_Manager.Properties.Resources.saveing;
             this.btnSaveBarcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveBarcode.ImageSize = 50;
             this.btnSaveBarcode.Location = new System.Drawing.Point(785, 20);
             this.btnSaveBarcode.Name = "btnSaveBarcode";
-            this.btnSaveBarcode.NoFocusImage = global::Filament_Manager.Properties.Resources.Save;
+            this.btnSaveBarcode.NoFocusImage = global::Filament_Manager.Properties.Resources.saveing;
             this.btnSaveBarcode.Size = new System.Drawing.Size(50, 50);
             this.btnSaveBarcode.TabIndex = 35;
             this.btnSaveBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -624,12 +579,13 @@
             // 
             // btnFilaDelete
             // 
-            this.btnFilaDelete.Image = global::Filament_Manager.Properties.Resources.Cancel1;
+            this.btnFilaDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilaDelete.Image = global::Filament_Manager.Properties.Resources.minus;
             this.btnFilaDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFilaDelete.ImageSize = 50;
             this.btnFilaDelete.Location = new System.Drawing.Point(125, 184);
             this.btnFilaDelete.Name = "btnFilaDelete";
-            this.btnFilaDelete.NoFocusImage = global::Filament_Manager.Properties.Resources.Cancel;
+            this.btnFilaDelete.NoFocusImage = global::Filament_Manager.Properties.Resources.minus;
             this.btnFilaDelete.Size = new System.Drawing.Size(50, 50);
             this.btnFilaDelete.TabIndex = 34;
             this.btnFilaDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -638,12 +594,13 @@
             // 
             // btnFilaUpdate
             // 
-            this.btnFilaUpdate.Image = global::Filament_Manager.Properties.Resources.Rotate_Left1;
+            this.btnFilaUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilaUpdate.Image = global::Filament_Manager.Properties.Resources.restart;
             this.btnFilaUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFilaUpdate.ImageSize = 50;
             this.btnFilaUpdate.Location = new System.Drawing.Point(69, 184);
             this.btnFilaUpdate.Name = "btnFilaUpdate";
-            this.btnFilaUpdate.NoFocusImage = global::Filament_Manager.Properties.Resources.Rotate_Left;
+            this.btnFilaUpdate.NoFocusImage = global::Filament_Manager.Properties.Resources.restart;
             this.btnFilaUpdate.Size = new System.Drawing.Size(50, 50);
             this.btnFilaUpdate.TabIndex = 33;
             this.btnFilaUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -652,12 +609,13 @@
             // 
             // btnFilaAdd
             // 
-            this.btnFilaAdd.Image = global::Filament_Manager.Properties.Resources.Ok1;
+            this.btnFilaAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilaAdd.Image = global::Filament_Manager.Properties.Resources.plus;
             this.btnFilaAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFilaAdd.ImageSize = 50;
             this.btnFilaAdd.Location = new System.Drawing.Point(13, 184);
             this.btnFilaAdd.Name = "btnFilaAdd";
-            this.btnFilaAdd.NoFocusImage = global::Filament_Manager.Properties.Resources.Ok;
+            this.btnFilaAdd.NoFocusImage = global::Filament_Manager.Properties.Resources.plus;
             this.btnFilaAdd.Size = new System.Drawing.Size(50, 50);
             this.btnFilaAdd.TabIndex = 32;
             this.btnFilaAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -666,12 +624,13 @@
             // 
             // btnGenBarcode
             // 
-            this.btnGenBarcode.Image = global::Filament_Manager.Properties.Resources.Barcode1;
+            this.btnGenBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenBarcode.Image = global::Filament_Manager.Properties.Resources.barcode_adding;
             this.btnGenBarcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenBarcode.ImageSize = 50;
             this.btnGenBarcode.Location = new System.Drawing.Point(185, 184);
             this.btnGenBarcode.Name = "btnGenBarcode";
-            this.btnGenBarcode.NoFocusImage = global::Filament_Manager.Properties.Resources.Barcode;
+            this.btnGenBarcode.NoFocusImage = global::Filament_Manager.Properties.Resources.barcode_adding;
             this.btnGenBarcode.Size = new System.Drawing.Size(116, 50);
             this.btnGenBarcode.TabIndex = 31;
             this.btnGenBarcode.Text = "ERZEUGEN";
@@ -1292,27 +1251,6 @@
             this.cbEncodeType.TabIndex = 0;
             this.cbEncodeType.UseSelectable = true;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 2000;
-            // 
-            // lnlClose
-            // 
-            this.lnlClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lnlClose.Image = ((System.Drawing.Image)(resources.GetObject("lnlClose.Image")));
-            this.lnlClose.ImageSize = 32;
-            this.lnlClose.Location = new System.Drawing.Point(1206, 8);
-            this.lnlClose.Name = "lnlClose";
-            this.lnlClose.NoFocusImage = ((System.Drawing.Image)(resources.GetObject("lnlClose.NoFocusImage")));
-            this.lnlClose.Size = new System.Drawing.Size(42, 39);
-            this.lnlClose.TabIndex = 2;
-            this.lnlClose.UseSelectable = true;
-            this.lnlClose.Click += new System.EventHandler(this.lnlClose_Click);
-            // 
-            // msmMain
-            // 
-            this.msmMain.Owner = this;
-            // 
             // metroTabPage5
             // 
             this.metroTabPage5.Controls.Add(this.lbVersion);
@@ -1329,15 +1267,6 @@
             this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage5.VerticalScrollbarSize = 10;
             // 
-            // metroLabel15
-            // 
-            this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(36, 23);
-            this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(54, 19);
-            this.metroLabel15.TabIndex = 2;
-            this.metroLabel15.Text = "Version:";
-            // 
             // lbVersion
             // 
             this.lbVersion.AutoSize = true;
@@ -1347,6 +1276,87 @@
             this.lbVersion.Size = new System.Drawing.Size(60, 25);
             this.lbVersion.TabIndex = 3;
             this.lbVersion.Text = "0.0.0.0";
+            // 
+            // metroLabel15
+            // 
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.Location = new System.Drawing.Point(36, 23);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(54, 19);
+            this.metroLabel15.TabIndex = 2;
+            this.metroLabel15.Text = "Version:";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            // 
+            // msmMain
+            // 
+            this.msmMain.Owner = this;
+            // 
+            // lnlClose
+            // 
+            this.lnlClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnlClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lnlClose.Image = global::Filament_Manager.Properties.Resources.shutdown;
+            this.lnlClose.ImageSize = 50;
+            this.lnlClose.Location = new System.Drawing.Point(1197, 8);
+            this.lnlClose.Name = "lnlClose";
+            this.lnlClose.NoFocusImage = global::Filament_Manager.Properties.Resources.shutdown;
+            this.lnlClose.Size = new System.Drawing.Size(50, 50);
+            this.lnlClose.TabIndex = 2;
+            this.lnlClose.UseSelectable = true;
+            this.lnlClose.Click += new System.EventHandler(this.lnlClose_Click);
+            // 
+            // gvFi
+            // 
+            this.gvFi.AllowUserToAddRows = false;
+            this.gvFi.AllowUserToDeleteRows = false;
+            this.gvFi.AllowUserToResizeColumns = false;
+            this.gvFi.AllowUserToResizeRows = false;
+            this.gvFi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvFi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gvFi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gvFi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gvFi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvFi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gvFi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvFi.DefaultCellStyle = dataGridViewCellStyle5;
+            this.gvFi.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gvFi.EnableHeadersVisualStyles = false;
+            this.gvFi.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gvFi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gvFi.Location = new System.Drawing.Point(0, 240);
+            this.gvFi.MultiSelect = false;
+            this.gvFi.Name = "gvFi";
+            this.gvFi.ReadOnly = true;
+            this.gvFi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.gvFi.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gvFi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gvFi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvFi.Size = new System.Drawing.Size(1204, 326);
+            this.gvFi.TabIndex = 23;
+            this.gvFi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gvFi_MouseDoubleClick);
             // 
             // MainForm
             // 
@@ -1367,7 +1377,6 @@
             this.metroTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvFilament)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvFi)).EndInit();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
             this.metroTabPage4.ResumeLayout(false);
@@ -1380,9 +1389,10 @@
             this.MySqlSetting.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvFi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1396,21 +1406,16 @@
         private MetroFramework.Controls.MetroTextBox txtPrintWeight;
         private MetroFramework.Controls.MetroTextBox txtFilament;
         private MetroFramework.Controls.MetroTextBox txtPrintID;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnFilamentAdd;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroGrid gvFilament;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnSearch;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnScan;
         private MetroFramework.Controls.MetroTextBox txtBarcode;
         private MetroFramework.Controls.MetroTextBox txtGenBarcode;
         private MetroFramework.Controls.MetroComboBox cbFactory;
-        private MetroFramework.Controls.MetroGrid gvFi;
         private MetroFramework.Controls.MetroTextBox txtNetto;
         private MetroFramework.Controls.MetroTextBox txtBrutto;
         private MetroFramework.Controls.MetroTextBox txtColor;
         private System.Windows.Forms.GroupBox gbBarcode;
         private MetroFramework.Controls.MetroLink btnGenBarcode;
-        private MetroFramework.Controls.MetroLink btnFilaAdd;
         private MetroFramework.Controls.MetroLink btnFilaUpdate;
         private MetroFramework.Controls.MetroLink btnFilaDelete;
         private MetroFramework.Controls.MetroLink btnSaveBarcode;
@@ -1457,6 +1462,11 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage5;
         private MetroFramework.Controls.MetroLabel lbVersion;
         private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroLink btnFilaAdd;
+        private MetroFramework.Controls.MetroLink btnScan;
+        private MetroFramework.Controls.MetroLink btnAdd;
+        private MetroFramework.Controls.MetroLink btnSearch;
+        private MetroFramework.Controls.MetroGrid gvFi;
     }
 }
 
