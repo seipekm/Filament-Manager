@@ -50,5 +50,11 @@
     <Setting Name="FullScreen" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="IpPrinter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.1.182</Value>
+    </Setting>
+    <Setting Name="ApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A6C6603BB2F743D6B084D7F52E568011</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

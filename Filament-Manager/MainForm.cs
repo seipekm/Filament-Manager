@@ -15,6 +15,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace Filament_Manager
 {
@@ -24,7 +26,10 @@ namespace Filament_Manager
         private MySqlCommand cmd;
         private delegate bool DelBackup(string filename);
 
+        public string ApiServerVersion = "1.2.7";
+
         BarcodeLib.Barcode b = new BarcodeLib.Barcode();
+        
 
         public MainForm()
         {                      
@@ -34,6 +39,7 @@ namespace Filament_Manager
             initStyle();
             cbFactory.SelectedIndex = 0;
             metroTabControl1.SelectedIndex = 0;
+           
             if(ApplicationDeployment.IsNetworkDeployed)
             {
                 lbVersion.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
@@ -51,6 +57,9 @@ namespace Filament_Manager
             {
                 DataGridPrintJob();
                 DataGridFilament();
+                getPrintOsVersion();
+                getPrintOperation();
+                timer1.Start();
             }
             catch (Exception ex)
             {
@@ -464,6 +473,8 @@ namespace Filament_Manager
             Properties.Settings.Default.labelpos = cbLabelLocation.SelectedIndex;
             Properties.Settings.Default.styleColor = msmMain.Style;
             Properties.Settings.Default.FullScreen = ctFullScreen.Checked;
+            Properties.Settings.Default.PrinterIP = txtIpOcto.Text;
+            Properties.Settings.Default.ApiKey = txtApi.Text;
             Properties.Settings.Default.Save();
         }
 
@@ -483,6 +494,8 @@ namespace Filament_Manager
             txtPassword.Text = Properties.Settings.Default.password;
             msmMain.Style = Properties.Settings.Default.styleColor;
             ctFullScreen.Checked = Properties.Settings.Default.FullScreen;
+            txtApi.Text = Properties.Settings.Default.ApiKey;
+            txtIpOcto.Text = Properties.Settings.Default.PrinterIP;
 
 
             this.cbRotateFlip.DataSource = System.Enum.GetNames(typeof(RotateFlipType));
@@ -514,6 +527,42 @@ namespace Filament_Manager
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            getPrintOperation();
+        }
+
+        private void getPrintOsVersion()
+        {
+            try
+            {
+                WebClient client = new WebClient();
+                var data = client.DownloadString("http://" + txtIpOcto.Text + "/api/version?apikey=" + txtApi.Text);
+                Console.Write(data);
+                JObject json = JObject.Parse(data);
+                txtApiVersion.Text = json["api"].ToString();
+                txtServerVersion.Text = (json["server"].ToString() + " / " + ApiServerVersion);
+
+                if(json["server"].ToString() != ApiServerVersion)
+                {
+                    MetroMessageBox.Show(this, "Server version ist warscheinlich nicht Kompaktibel", "Warnung", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch(Exception ex)
+            {
+                MetroMessageBox.Show(this, ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void getPrintOperation()
+        {
+            WebClient client = new WebClient();
+            var data = client.DownloadString("http://" + txtIpOcto.Text + "/api/printer?apikey=" + txtApi.Text);
+            JObject json = JObject.Parse(data);
+            txtPrintTemp.Text = json["temperature"]["tool0"]["actual"].ToString() + "°C / " + json["temperature"]["tool0"]["target"].ToString()+"°C";
+            txtPrintState.Text = json["state"]["text"].ToString();
+            client.Dispose();
+        }
     }
     
 }
