@@ -622,7 +622,7 @@ namespace Filament_Manager
                 txtPrintTimeEnd.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", tl.Hours, tl.Minutes, tl.Seconds);
             }
             
-
+            //Processbar
             string ProcessStr = json["progress"]["completion"].ToString();
             double ProcessDouble = double.Parse(ProcessStr);
             int ProgressBar = Convert.ToInt32(ProcessDouble);
