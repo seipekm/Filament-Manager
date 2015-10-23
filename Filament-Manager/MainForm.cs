@@ -530,6 +530,7 @@ namespace Filament_Manager
         private void timer1_Tick(object sender, EventArgs e)
         {
             getPrintOperation();
+            getJobOperation();
         }
 
         private void getPrintOsVersion()
@@ -562,6 +563,70 @@ namespace Filament_Manager
             txtPrintTemp.Text = json["temperature"]["tool0"]["actual"].ToString() + "°C / " + json["temperature"]["tool0"]["target"].ToString()+"°C";
             txtPrintState.Text = json["state"]["text"].ToString();
             client.Dispose();
+        }
+        private void getJobOperation()
+        {
+            WebClient client = new WebClient();
+            var data = client.DownloadString("http://" + txtIpOcto.Text + "/api/job?apikey=" + txtApi.Text);
+            JObject json = JObject.Parse(data);
+
+            //File Name
+            txtFileName.Text = json["job"]["file"]["name"].ToString();
+
+            //calculation Print Weight with print length
+            string volumeStr = json["job"]["filament"]["tool0"]["length"].ToString();
+            double volume = double.Parse(volumeStr);
+            double calcWeight = 0.00121 * 0.875 * 0.875 * Math.PI * volume;
+            txtWeight.Text = calcWeight.ToString("0.#") + "g";
+
+            //Calc Print Time
+            if(json["job"]["lastPrintTime"].ToString()=="")
+            {
+                string calcTimeStr = json["job"]["estimatedPrintTime"].ToString();
+                double calcTime = double.Parse(calcTimeStr);
+                TimeSpan calct = TimeSpan.FromSeconds(calcTime);
+                txtCalcPrintTime.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", calct.Hours, calct.Minutes, calct.Seconds);
+            }
+            else
+            {
+                string calcNewTimeStr = json["job"]["lastPrintTime"].ToString();
+                double calcNewTime = double.Parse(calcNewTimeStr);
+                TimeSpan calcnewt = TimeSpan.FromSeconds(calcNewTime);
+                txtCalcPrintTime.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", calcnewt.Hours, calcnewt.Minutes, calcnewt.Seconds);
+            }
+
+            //Print Time
+            string TimeStr = json["progress"]["printTime"].ToString();
+            if(TimeStr == "")
+            {
+                txtPrintTime.Text = "-";
+            }
+            else
+            {
+                double Time = double.Parse(TimeStr);
+                TimeSpan t = TimeSpan.FromSeconds(Time);
+                txtPrintTime.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", t.Hours, t.Minutes, t.Seconds);
+            }
+            
+
+            //Print time left
+            string TimeLeftStr = json["progress"]["printTimeLeft"].ToString();
+            if(TimeLeftStr == "")
+            {
+                txtPrintTimeEnd.Text = "-";
+            }
+            else
+            {
+                double TimeLeft = double.Parse(TimeLeftStr);
+                TimeSpan tl = TimeSpan.FromSeconds(TimeLeft);
+                txtPrintTimeEnd.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", tl.Hours, tl.Minutes, tl.Seconds);
+            }
+            
+
+            string ProcessStr = json["progress"]["completion"].ToString();
+            double ProcessDouble = double.Parse(ProcessStr);
+            int ProgressBar = Convert.ToInt32(ProcessDouble);
+            pbProcess.Value = ProgressBar;
         }
     }
     
