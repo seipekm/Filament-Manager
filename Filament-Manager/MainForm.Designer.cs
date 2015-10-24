@@ -60,6 +60,44 @@
             this.btnFilaAdd = new MetroFramework.Controls.MetroLink();
             this.btnGenBarcode = new MetroFramework.Controls.MetroLink();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
+            this.streamPlayerControl = new WebEye.StreamPlayerControl();
+            this.btnCamDisCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnCamCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLink4 = new MetroFramework.Controls.MetroLink();
+            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.metroLink3 = new MetroFramework.Controls.MetroLink();
+            this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.metroTextButton5 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton18 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton19 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton20 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton21 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton22 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton23 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton24 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.metroTextButton17 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton16 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton15 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton14 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton13 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton12 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton11 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton9 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton8 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton7 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton6 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton4 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton3 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton2 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTextButton1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.pbProcess = new MetroFramework.Controls.MetroProgressBar();
             this.txtPrintTimeEnd = new MetroFramework.Controls.MetroLabel();
             this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
@@ -128,18 +166,17 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
             this.lnlClose = new MetroFramework.Controls.MetroLink();
-            this.btnCamCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.btnCamDisCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
-            this.streamPlayerControl = new WebEye.StreamPlayerControl();
+            this.txtSetTemp = new MetroFramework.Controls.MetroTextBox();
+            this.metroLink5 = new MetroFramework.Controls.MetroLink();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvFilament)).BeginInit();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvFi)).BeginInit();
             this.metroTabPage3.SuspendLayout();
+            this.metroTabControl2.SuspendLayout();
+            this.metroTabPage6.SuspendLayout();
+            this.metroTabPage7.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -149,8 +186,6 @@
             this.groupBox2.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
-            this.metroTabControl2.SuspendLayout();
-            this.metroTabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -722,6 +757,7 @@
             // 
             // metroTabPage3
             // 
+            this.metroTabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.metroTabPage3.Controls.Add(this.metroTabControl2);
             this.metroTabPage3.Controls.Add(this.pbProcess);
             this.metroTabPage3.Controls.Add(this.txtPrintTimeEnd);
@@ -754,6 +790,517 @@
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
+            // 
+            // metroTabControl2
+            // 
+            this.metroTabControl2.Controls.Add(this.metroTabPage6);
+            this.metroTabControl2.Controls.Add(this.metroTabPage7);
+            this.metroTabControl2.Location = new System.Drawing.Point(589, 3);
+            this.metroTabControl2.Name = "metroTabControl2";
+            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.Size = new System.Drawing.Size(612, 510);
+            this.metroTabControl2.TabIndex = 25;
+            this.metroTabControl2.UseSelectable = true;
+            // 
+            // metroTabPage6
+            // 
+            this.metroTabPage6.Controls.Add(this.streamPlayerControl);
+            this.metroTabPage6.Controls.Add(this.btnCamDisCon);
+            this.metroTabPage6.Controls.Add(this.btnCamCon);
+            this.metroTabPage6.HorizontalScrollbarBarColor = true;
+            this.metroTabPage6.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage6.HorizontalScrollbarSize = 10;
+            this.metroTabPage6.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage6.Name = "metroTabPage6";
+            this.metroTabPage6.Size = new System.Drawing.Size(604, 468);
+            this.metroTabPage6.TabIndex = 0;
+            this.metroTabPage6.Text = "Camera";
+            this.metroTabPage6.VerticalScrollbarBarColor = true;
+            this.metroTabPage6.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage6.VerticalScrollbarSize = 10;
+            // 
+            // streamPlayerControl
+            // 
+            this.streamPlayerControl.Location = new System.Drawing.Point(8, 7);
+            this.streamPlayerControl.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.streamPlayerControl.Name = "streamPlayerControl";
+            this.streamPlayerControl.Size = new System.Drawing.Size(588, 404);
+            this.streamPlayerControl.TabIndex = 2;
+            // 
+            // btnCamDisCon
+            // 
+            this.btnCamDisCon.Image = null;
+            this.btnCamDisCon.Location = new System.Drawing.Point(100, 421);
+            this.btnCamDisCon.Name = "btnCamDisCon";
+            this.btnCamDisCon.Size = new System.Drawing.Size(87, 33);
+            this.btnCamDisCon.TabIndex = 24;
+            this.btnCamDisCon.Text = "Trennen";
+            this.btnCamDisCon.UseSelectable = true;
+            this.btnCamDisCon.UseVisualStyleBackColor = true;
+            this.btnCamDisCon.Click += new System.EventHandler(this.btnCamDisCon_Click);
+            // 
+            // btnCamCon
+            // 
+            this.btnCamCon.Image = null;
+            this.btnCamCon.Location = new System.Drawing.Point(8, 421);
+            this.btnCamCon.Name = "btnCamCon";
+            this.btnCamCon.Size = new System.Drawing.Size(86, 33);
+            this.btnCamCon.TabIndex = 23;
+            this.btnCamCon.Text = "Verbinden";
+            this.btnCamCon.UseSelectable = true;
+            this.btnCamCon.UseVisualStyleBackColor = true;
+            this.btnCamCon.Click += new System.EventHandler(this.btnCamCon_Click);
+            // 
+            // metroTabPage7
+            // 
+            this.metroTabPage7.Controls.Add(this.metroLink5);
+            this.metroTabPage7.Controls.Add(this.txtSetTemp);
+            this.metroTabPage7.Controls.Add(this.metroLink4);
+            this.metroTabPage7.Controls.Add(this.metroLabel28);
+            this.metroTabPage7.Controls.Add(this.metroLabel27);
+            this.metroTabPage7.Controls.Add(this.metroLabel26);
+            this.metroTabPage7.Controls.Add(this.metroLabel20);
+            this.metroTabPage7.Controls.Add(this.metroLink3);
+            this.metroTabPage7.Controls.Add(this.metroLink2);
+            this.metroTabPage7.Controls.Add(this.metroTextButton5);
+            this.metroTabPage7.Controls.Add(this.metroTextButton18);
+            this.metroTabPage7.Controls.Add(this.metroTextButton19);
+            this.metroTabPage7.Controls.Add(this.metroTextButton20);
+            this.metroTabPage7.Controls.Add(this.metroTextButton21);
+            this.metroTabPage7.Controls.Add(this.metroTextButton22);
+            this.metroTabPage7.Controls.Add(this.metroTextButton23);
+            this.metroTabPage7.Controls.Add(this.metroTextButton24);
+            this.metroTabPage7.Controls.Add(this.metroLink1);
+            this.metroTabPage7.Controls.Add(this.metroTextButton17);
+            this.metroTabPage7.Controls.Add(this.metroTextButton16);
+            this.metroTabPage7.Controls.Add(this.metroTextButton15);
+            this.metroTabPage7.Controls.Add(this.metroTextButton14);
+            this.metroTabPage7.Controls.Add(this.metroTextButton13);
+            this.metroTabPage7.Controls.Add(this.metroTextButton12);
+            this.metroTabPage7.Controls.Add(this.metroTextButton11);
+            this.metroTabPage7.Controls.Add(this.metroTextButton10);
+            this.metroTabPage7.Controls.Add(this.metroTextButton9);
+            this.metroTabPage7.Controls.Add(this.metroTextButton8);
+            this.metroTabPage7.Controls.Add(this.metroTextButton7);
+            this.metroTabPage7.Controls.Add(this.metroTextButton6);
+            this.metroTabPage7.Controls.Add(this.metroTextButton4);
+            this.metroTabPage7.Controls.Add(this.metroTextButton3);
+            this.metroTabPage7.Controls.Add(this.metroTextButton2);
+            this.metroTabPage7.Controls.Add(this.metroTextButton1);
+            this.metroTabPage7.HorizontalScrollbarBarColor = true;
+            this.metroTabPage7.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage7.HorizontalScrollbarSize = 10;
+            this.metroTabPage7.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage7.Name = "metroTabPage7";
+            this.metroTabPage7.Size = new System.Drawing.Size(604, 468);
+            this.metroTabPage7.TabIndex = 1;
+            this.metroTabPage7.Text = "Control";
+            this.metroTabPage7.VerticalScrollbarBarColor = true;
+            this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage7.VerticalScrollbarSize = 10;
+            // 
+            // metroLink4
+            // 
+            this.metroLink4.Image = global::Filament_Manager.Properties.Resources.temperature1;
+            this.metroLink4.ImageSize = 37;
+            this.metroLink4.Location = new System.Drawing.Point(74, 419);
+            this.metroLink4.Name = "metroLink4";
+            this.metroLink4.NoFocusImage = global::Filament_Manager.Properties.Resources.temperature1;
+            this.metroLink4.Size = new System.Drawing.Size(37, 37);
+            this.metroLink4.TabIndex = 34;
+            this.metroLink4.UseSelectable = true;
+            // 
+            // metroLabel28
+            // 
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel28.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel28.Location = new System.Drawing.Point(113, 319);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(67, 25);
+            this.metroLabel28.TabIndex = 32;
+            this.metroLabel28.Text = "HOME";
+            // 
+            // metroLabel27
+            // 
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel27.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel27.Location = new System.Drawing.Point(535, 6);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(23, 25);
+            this.metroLabel27.TabIndex = 31;
+            this.metroLabel27.Text = "Z";
+            // 
+            // metroLabel26
+            // 
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel26.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel26.Location = new System.Drawing.Point(256, 6);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(23, 25);
+            this.metroLabel26.TabIndex = 30;
+            this.metroLabel26.Text = "Y";
+            // 
+            // metroLabel20
+            // 
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel20.Location = new System.Drawing.Point(113, 147);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(24, 25);
+            this.metroLabel20.TabIndex = 26;
+            this.metroLabel20.Text = "X";
+            // 
+            // metroLink3
+            // 
+            this.metroLink3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroLink3.Image = global::Filament_Manager.Properties.Resources.home;
+            this.metroLink3.ImageSize = 37;
+            this.metroLink3.Location = new System.Drawing.Point(113, 350);
+            this.metroLink3.Name = "metroLink3";
+            this.metroLink3.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.metroLink3.Size = new System.Drawing.Size(37, 37);
+            this.metroLink3.TabIndex = 29;
+            this.metroLink3.UseSelectable = true;
+            // 
+            // metroLink2
+            // 
+            this.metroLink2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroLink2.Image = global::Filament_Manager.Properties.Resources.home;
+            this.metroLink2.ImageSize = 37;
+            this.metroLink2.Location = new System.Drawing.Point(564, 178);
+            this.metroLink2.Name = "metroLink2";
+            this.metroLink2.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.metroLink2.Size = new System.Drawing.Size(37, 37);
+            this.metroLink2.TabIndex = 28;
+            this.metroLink2.UseSelectable = true;
+            // 
+            // metroTextButton5
+            // 
+            this.metroTextButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton5.Image = null;
+            this.metroTextButton5.Location = new System.Drawing.Point(564, 350);
+            this.metroTextButton5.Name = "metroTextButton5";
+            this.metroTextButton5.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton5.TabIndex = 27;
+            this.metroTextButton5.Text = "100";
+            this.metroTextButton5.UseCompatibleTextRendering = true;
+            this.metroTextButton5.UseSelectable = true;
+            this.metroTextButton5.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton18
+            // 
+            this.metroTextButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton18.Image = null;
+            this.metroTextButton18.Location = new System.Drawing.Point(564, 307);
+            this.metroTextButton18.Name = "metroTextButton18";
+            this.metroTextButton18.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton18.TabIndex = 26;
+            this.metroTextButton18.Text = "10";
+            this.metroTextButton18.UseCompatibleTextRendering = true;
+            this.metroTextButton18.UseSelectable = true;
+            this.metroTextButton18.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton19
+            // 
+            this.metroTextButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton19.Image = null;
+            this.metroTextButton19.Location = new System.Drawing.Point(564, 264);
+            this.metroTextButton19.Name = "metroTextButton19";
+            this.metroTextButton19.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton19.TabIndex = 25;
+            this.metroTextButton19.Text = "1";
+            this.metroTextButton19.UseCompatibleTextRendering = true;
+            this.metroTextButton19.UseSelectable = true;
+            this.metroTextButton19.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton20
+            // 
+            this.metroTextButton20.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton20.Image = null;
+            this.metroTextButton20.Location = new System.Drawing.Point(564, 221);
+            this.metroTextButton20.Name = "metroTextButton20";
+            this.metroTextButton20.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton20.TabIndex = 24;
+            this.metroTextButton20.Text = "0.1";
+            this.metroTextButton20.UseCompatibleTextRendering = true;
+            this.metroTextButton20.UseSelectable = true;
+            this.metroTextButton20.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton21
+            // 
+            this.metroTextButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton21.Image = null;
+            this.metroTextButton21.Location = new System.Drawing.Point(564, 135);
+            this.metroTextButton21.Name = "metroTextButton21";
+            this.metroTextButton21.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton21.TabIndex = 23;
+            this.metroTextButton21.Text = "0.1";
+            this.metroTextButton21.UseCompatibleTextRendering = true;
+            this.metroTextButton21.UseSelectable = true;
+            this.metroTextButton21.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton22
+            // 
+            this.metroTextButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton22.Image = null;
+            this.metroTextButton22.Location = new System.Drawing.Point(564, 92);
+            this.metroTextButton22.Name = "metroTextButton22";
+            this.metroTextButton22.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton22.TabIndex = 22;
+            this.metroTextButton22.Text = "1";
+            this.metroTextButton22.UseCompatibleTextRendering = true;
+            this.metroTextButton22.UseSelectable = true;
+            this.metroTextButton22.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton23
+            // 
+            this.metroTextButton23.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton23.Image = null;
+            this.metroTextButton23.Location = new System.Drawing.Point(564, 49);
+            this.metroTextButton23.Name = "metroTextButton23";
+            this.metroTextButton23.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton23.TabIndex = 21;
+            this.metroTextButton23.Text = "10";
+            this.metroTextButton23.UseCompatibleTextRendering = true;
+            this.metroTextButton23.UseSelectable = true;
+            this.metroTextButton23.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton24
+            // 
+            this.metroTextButton24.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton24.Image = null;
+            this.metroTextButton24.Location = new System.Drawing.Point(564, 6);
+            this.metroTextButton24.Name = "metroTextButton24";
+            this.metroTextButton24.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton24.TabIndex = 20;
+            this.metroTextButton24.Text = "100";
+            this.metroTextButton24.UseCompatibleTextRendering = true;
+            this.metroTextButton24.UseSelectable = true;
+            this.metroTextButton24.UseVisualStyleBackColor = true;
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroLink1.Image = global::Filament_Manager.Properties.Resources.home;
+            this.metroLink1.ImageSize = 37;
+            this.metroLink1.Location = new System.Drawing.Point(285, 178);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.metroLink1.Size = new System.Drawing.Size(37, 37);
+            this.metroLink1.TabIndex = 19;
+            this.metroLink1.UseSelectable = true;
+            // 
+            // metroTextButton17
+            // 
+            this.metroTextButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton17.Image = null;
+            this.metroTextButton17.Location = new System.Drawing.Point(113, 178);
+            this.metroTextButton17.Name = "metroTextButton17";
+            this.metroTextButton17.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton17.TabIndex = 18;
+            this.metroTextButton17.Text = "100";
+            this.metroTextButton17.UseCompatibleTextRendering = true;
+            this.metroTextButton17.UseSelectable = true;
+            this.metroTextButton17.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton16
+            // 
+            this.metroTextButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton16.Image = null;
+            this.metroTextButton16.Location = new System.Drawing.Point(285, 350);
+            this.metroTextButton16.Name = "metroTextButton16";
+            this.metroTextButton16.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton16.TabIndex = 17;
+            this.metroTextButton16.Text = "100";
+            this.metroTextButton16.UseCompatibleTextRendering = true;
+            this.metroTextButton16.UseSelectable = true;
+            this.metroTextButton16.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton15
+            // 
+            this.metroTextButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton15.Image = null;
+            this.metroTextButton15.Location = new System.Drawing.Point(457, 178);
+            this.metroTextButton15.Name = "metroTextButton15";
+            this.metroTextButton15.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton15.TabIndex = 16;
+            this.metroTextButton15.Text = "100";
+            this.metroTextButton15.UseCompatibleTextRendering = true;
+            this.metroTextButton15.UseSelectable = true;
+            this.metroTextButton15.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton14
+            // 
+            this.metroTextButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton14.Image = null;
+            this.metroTextButton14.Location = new System.Drawing.Point(156, 178);
+            this.metroTextButton14.Name = "metroTextButton14";
+            this.metroTextButton14.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton14.TabIndex = 15;
+            this.metroTextButton14.Text = "10";
+            this.metroTextButton14.UseCompatibleTextRendering = true;
+            this.metroTextButton14.UseSelectable = true;
+            this.metroTextButton14.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton13
+            // 
+            this.metroTextButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton13.Image = null;
+            this.metroTextButton13.Location = new System.Drawing.Point(285, 307);
+            this.metroTextButton13.Name = "metroTextButton13";
+            this.metroTextButton13.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton13.TabIndex = 14;
+            this.metroTextButton13.Text = "10";
+            this.metroTextButton13.UseCompatibleTextRendering = true;
+            this.metroTextButton13.UseSelectable = true;
+            this.metroTextButton13.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton12
+            // 
+            this.metroTextButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton12.Image = null;
+            this.metroTextButton12.Location = new System.Drawing.Point(414, 178);
+            this.metroTextButton12.Name = "metroTextButton12";
+            this.metroTextButton12.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton12.TabIndex = 13;
+            this.metroTextButton12.Text = "10";
+            this.metroTextButton12.UseCompatibleTextRendering = true;
+            this.metroTextButton12.UseSelectable = true;
+            this.metroTextButton12.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton11
+            // 
+            this.metroTextButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton11.Image = null;
+            this.metroTextButton11.Location = new System.Drawing.Point(199, 178);
+            this.metroTextButton11.Name = "metroTextButton11";
+            this.metroTextButton11.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton11.TabIndex = 12;
+            this.metroTextButton11.Text = "1";
+            this.metroTextButton11.UseCompatibleTextRendering = true;
+            this.metroTextButton11.UseSelectable = true;
+            this.metroTextButton11.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton10
+            // 
+            this.metroTextButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton10.Image = null;
+            this.metroTextButton10.Location = new System.Drawing.Point(285, 264);
+            this.metroTextButton10.Name = "metroTextButton10";
+            this.metroTextButton10.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton10.TabIndex = 11;
+            this.metroTextButton10.Text = "1";
+            this.metroTextButton10.UseCompatibleTextRendering = true;
+            this.metroTextButton10.UseSelectable = true;
+            this.metroTextButton10.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton9
+            // 
+            this.metroTextButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton9.Image = null;
+            this.metroTextButton9.Location = new System.Drawing.Point(371, 178);
+            this.metroTextButton9.Name = "metroTextButton9";
+            this.metroTextButton9.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton9.TabIndex = 10;
+            this.metroTextButton9.Text = "1";
+            this.metroTextButton9.UseCompatibleTextRendering = true;
+            this.metroTextButton9.UseSelectable = true;
+            this.metroTextButton9.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton8
+            // 
+            this.metroTextButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton8.Image = null;
+            this.metroTextButton8.Location = new System.Drawing.Point(242, 178);
+            this.metroTextButton8.Name = "metroTextButton8";
+            this.metroTextButton8.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton8.TabIndex = 9;
+            this.metroTextButton8.Text = "0.1";
+            this.metroTextButton8.UseCompatibleTextRendering = true;
+            this.metroTextButton8.UseSelectable = true;
+            this.metroTextButton8.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton7
+            // 
+            this.metroTextButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton7.Image = null;
+            this.metroTextButton7.Location = new System.Drawing.Point(328, 178);
+            this.metroTextButton7.Name = "metroTextButton7";
+            this.metroTextButton7.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton7.TabIndex = 8;
+            this.metroTextButton7.Text = "0.1";
+            this.metroTextButton7.UseCompatibleTextRendering = true;
+            this.metroTextButton7.UseSelectable = true;
+            this.metroTextButton7.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton6
+            // 
+            this.metroTextButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton6.Image = null;
+            this.metroTextButton6.Location = new System.Drawing.Point(285, 221);
+            this.metroTextButton6.Name = "metroTextButton6";
+            this.metroTextButton6.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton6.TabIndex = 7;
+            this.metroTextButton6.Text = "0.1";
+            this.metroTextButton6.UseCompatibleTextRendering = true;
+            this.metroTextButton6.UseSelectable = true;
+            this.metroTextButton6.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton4
+            // 
+            this.metroTextButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton4.Image = null;
+            this.metroTextButton4.Location = new System.Drawing.Point(285, 135);
+            this.metroTextButton4.Name = "metroTextButton4";
+            this.metroTextButton4.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton4.TabIndex = 5;
+            this.metroTextButton4.Text = "0.1";
+            this.metroTextButton4.UseCompatibleTextRendering = true;
+            this.metroTextButton4.UseSelectable = true;
+            this.metroTextButton4.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton3
+            // 
+            this.metroTextButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton3.Image = null;
+            this.metroTextButton3.Location = new System.Drawing.Point(285, 92);
+            this.metroTextButton3.Name = "metroTextButton3";
+            this.metroTextButton3.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton3.TabIndex = 4;
+            this.metroTextButton3.Text = "1";
+            this.metroTextButton3.UseCompatibleTextRendering = true;
+            this.metroTextButton3.UseSelectable = true;
+            this.metroTextButton3.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton2
+            // 
+            this.metroTextButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton2.Image = null;
+            this.metroTextButton2.Location = new System.Drawing.Point(285, 49);
+            this.metroTextButton2.Name = "metroTextButton2";
+            this.metroTextButton2.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton2.TabIndex = 3;
+            this.metroTextButton2.Text = "10";
+            this.metroTextButton2.UseCompatibleTextRendering = true;
+            this.metroTextButton2.UseSelectable = true;
+            this.metroTextButton2.UseVisualStyleBackColor = true;
+            // 
+            // metroTextButton1
+            // 
+            this.metroTextButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTextButton1.Image = null;
+            this.metroTextButton1.Location = new System.Drawing.Point(285, 6);
+            this.metroTextButton1.Name = "metroTextButton1";
+            this.metroTextButton1.Size = new System.Drawing.Size(37, 37);
+            this.metroTextButton1.TabIndex = 2;
+            this.metroTextButton1.Text = "100";
+            this.metroTextButton1.UseCompatibleTextRendering = true;
+            this.metroTextButton1.UseSelectable = true;
+            this.metroTextButton1.UseVisualStyleBackColor = true;
             // 
             // pbProcess
             // 
@@ -960,9 +1507,9 @@
             this.groupBox5.Controls.Add(this.txtApiKey);
             this.groupBox5.Controls.Add(this.txtIpOcto);
             this.groupBox5.Controls.Add(this.metroLabel16);
-            this.groupBox5.Location = new System.Drawing.Point(745, 200);
+            this.groupBox5.Location = new System.Drawing.Point(498, 200);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(365, 176);
+            this.groupBox5.Size = new System.Drawing.Size(365, 144);
             this.groupBox5.TabIndex = 31;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Octoprint";
@@ -1014,7 +1561,7 @@
             // 
             // 
             this.txtIpOcto.CustomButton.Image = null;
-            this.txtIpOcto.CustomButton.Location = new System.Drawing.Point(201, 2);
+            this.txtIpOcto.CustomButton.Location = new System.Drawing.Point(325, 2);
             this.txtIpOcto.CustomButton.Name = "";
             this.txtIpOcto.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtIpOcto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1032,7 +1579,7 @@
             this.txtIpOcto.SelectedText = "";
             this.txtIpOcto.SelectionLength = 0;
             this.txtIpOcto.SelectionStart = 0;
-            this.txtIpOcto.Size = new System.Drawing.Size(229, 30);
+            this.txtIpOcto.Size = new System.Drawing.Size(353, 30);
             this.txtIpOcto.TabIndex = 23;
             this.txtIpOcto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIpOcto.UseSelectable = true;
@@ -1054,7 +1601,7 @@
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.ctFullScreen);
             this.groupBox4.Controls.Add(this.metroLabel14);
-            this.groupBox4.Location = new System.Drawing.Point(745, 4);
+            this.groupBox4.Location = new System.Drawing.Point(960, 4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(241, 190);
             this.groupBox4.TabIndex = 30;
@@ -1086,9 +1633,9 @@
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.btnBackup);
             this.groupBox3.Controls.Add(this.btnRestore);
-            this.groupBox3.Location = new System.Drawing.Point(498, 200);
+            this.groupBox3.Location = new System.Drawing.Point(745, 10);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(241, 144);
+            this.groupBox3.Size = new System.Drawing.Size(209, 184);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Backup/Restore";
@@ -1097,9 +1644,9 @@
             // 
             this.btnBackup.Enabled = false;
             this.btnBackup.Image = null;
-            this.btnBackup.Location = new System.Drawing.Point(6, 36);
+            this.btnBackup.Location = new System.Drawing.Point(6, 66);
             this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(229, 35);
+            this.btnBackup.Size = new System.Drawing.Size(197, 33);
             this.btnBackup.TabIndex = 30;
             this.btnBackup.Text = "Backup";
             this.btnBackup.UseSelectable = true;
@@ -1109,9 +1656,9 @@
             // 
             this.btnRestore.Enabled = false;
             this.btnRestore.Image = null;
-            this.btnRestore.Location = new System.Drawing.Point(6, 77);
+            this.btnRestore.Location = new System.Drawing.Point(6, 123);
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(229, 40);
+            this.btnRestore.Size = new System.Drawing.Size(197, 40);
             this.btnRestore.TabIndex = 29;
             this.btnRestore.Text = "Restore";
             this.btnRestore.UseSelectable = true;
@@ -1675,79 +2222,49 @@
             this.lnlClose.UseSelectable = true;
             this.lnlClose.Click += new System.EventHandler(this.lnlClose_Click);
             // 
-            // btnCamCon
+            // txtSetTemp
             // 
-            this.btnCamCon.Image = null;
-            this.btnCamCon.Location = new System.Drawing.Point(8, 421);
-            this.btnCamCon.Name = "btnCamCon";
-            this.btnCamCon.Size = new System.Drawing.Size(140, 44);
-            this.btnCamCon.TabIndex = 23;
-            this.btnCamCon.Text = "Verbinden";
-            this.btnCamCon.UseSelectable = true;
-            this.btnCamCon.UseVisualStyleBackColor = true;
-            this.btnCamCon.Click += new System.EventHandler(this.btnCamCon_Click);
             // 
-            // btnCamDisCon
             // 
-            this.btnCamDisCon.Image = null;
-            this.btnCamDisCon.Location = new System.Drawing.Point(154, 421);
-            this.btnCamDisCon.Name = "btnCamDisCon";
-            this.btnCamDisCon.Size = new System.Drawing.Size(140, 44);
-            this.btnCamDisCon.TabIndex = 24;
-            this.btnCamDisCon.Text = "Trennen";
-            this.btnCamDisCon.UseSelectable = true;
-            this.btnCamDisCon.UseVisualStyleBackColor = true;
-            this.btnCamDisCon.Click += new System.EventHandler(this.btnCamDisCon_Click);
             // 
-            // metroTabControl2
+            this.txtSetTemp.CustomButton.Image = null;
+            this.txtSetTemp.CustomButton.Location = new System.Drawing.Point(72, 1);
+            this.txtSetTemp.CustomButton.Name = "";
+            this.txtSetTemp.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.txtSetTemp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSetTemp.CustomButton.TabIndex = 1;
+            this.txtSetTemp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSetTemp.CustomButton.UseSelectable = true;
+            this.txtSetTemp.CustomButton.Visible = false;
+            this.txtSetTemp.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtSetTemp.Lines = new string[0];
+            this.txtSetTemp.Location = new System.Drawing.Point(117, 419);
+            this.txtSetTemp.MaxLength = 32767;
+            this.txtSetTemp.Name = "txtSetTemp";
+            this.txtSetTemp.PasswordChar = '\0';
+            this.txtSetTemp.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSetTemp.SelectedText = "";
+            this.txtSetTemp.SelectionLength = 0;
+            this.txtSetTemp.SelectionStart = 0;
+            this.txtSetTemp.Size = new System.Drawing.Size(106, 35);
+            this.txtSetTemp.TabIndex = 35;
+            this.txtSetTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSetTemp.UseSelectable = true;
+            this.txtSetTemp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSetTemp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.metroTabControl2.Controls.Add(this.metroTabPage6);
-            this.metroTabControl2.Controls.Add(this.metroTabPage7);
-            this.metroTabControl2.Location = new System.Drawing.Point(589, 3);
-            this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
-            this.metroTabControl2.Size = new System.Drawing.Size(612, 510);
-            this.metroTabControl2.TabIndex = 25;
-            this.metroTabControl2.UseSelectable = true;
+            // metroLink5
             // 
-            // metroTabPage6
-            // 
-            this.metroTabPage6.Controls.Add(this.streamPlayerControl);
-            this.metroTabPage6.Controls.Add(this.btnCamDisCon);
-            this.metroTabPage6.Controls.Add(this.btnCamCon);
-            this.metroTabPage6.HorizontalScrollbarBarColor = true;
-            this.metroTabPage6.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage6.HorizontalScrollbarSize = 10;
-            this.metroTabPage6.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage6.Name = "metroTabPage6";
-            this.metroTabPage6.Size = new System.Drawing.Size(604, 468);
-            this.metroTabPage6.TabIndex = 0;
-            this.metroTabPage6.Text = "Camera";
-            this.metroTabPage6.VerticalScrollbarBarColor = true;
-            this.metroTabPage6.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage6.VerticalScrollbarSize = 10;
-            // 
-            // metroTabPage7
-            // 
-            this.metroTabPage7.HorizontalScrollbarBarColor = true;
-            this.metroTabPage7.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage7.HorizontalScrollbarSize = 10;
-            this.metroTabPage7.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage7.Name = "metroTabPage7";
-            this.metroTabPage7.Size = new System.Drawing.Size(604, 468);
-            this.metroTabPage7.TabIndex = 1;
-            this.metroTabPage7.Text = "Control";
-            this.metroTabPage7.VerticalScrollbarBarColor = true;
-            this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage7.VerticalScrollbarSize = 10;
-            // 
-            // streamPlayerControl
-            // 
-            this.streamPlayerControl.Location = new System.Drawing.Point(8, 7);
-            this.streamPlayerControl.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.streamPlayerControl.Name = "streamPlayerControl";
-            this.streamPlayerControl.Size = new System.Drawing.Size(588, 404);
-            this.streamPlayerControl.TabIndex = 2;
+            this.metroLink5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroLink5.Image = global::Filament_Manager.Properties.Resources.checkmark;
+            this.metroLink5.ImageSize = 37;
+            this.metroLink5.Location = new System.Drawing.Point(229, 417);
+            this.metroLink5.Name = "metroLink5";
+            this.metroLink5.NoFocusImage = global::Filament_Manager.Properties.Resources.checkmark;
+            this.metroLink5.Size = new System.Drawing.Size(37, 37);
+            this.metroLink5.TabIndex = 36;
+            this.metroLink5.UseSelectable = true;
+            this.metroLink5.Click += new System.EventHandler(this.metroLink5_Click);
             // 
             // MainForm
             // 
@@ -1771,6 +2288,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvFi)).EndInit();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
+            this.metroTabControl2.ResumeLayout(false);
+            this.metroTabPage6.ResumeLayout(false);
+            this.metroTabPage7.ResumeLayout(false);
+            this.metroTabPage7.PerformLayout();
             this.metroTabPage4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -1786,8 +2307,6 @@
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
-            this.metroTabControl2.ResumeLayout(false);
-            this.metroTabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1891,6 +2410,40 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage6;
         private WebEye.StreamPlayerControl streamPlayerControl;
         private MetroFramework.Controls.MetroTabPage metroTabPage7;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton3;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton2;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton4;
+        private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton17;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton16;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton15;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton14;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton13;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton12;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton11;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton10;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton9;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton8;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton7;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton6;
+        private MetroFramework.Controls.MetroLabel metroLabel28;
+        private MetroFramework.Controls.MetroLabel metroLabel27;
+        private MetroFramework.Controls.MetroLabel metroLabel26;
+        private MetroFramework.Controls.MetroLabel metroLabel20;
+        private MetroFramework.Controls.MetroLink metroLink3;
+        private MetroFramework.Controls.MetroLink metroLink2;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton5;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton18;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton19;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton20;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton21;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton22;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton23;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton24;
+        private MetroFramework.Controls.MetroLink metroLink4;
+        private MetroFramework.Controls.MetroTextBox txtSetTemp;
+        private MetroFramework.Controls.MetroLink metroLink5;
     }
 }
 

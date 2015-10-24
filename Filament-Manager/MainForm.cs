@@ -39,8 +39,10 @@ namespace Filament_Manager
             initStyle();
             cbFactory.SelectedIndex = 0;
             metroTabControl1.SelectedIndex = 0;
-           
-            if(ApplicationDeployment.IsNetworkDeployed)
+            btnCamDisCon.Enabled = false;
+            btnCamCon.Enabled = true;
+
+            if (ApplicationDeployment.IsNetworkDeployed)
             {
                 lbVersion.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
             }
@@ -326,6 +328,24 @@ namespace Filament_Manager
 
         }
 
+        private void btnCamCon_Click(object sender, EventArgs e)
+        {
+            var uri = new Uri("http://" + txtIpOcto.Text + "/webcam/?action=stream");
+            streamPlayerControl.StartPlay(uri);
+            btnCamDisCon.Enabled = true;
+            btnCamCon.Enabled = false;
+
+
+        }
+
+        private void btnCamDisCon_Click(object sender, EventArgs e)
+        {
+            streamPlayerControl.Stop();
+            btnCamDisCon.Enabled = false;
+            btnCamCon.Enabled = true;
+
+        }
+
         private void ctFullScreen_CheckedChanged(object sender, EventArgs e)
         {
             if (ctFullScreen.Checked)
@@ -562,7 +582,8 @@ namespace Filament_Manager
             JObject json = JObject.Parse(data);
             txtPrintTemp.Text = json["temperature"]["tool0"]["actual"].ToString() + "°C / " + json["temperature"]["tool0"]["target"].ToString()+"°C";
             txtPrintState.Text = json["state"]["text"].ToString();
-            client.Dispose();
+            txtSetTemp.WaterMark = json["temperature"]["tool0"]["target"].ToString() + "°C";
+
         }
         private void getJobOperation()
         {
@@ -629,16 +650,9 @@ namespace Filament_Manager
             pbProcess.Value = ProgressBar;
         }
 
-        private void btnCamCon_Click(object sender, EventArgs e)
+        private void metroLink5_Click(object sender, EventArgs e)
         {
-            var uri = new Uri("http://"+txtIpOcto.Text + "/webcam/?action=stream");
-            streamPlayerControl.StartPlay(uri);
-
-        }
-
-        private void btnCamDisCon_Click(object sender, EventArgs e)
-        {
-            streamPlayerControl.Stop();
+            txtSetTemp.Text = "";
         }
     }
     

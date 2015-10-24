@@ -33,7 +33,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -168,11 +168,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="3d_printer.ico" />
+    <None Include="Resources\temperature1.png" />
+    <None Include="Resources\temperature.png" />
     <None Include="Resources\minus.png" />
     <None Include="Resources\barcode.png" />
     <None Include="Resources\barcode_adding.png" />
     <Content Include="Resources\barcode_scanner.png" />
     <None Include="Resources\barcode_scanner1.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\checkmark.png" />
     <Content Include="Resources\mysqldump.exe" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\restart.png" />
