@@ -628,6 +628,18 @@ namespace Filament_Manager
             int ProgressBar = Convert.ToInt32(ProcessDouble);
             pbProcess.Value = ProgressBar;
         }
+
+        private void btnCamCon_Click(object sender, EventArgs e)
+        {
+            var uri = new Uri("http://"+txtIpOcto.Text + "/webcam/?action=stream");
+            streamPlayerControl.StartPlay(uri);
+
+        }
+
+        private void btnCamDisCon_Click(object sender, EventArgs e)
+        {
+            streamPlayerControl.Stop();
+        }
     }
     
 }

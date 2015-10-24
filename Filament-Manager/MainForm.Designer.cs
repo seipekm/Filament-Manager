@@ -60,6 +60,15 @@
             this.btnFilaAdd = new MetroFramework.Controls.MetroLink();
             this.btnGenBarcode = new MetroFramework.Controls.MetroLink();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.pbProcess = new MetroFramework.Controls.MetroProgressBar();
+            this.txtPrintTimeEnd = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.txtPrintTime = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.txtCalcPrintTime = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.txtWeight = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
             this.txtFileName = new MetroFramework.Controls.MetroLabel();
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
             this.txtPrintState = new MetroFramework.Controls.MetroLabel();
@@ -119,15 +128,12 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
             this.lnlClose = new MetroFramework.Controls.MetroLink();
-            this.txtWeight = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
-            this.txtCalcPrintTime = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
-            this.txtPrintTime = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
-            this.txtPrintTimeEnd = new MetroFramework.Controls.MetroLabel();
-            this.pbProcess = new MetroFramework.Controls.MetroProgressBar();
+            this.btnCamCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnCamDisCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
+            this.streamPlayerControl = new WebEye.StreamPlayerControl();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvFilament)).BeginInit();
@@ -143,6 +149,8 @@
             this.groupBox2.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
+            this.metroTabControl2.SuspendLayout();
+            this.metroTabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -714,6 +722,7 @@
             // 
             // metroTabPage3
             // 
+            this.metroTabPage3.Controls.Add(this.metroTabControl2);
             this.metroTabPage3.Controls.Add(this.pbProcess);
             this.metroTabPage3.Controls.Add(this.txtPrintTimeEnd);
             this.metroTabPage3.Controls.Add(this.metroLabel25);
@@ -745,6 +754,90 @@
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
+            // 
+            // pbProcess
+            // 
+            this.pbProcess.HideProgressText = false;
+            this.pbProcess.Location = new System.Drawing.Point(4, 199);
+            this.pbProcess.Name = "pbProcess";
+            this.pbProcess.Size = new System.Drawing.Size(337, 23);
+            this.pbProcess.TabIndex = 20;
+            // 
+            // txtPrintTimeEnd
+            // 
+            this.txtPrintTimeEnd.AutoSize = true;
+            this.txtPrintTimeEnd.BackColor = System.Drawing.Color.Transparent;
+            this.txtPrintTimeEnd.Location = new System.Drawing.Point(171, 176);
+            this.txtPrintTimeEnd.Name = "txtPrintTimeEnd";
+            this.txtPrintTimeEnd.Size = new System.Drawing.Size(170, 19);
+            this.txtPrintTimeEnd.TabIndex = 19;
+            this.txtPrintTimeEnd.Text = "Keine Verbindung gefunden";
+            // 
+            // metroLabel25
+            // 
+            this.metroLabel25.AutoSize = true;
+            this.metroLabel25.Location = new System.Drawing.Point(4, 176);
+            this.metroLabel25.Name = "metroLabel25";
+            this.metroLabel25.Size = new System.Drawing.Size(161, 19);
+            this.metroLabel25.TabIndex = 18;
+            this.metroLabel25.Text = "Verbleibende Druckdauer:";
+            // 
+            // txtPrintTime
+            // 
+            this.txtPrintTime.AutoSize = true;
+            this.txtPrintTime.BackColor = System.Drawing.Color.Transparent;
+            this.txtPrintTime.Location = new System.Drawing.Point(171, 157);
+            this.txtPrintTime.Name = "txtPrintTime";
+            this.txtPrintTime.Size = new System.Drawing.Size(170, 19);
+            this.txtPrintTime.TabIndex = 17;
+            this.txtPrintTime.Text = "Keine Verbindung gefunden";
+            // 
+            // metroLabel24
+            // 
+            this.metroLabel24.AutoSize = true;
+            this.metroLabel24.Location = new System.Drawing.Point(4, 157);
+            this.metroLabel24.Name = "metroLabel24";
+            this.metroLabel24.Size = new System.Drawing.Size(80, 19);
+            this.metroLabel24.TabIndex = 16;
+            this.metroLabel24.Text = "Druckdauer:";
+            // 
+            // txtCalcPrintTime
+            // 
+            this.txtCalcPrintTime.AutoSize = true;
+            this.txtCalcPrintTime.BackColor = System.Drawing.Color.Transparent;
+            this.txtCalcPrintTime.Location = new System.Drawing.Point(171, 138);
+            this.txtCalcPrintTime.Name = "txtCalcPrintTime";
+            this.txtCalcPrintTime.Size = new System.Drawing.Size(170, 19);
+            this.txtCalcPrintTime.TabIndex = 15;
+            this.txtCalcPrintTime.Text = "Keine Verbindung gefunden";
+            // 
+            // metroLabel23
+            // 
+            this.metroLabel23.AutoSize = true;
+            this.metroLabel23.Location = new System.Drawing.Point(4, 138);
+            this.metroLabel23.Name = "metroLabel23";
+            this.metroLabel23.Size = new System.Drawing.Size(145, 19);
+            this.metroLabel23.TabIndex = 14;
+            this.metroLabel23.Text = "Ungefähre Druckdauer:";
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.AutoSize = true;
+            this.txtWeight.BackColor = System.Drawing.Color.Transparent;
+            this.txtWeight.Location = new System.Drawing.Point(171, 119);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(170, 19);
+            this.txtWeight.TabIndex = 13;
+            this.txtWeight.Text = "Keine Verbindung gefunden";
+            // 
+            // metroLabel22
+            // 
+            this.metroLabel22.AutoSize = true;
+            this.metroLabel22.Location = new System.Drawing.Point(4, 119);
+            this.metroLabel22.Name = "metroLabel22";
+            this.metroLabel22.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel22.TabIndex = 12;
+            this.metroLabel22.Text = "Gewicht:";
             // 
             // txtFileName
             // 
@@ -1582,89 +1675,79 @@
             this.lnlClose.UseSelectable = true;
             this.lnlClose.Click += new System.EventHandler(this.lnlClose_Click);
             // 
-            // txtWeight
+            // btnCamCon
             // 
-            this.txtWeight.AutoSize = true;
-            this.txtWeight.BackColor = System.Drawing.Color.Transparent;
-            this.txtWeight.Location = new System.Drawing.Point(171, 119);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(170, 19);
-            this.txtWeight.TabIndex = 13;
-            this.txtWeight.Text = "Keine Verbindung gefunden";
+            this.btnCamCon.Image = null;
+            this.btnCamCon.Location = new System.Drawing.Point(8, 421);
+            this.btnCamCon.Name = "btnCamCon";
+            this.btnCamCon.Size = new System.Drawing.Size(140, 44);
+            this.btnCamCon.TabIndex = 23;
+            this.btnCamCon.Text = "Verbinden";
+            this.btnCamCon.UseSelectable = true;
+            this.btnCamCon.UseVisualStyleBackColor = true;
+            this.btnCamCon.Click += new System.EventHandler(this.btnCamCon_Click);
             // 
-            // metroLabel22
+            // btnCamDisCon
             // 
-            this.metroLabel22.AutoSize = true;
-            this.metroLabel22.Location = new System.Drawing.Point(4, 119);
-            this.metroLabel22.Name = "metroLabel22";
-            this.metroLabel22.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel22.TabIndex = 12;
-            this.metroLabel22.Text = "Gewicht:";
+            this.btnCamDisCon.Image = null;
+            this.btnCamDisCon.Location = new System.Drawing.Point(154, 421);
+            this.btnCamDisCon.Name = "btnCamDisCon";
+            this.btnCamDisCon.Size = new System.Drawing.Size(140, 44);
+            this.btnCamDisCon.TabIndex = 24;
+            this.btnCamDisCon.Text = "Trennen";
+            this.btnCamDisCon.UseSelectable = true;
+            this.btnCamDisCon.UseVisualStyleBackColor = true;
+            this.btnCamDisCon.Click += new System.EventHandler(this.btnCamDisCon_Click);
             // 
-            // txtCalcPrintTime
+            // metroTabControl2
             // 
-            this.txtCalcPrintTime.AutoSize = true;
-            this.txtCalcPrintTime.BackColor = System.Drawing.Color.Transparent;
-            this.txtCalcPrintTime.Location = new System.Drawing.Point(171, 138);
-            this.txtCalcPrintTime.Name = "txtCalcPrintTime";
-            this.txtCalcPrintTime.Size = new System.Drawing.Size(170, 19);
-            this.txtCalcPrintTime.TabIndex = 15;
-            this.txtCalcPrintTime.Text = "Keine Verbindung gefunden";
+            this.metroTabControl2.Controls.Add(this.metroTabPage6);
+            this.metroTabControl2.Controls.Add(this.metroTabPage7);
+            this.metroTabControl2.Location = new System.Drawing.Point(589, 3);
+            this.metroTabControl2.Name = "metroTabControl2";
+            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.Size = new System.Drawing.Size(612, 510);
+            this.metroTabControl2.TabIndex = 25;
+            this.metroTabControl2.UseSelectable = true;
             // 
-            // metroLabel23
+            // metroTabPage6
             // 
-            this.metroLabel23.AutoSize = true;
-            this.metroLabel23.Location = new System.Drawing.Point(4, 138);
-            this.metroLabel23.Name = "metroLabel23";
-            this.metroLabel23.Size = new System.Drawing.Size(145, 19);
-            this.metroLabel23.TabIndex = 14;
-            this.metroLabel23.Text = "Ungefähre Druckdauer:";
+            this.metroTabPage6.Controls.Add(this.streamPlayerControl);
+            this.metroTabPage6.Controls.Add(this.btnCamDisCon);
+            this.metroTabPage6.Controls.Add(this.btnCamCon);
+            this.metroTabPage6.HorizontalScrollbarBarColor = true;
+            this.metroTabPage6.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage6.HorizontalScrollbarSize = 10;
+            this.metroTabPage6.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage6.Name = "metroTabPage6";
+            this.metroTabPage6.Size = new System.Drawing.Size(604, 468);
+            this.metroTabPage6.TabIndex = 0;
+            this.metroTabPage6.Text = "Camera";
+            this.metroTabPage6.VerticalScrollbarBarColor = true;
+            this.metroTabPage6.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage6.VerticalScrollbarSize = 10;
             // 
-            // txtPrintTime
+            // metroTabPage7
             // 
-            this.txtPrintTime.AutoSize = true;
-            this.txtPrintTime.BackColor = System.Drawing.Color.Transparent;
-            this.txtPrintTime.Location = new System.Drawing.Point(171, 157);
-            this.txtPrintTime.Name = "txtPrintTime";
-            this.txtPrintTime.Size = new System.Drawing.Size(170, 19);
-            this.txtPrintTime.TabIndex = 17;
-            this.txtPrintTime.Text = "Keine Verbindung gefunden";
+            this.metroTabPage7.HorizontalScrollbarBarColor = true;
+            this.metroTabPage7.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage7.HorizontalScrollbarSize = 10;
+            this.metroTabPage7.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage7.Name = "metroTabPage7";
+            this.metroTabPage7.Size = new System.Drawing.Size(604, 468);
+            this.metroTabPage7.TabIndex = 1;
+            this.metroTabPage7.Text = "Control";
+            this.metroTabPage7.VerticalScrollbarBarColor = true;
+            this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage7.VerticalScrollbarSize = 10;
             // 
-            // metroLabel24
+            // streamPlayerControl
             // 
-            this.metroLabel24.AutoSize = true;
-            this.metroLabel24.Location = new System.Drawing.Point(4, 157);
-            this.metroLabel24.Name = "metroLabel24";
-            this.metroLabel24.Size = new System.Drawing.Size(80, 19);
-            this.metroLabel24.TabIndex = 16;
-            this.metroLabel24.Text = "Druckdauer:";
-            // 
-            // metroLabel25
-            // 
-            this.metroLabel25.AutoSize = true;
-            this.metroLabel25.Location = new System.Drawing.Point(4, 176);
-            this.metroLabel25.Name = "metroLabel25";
-            this.metroLabel25.Size = new System.Drawing.Size(161, 19);
-            this.metroLabel25.TabIndex = 18;
-            this.metroLabel25.Text = "Verbleibende Druckdauer:";
-            // 
-            // txtPrintTimeEnd
-            // 
-            this.txtPrintTimeEnd.AutoSize = true;
-            this.txtPrintTimeEnd.BackColor = System.Drawing.Color.Transparent;
-            this.txtPrintTimeEnd.Location = new System.Drawing.Point(171, 176);
-            this.txtPrintTimeEnd.Name = "txtPrintTimeEnd";
-            this.txtPrintTimeEnd.Size = new System.Drawing.Size(170, 19);
-            this.txtPrintTimeEnd.TabIndex = 19;
-            this.txtPrintTimeEnd.Text = "Keine Verbindung gefunden";
-            // 
-            // pbProcess
-            // 
-            this.pbProcess.HideProgressText = false;
-            this.pbProcess.Location = new System.Drawing.Point(4, 199);
-            this.pbProcess.Name = "pbProcess";
-            this.pbProcess.Size = new System.Drawing.Size(337, 23);
-            this.pbProcess.TabIndex = 20;
+            this.streamPlayerControl.Location = new System.Drawing.Point(8, 7);
+            this.streamPlayerControl.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.streamPlayerControl.Name = "streamPlayerControl";
+            this.streamPlayerControl.Size = new System.Drawing.Size(588, 404);
+            this.streamPlayerControl.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -1703,6 +1786,8 @@
             this.metroTabPage5.ResumeLayout(false);
             this.metroTabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
+            this.metroTabControl2.ResumeLayout(false);
+            this.metroTabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1800,6 +1885,12 @@
         private MetroFramework.Controls.MetroLabel metroLabel23;
         private MetroFramework.Controls.MetroLabel txtWeight;
         private MetroFramework.Controls.MetroLabel metroLabel22;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnCamDisCon;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnCamCon;
+        private MetroFramework.Controls.MetroTabControl metroTabControl2;
+        private MetroFramework.Controls.MetroTabPage metroTabPage6;
+        private WebEye.StreamPlayerControl streamPlayerControl;
+        private MetroFramework.Controls.MetroTabPage metroTabPage7;
     }
 }
 
