@@ -3,17 +3,9 @@ using MetroFramework.Controls;
 using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 using System;
-using System.Deployment;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Deployment.Application;
-using System.Diagnostics;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using Newtonsoft.Json.Linq;
@@ -49,6 +41,17 @@ namespace Filament_Manager
             {
                 lbVersion.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
             }
+
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.AutoPopDelay = 1000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+
+            toolTip1.SetToolTip(this.btnStartPrint, "Print Start");
+            toolTip1.SetToolTip(this.btnRestartPrint, "Print Restart");
+            toolTip1.SetToolTip(this.btnHoldPrint, "Print Hold");
+            toolTip1.SetToolTip(this.btnCancelPrint, "Print Cancel");
         }
 
         public void _tile_Click(object sender, EventArgs e)
@@ -1009,8 +1012,10 @@ namespace Filament_Manager
             txtPrintTemp.Text = json["temperature"]["tool0"]["actual"].ToString() + "°C / " + json["temperature"]["tool0"]["target"].ToString()+"°C";
             txtPrintState.Text = json["state"]["text"].ToString();
             txtSetTemp.WaterMark = json["temperature"]["tool0"]["target"].ToString() + "°C";
+            printCheck(json["state"]["text"].ToString());
 
         }
+
         private void getJobOperation()
         {
             WebClient client = new WebClient();
@@ -1110,7 +1115,98 @@ namespace Filament_Manager
             pbProcess.Value = ProgressBar;
         }
 
-        
+        private void printCheck(string state)
+        {
+            if (state == "Printing")
+            {
+                btnStartPrint.Visible = false;
+                btnRestartPrint.Visible = false;
+                btnHoldPrint.Visible = true;
+                btnCancelPrint.Visible = true;
+            }
+            else if(state == "Operational")
+            {
+                btnStartPrint.Visible = true;
+                btnRestartPrint.Visible = true;
+                btnHoldPrint.Visible = false;
+                btnCancelPrint.Visible = false;
+            }
+            else if(state == "Paused")
+            {
+                btnStartPrint.Visible = false;
+                btnRestartPrint.Visible = true;
+                btnHoldPrint.Visible = false;
+                btnCancelPrint.Visible = true;
+            }
+            else
+            {
+                btnStartPrint.Visible = false;
+                btnRestartPrint.Visible = false;
+                btnHoldPrint.Visible = false;
+                btnCancelPrint.Visible = false;
+            }
+
+        }
+
+        private void btnStartPrint_Click(object sender, EventArgs e)
+        {
+            var printStartCmd = new Command { command = "start" };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(printStartCmd, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/job?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnRestartPrint_Click(object sender, EventArgs e)
+        {
+            var printRestartCmd = new Command { command = "restart" };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(printRestartCmd, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/job?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnHoldPrint_Click(object sender, EventArgs e)
+        {
+            var printHoldCmd = new Command { command = "pause" };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(printHoldCmd, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/job?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnCancelPrint_Click(object sender, EventArgs e)
+        {
+            var printCancelCmd = new Command { command = "cancel" };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(printCancelCmd, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/job?apikey=" + txtApi.Text, data);
+        }
     }
     
 }

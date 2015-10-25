@@ -38,9 +38,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.btnSearch = new MetroFramework.Controls.MetroLink();
-            this.btnScan = new MetroFramework.Controls.MetroLink();
-            this.btnAdd = new MetroFramework.Controls.MetroLink();
             this.gvFilament = new MetroFramework.Controls.MetroGrid();
             this.txtPrintWeight = new MetroFramework.Controls.MetroTextBox();
             this.txtFilament = new MetroFramework.Controls.MetroTextBox();
@@ -54,11 +51,6 @@
             this.txtNetto = new MetroFramework.Controls.MetroTextBox();
             this.txtBrutto = new MetroFramework.Controls.MetroTextBox();
             this.txtColor = new MetroFramework.Controls.MetroTextBox();
-            this.btnSaveBarcode = new MetroFramework.Controls.MetroLink();
-            this.btnFilaDelete = new MetroFramework.Controls.MetroLink();
-            this.btnFilaUpdate = new MetroFramework.Controls.MetroLink();
-            this.btnFilaAdd = new MetroFramework.Controls.MetroLink();
-            this.btnGenBarcode = new MetroFramework.Controls.MetroLink();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
@@ -66,15 +58,11 @@
             this.btnCamDisCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnCamCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
-            this.btnSetTemp = new MetroFramework.Controls.MetroLink();
             this.txtSetTemp = new MetroFramework.Controls.MetroTextBox();
-            this.metroLink4 = new MetroFramework.Controls.MetroLink();
             this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
-            this.btnHomePosition = new MetroFramework.Controls.MetroLink();
-            this.btnHomeZ = new MetroFramework.Controls.MetroLink();
             this.btnJogZneg100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnJogZneg10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnJogZneg1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
@@ -83,7 +71,6 @@
             this.btnJogZpos1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnJogZpos10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnJogZpos100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.btnHomeXY = new MetroFramework.Controls.MetroLink();
             this.btnJogXpos100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnJogYneg100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnJogXneg100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
@@ -167,6 +154,23 @@
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.btnSearch = new MetroFramework.Controls.MetroLink();
+            this.btnScan = new MetroFramework.Controls.MetroLink();
+            this.btnAdd = new MetroFramework.Controls.MetroLink();
+            this.btnSaveBarcode = new MetroFramework.Controls.MetroLink();
+            this.btnFilaDelete = new MetroFramework.Controls.MetroLink();
+            this.btnFilaUpdate = new MetroFramework.Controls.MetroLink();
+            this.btnFilaAdd = new MetroFramework.Controls.MetroLink();
+            this.btnGenBarcode = new MetroFramework.Controls.MetroLink();
+            this.btnCancelPrint = new MetroFramework.Controls.MetroLink();
+            this.btnHoldPrint = new MetroFramework.Controls.MetroLink();
+            this.btnRestartPrint = new MetroFramework.Controls.MetroLink();
+            this.btnStartPrint = new MetroFramework.Controls.MetroLink();
+            this.btnSetTemp = new MetroFramework.Controls.MetroLink();
+            this.metroLink4 = new MetroFramework.Controls.MetroLink();
+            this.btnHomePosition = new MetroFramework.Controls.MetroLink();
+            this.btnHomeZ = new MetroFramework.Controls.MetroLink();
+            this.btnHomeXY = new MetroFramework.Controls.MetroLink();
             this.lnlClose = new MetroFramework.Controls.MetroLink();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -227,49 +231,6 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Image = global::Filament_Manager.Properties.Resources.search;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.ImageSize = 30;
-            this.btnSearch.Location = new System.Drawing.Point(307, 75);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.NoFocusImage = global::Filament_Manager.Properties.Resources.search;
-            this.btnSearch.Size = new System.Drawing.Size(30, 30);
-            this.btnSearch.TabIndex = 35;
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSearch.UseSelectable = true;
-            // 
-            // btnScan
-            // 
-            this.btnScan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnScan.Image = global::Filament_Manager.Properties.Resources.barcode_scanner;
-            this.btnScan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnScan.ImageSize = 30;
-            this.btnScan.Location = new System.Drawing.Point(307, 3);
-            this.btnScan.Name = "btnScan";
-            this.btnScan.NoFocusImage = global::Filament_Manager.Properties.Resources.barcode_scanner;
-            this.btnScan.Size = new System.Drawing.Size(30, 30);
-            this.btnScan.TabIndex = 34;
-            this.btnScan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnScan.UseSelectable = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Image = global::Filament_Manager.Properties.Resources.plus;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.ImageSize = 50;
-            this.btnAdd.Location = new System.Drawing.Point(13, 147);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.NoFocusImage = global::Filament_Manager.Properties.Resources.plus;
-            this.btnAdd.Size = new System.Drawing.Size(50, 50);
-            this.btnAdd.TabIndex = 33;
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseSelectable = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gvFilament
             // 
@@ -679,85 +640,13 @@
             this.txtColor.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtColor.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnSaveBarcode
-            // 
-            this.btnSaveBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveBarcode.Image = global::Filament_Manager.Properties.Resources.saveing;
-            this.btnSaveBarcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveBarcode.ImageSize = 50;
-            this.btnSaveBarcode.Location = new System.Drawing.Point(785, 20);
-            this.btnSaveBarcode.Name = "btnSaveBarcode";
-            this.btnSaveBarcode.NoFocusImage = global::Filament_Manager.Properties.Resources.saveing;
-            this.btnSaveBarcode.Size = new System.Drawing.Size(50, 50);
-            this.btnSaveBarcode.TabIndex = 35;
-            this.btnSaveBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaveBarcode.UseSelectable = true;
-            this.btnSaveBarcode.Click += new System.EventHandler(this.btnSaveBarcode_Click);
-            // 
-            // btnFilaDelete
-            // 
-            this.btnFilaDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilaDelete.Image = global::Filament_Manager.Properties.Resources.minus;
-            this.btnFilaDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilaDelete.ImageSize = 50;
-            this.btnFilaDelete.Location = new System.Drawing.Point(125, 184);
-            this.btnFilaDelete.Name = "btnFilaDelete";
-            this.btnFilaDelete.NoFocusImage = global::Filament_Manager.Properties.Resources.minus;
-            this.btnFilaDelete.Size = new System.Drawing.Size(50, 50);
-            this.btnFilaDelete.TabIndex = 34;
-            this.btnFilaDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilaDelete.UseSelectable = true;
-            this.btnFilaDelete.Click += new System.EventHandler(this.btnFilaDelete_Click);
-            // 
-            // btnFilaUpdate
-            // 
-            this.btnFilaUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilaUpdate.Image = global::Filament_Manager.Properties.Resources.restart;
-            this.btnFilaUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilaUpdate.ImageSize = 50;
-            this.btnFilaUpdate.Location = new System.Drawing.Point(69, 184);
-            this.btnFilaUpdate.Name = "btnFilaUpdate";
-            this.btnFilaUpdate.NoFocusImage = global::Filament_Manager.Properties.Resources.restart;
-            this.btnFilaUpdate.Size = new System.Drawing.Size(50, 50);
-            this.btnFilaUpdate.TabIndex = 33;
-            this.btnFilaUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilaUpdate.UseSelectable = true;
-            this.btnFilaUpdate.Click += new System.EventHandler(this.btnFilaUpdate_Click);
-            // 
-            // btnFilaAdd
-            // 
-            this.btnFilaAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFilaAdd.Image = global::Filament_Manager.Properties.Resources.plus;
-            this.btnFilaAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilaAdd.ImageSize = 50;
-            this.btnFilaAdd.Location = new System.Drawing.Point(13, 184);
-            this.btnFilaAdd.Name = "btnFilaAdd";
-            this.btnFilaAdd.NoFocusImage = global::Filament_Manager.Properties.Resources.plus;
-            this.btnFilaAdd.Size = new System.Drawing.Size(50, 50);
-            this.btnFilaAdd.TabIndex = 32;
-            this.btnFilaAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFilaAdd.UseSelectable = true;
-            this.btnFilaAdd.Click += new System.EventHandler(this.btnFilaAdd_Click);
-            // 
-            // btnGenBarcode
-            // 
-            this.btnGenBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenBarcode.Image = global::Filament_Manager.Properties.Resources.barcode_adding;
-            this.btnGenBarcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenBarcode.ImageSize = 50;
-            this.btnGenBarcode.Location = new System.Drawing.Point(185, 184);
-            this.btnGenBarcode.Name = "btnGenBarcode";
-            this.btnGenBarcode.NoFocusImage = global::Filament_Manager.Properties.Resources.barcode_adding;
-            this.btnGenBarcode.Size = new System.Drawing.Size(116, 50);
-            this.btnGenBarcode.TabIndex = 31;
-            this.btnGenBarcode.Text = "ERZEUGEN";
-            this.btnGenBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenBarcode.UseSelectable = true;
-            this.btnGenBarcode.Click += new System.EventHandler(this.btnGenBarcode_Click);
-            // 
             // metroTabPage3
             // 
             this.metroTabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroTabPage3.Controls.Add(this.btnCancelPrint);
+            this.metroTabPage3.Controls.Add(this.btnHoldPrint);
+            this.metroTabPage3.Controls.Add(this.btnRestartPrint);
+            this.metroTabPage3.Controls.Add(this.btnStartPrint);
             this.metroTabPage3.Controls.Add(this.metroTabControl2);
             this.metroTabPage3.Controls.Add(this.pbProcess);
             this.metroTabPage3.Controls.Add(this.txtPrintTimeEnd);
@@ -797,7 +686,7 @@
             this.metroTabControl2.Controls.Add(this.metroTabPage7);
             this.metroTabControl2.Location = new System.Drawing.Point(589, 3);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 1;
+            this.metroTabControl2.SelectedIndex = 0;
             this.metroTabControl2.Size = new System.Drawing.Size(612, 510);
             this.metroTabControl2.TabIndex = 25;
             this.metroTabControl2.UseSelectable = true;
@@ -853,15 +742,11 @@
             // 
             // metroTabPage7
             // 
-            this.metroTabPage7.Controls.Add(this.btnSetTemp);
             this.metroTabPage7.Controls.Add(this.txtSetTemp);
-            this.metroTabPage7.Controls.Add(this.metroLink4);
             this.metroTabPage7.Controls.Add(this.metroLabel28);
             this.metroTabPage7.Controls.Add(this.metroLabel27);
             this.metroTabPage7.Controls.Add(this.metroLabel26);
             this.metroTabPage7.Controls.Add(this.metroLabel20);
-            this.metroTabPage7.Controls.Add(this.btnHomePosition);
-            this.metroTabPage7.Controls.Add(this.btnHomeZ);
             this.metroTabPage7.Controls.Add(this.btnJogZneg100);
             this.metroTabPage7.Controls.Add(this.btnJogZneg10);
             this.metroTabPage7.Controls.Add(this.btnJogZneg1);
@@ -870,7 +755,6 @@
             this.metroTabPage7.Controls.Add(this.btnJogZpos1);
             this.metroTabPage7.Controls.Add(this.btnJogZpos10);
             this.metroTabPage7.Controls.Add(this.btnJogZpos100);
-            this.metroTabPage7.Controls.Add(this.btnHomeXY);
             this.metroTabPage7.Controls.Add(this.btnJogXpos100);
             this.metroTabPage7.Controls.Add(this.btnJogYneg100);
             this.metroTabPage7.Controls.Add(this.btnJogXneg100);
@@ -887,6 +771,11 @@
             this.metroTabPage7.Controls.Add(this.btnJogYpos1);
             this.metroTabPage7.Controls.Add(this.btnJogYpos10);
             this.metroTabPage7.Controls.Add(this.btnJogYpos100);
+            this.metroTabPage7.Controls.Add(this.btnSetTemp);
+            this.metroTabPage7.Controls.Add(this.metroLink4);
+            this.metroTabPage7.Controls.Add(this.btnHomePosition);
+            this.metroTabPage7.Controls.Add(this.btnHomeZ);
+            this.metroTabPage7.Controls.Add(this.btnHomeXY);
             this.metroTabPage7.HorizontalScrollbarBarColor = true;
             this.metroTabPage7.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage7.HorizontalScrollbarSize = 10;
@@ -898,19 +787,6 @@
             this.metroTabPage7.VerticalScrollbarBarColor = true;
             this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage7.VerticalScrollbarSize = 10;
-            // 
-            // btnSetTemp
-            // 
-            this.btnSetTemp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSetTemp.Image = global::Filament_Manager.Properties.Resources.checkmark;
-            this.btnSetTemp.ImageSize = 37;
-            this.btnSetTemp.Location = new System.Drawing.Point(229, 417);
-            this.btnSetTemp.Name = "btnSetTemp";
-            this.btnSetTemp.NoFocusImage = global::Filament_Manager.Properties.Resources.checkmark;
-            this.btnSetTemp.Size = new System.Drawing.Size(37, 37);
-            this.btnSetTemp.TabIndex = 36;
-            this.btnSetTemp.UseSelectable = true;
-            this.btnSetTemp.Click += new System.EventHandler(this.btnSetTemp_Click);
             // 
             // txtSetTemp
             // 
@@ -942,17 +818,6 @@
             this.txtSetTemp.UseSelectable = true;
             this.txtSetTemp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSetTemp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLink4
-            // 
-            this.metroLink4.Image = global::Filament_Manager.Properties.Resources.temperature1;
-            this.metroLink4.ImageSize = 37;
-            this.metroLink4.Location = new System.Drawing.Point(74, 419);
-            this.metroLink4.Name = "metroLink4";
-            this.metroLink4.NoFocusImage = global::Filament_Manager.Properties.Resources.temperature1;
-            this.metroLink4.Size = new System.Drawing.Size(37, 37);
-            this.metroLink4.TabIndex = 34;
-            this.metroLink4.UseSelectable = true;
             // 
             // metroLabel28
             // 
@@ -997,32 +862,6 @@
             this.metroLabel20.Size = new System.Drawing.Size(24, 25);
             this.metroLabel20.TabIndex = 26;
             this.metroLabel20.Text = "X";
-            // 
-            // btnHomePosition
-            // 
-            this.btnHomePosition.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomePosition.Image = global::Filament_Manager.Properties.Resources.home;
-            this.btnHomePosition.ImageSize = 37;
-            this.btnHomePosition.Location = new System.Drawing.Point(113, 350);
-            this.btnHomePosition.Name = "btnHomePosition";
-            this.btnHomePosition.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
-            this.btnHomePosition.Size = new System.Drawing.Size(37, 37);
-            this.btnHomePosition.TabIndex = 29;
-            this.btnHomePosition.UseSelectable = true;
-            this.btnHomePosition.Click += new System.EventHandler(this.btnHomePosition_Click);
-            // 
-            // btnHomeZ
-            // 
-            this.btnHomeZ.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeZ.Image = global::Filament_Manager.Properties.Resources.home;
-            this.btnHomeZ.ImageSize = 37;
-            this.btnHomeZ.Location = new System.Drawing.Point(564, 178);
-            this.btnHomeZ.Name = "btnHomeZ";
-            this.btnHomeZ.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
-            this.btnHomeZ.Size = new System.Drawing.Size(37, 37);
-            this.btnHomeZ.TabIndex = 28;
-            this.btnHomeZ.UseSelectable = true;
-            this.btnHomeZ.Click += new System.EventHandler(this.btnHomeZ_Click);
             // 
             // btnJogZneg100
             // 
@@ -1135,19 +974,6 @@
             this.btnJogZpos100.UseSelectable = true;
             this.btnJogZpos100.UseVisualStyleBackColor = true;
             this.btnJogZpos100.Click += new System.EventHandler(this.btnJogZpos100_Click);
-            // 
-            // btnHomeXY
-            // 
-            this.btnHomeXY.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHomeXY.Image = global::Filament_Manager.Properties.Resources.home;
-            this.btnHomeXY.ImageSize = 37;
-            this.btnHomeXY.Location = new System.Drawing.Point(285, 178);
-            this.btnHomeXY.Name = "btnHomeXY";
-            this.btnHomeXY.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
-            this.btnHomeXY.Size = new System.Drawing.Size(37, 37);
-            this.btnHomeXY.TabIndex = 19;
-            this.btnHomeXY.UseSelectable = true;
-            this.btnHomeXY.Click += new System.EventHandler(this.btnHomeXY_Click);
             // 
             // btnJogXpos100
             // 
@@ -2279,6 +2105,251 @@
             // 
             this.msmMain.Owner = this;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Image = global::Filament_Manager.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.ImageSize = 30;
+            this.btnSearch.Location = new System.Drawing.Point(307, 75);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.NoFocusImage = global::Filament_Manager.Properties.Resources.search;
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
+            this.btnSearch.TabIndex = 35;
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.UseSelectable = true;
+            // 
+            // btnScan
+            // 
+            this.btnScan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnScan.Image = global::Filament_Manager.Properties.Resources.barcode_scanner;
+            this.btnScan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnScan.ImageSize = 30;
+            this.btnScan.Location = new System.Drawing.Point(307, 3);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.NoFocusImage = global::Filament_Manager.Properties.Resources.barcode_scanner;
+            this.btnScan.Size = new System.Drawing.Size(30, 30);
+            this.btnScan.TabIndex = 34;
+            this.btnScan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnScan.UseSelectable = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Image = global::Filament_Manager.Properties.Resources.plus;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.ImageSize = 50;
+            this.btnAdd.Location = new System.Drawing.Point(13, 147);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.NoFocusImage = global::Filament_Manager.Properties.Resources.plus;
+            this.btnAdd.Size = new System.Drawing.Size(50, 50);
+            this.btnAdd.TabIndex = 33;
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseSelectable = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnSaveBarcode
+            // 
+            this.btnSaveBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveBarcode.Image = global::Filament_Manager.Properties.Resources.saveing;
+            this.btnSaveBarcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveBarcode.ImageSize = 50;
+            this.btnSaveBarcode.Location = new System.Drawing.Point(785, 20);
+            this.btnSaveBarcode.Name = "btnSaveBarcode";
+            this.btnSaveBarcode.NoFocusImage = global::Filament_Manager.Properties.Resources.saveing;
+            this.btnSaveBarcode.Size = new System.Drawing.Size(50, 50);
+            this.btnSaveBarcode.TabIndex = 35;
+            this.btnSaveBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveBarcode.UseSelectable = true;
+            this.btnSaveBarcode.Click += new System.EventHandler(this.btnSaveBarcode_Click);
+            // 
+            // btnFilaDelete
+            // 
+            this.btnFilaDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilaDelete.Image = global::Filament_Manager.Properties.Resources.minus;
+            this.btnFilaDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFilaDelete.ImageSize = 50;
+            this.btnFilaDelete.Location = new System.Drawing.Point(125, 184);
+            this.btnFilaDelete.Name = "btnFilaDelete";
+            this.btnFilaDelete.NoFocusImage = global::Filament_Manager.Properties.Resources.minus;
+            this.btnFilaDelete.Size = new System.Drawing.Size(50, 50);
+            this.btnFilaDelete.TabIndex = 34;
+            this.btnFilaDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilaDelete.UseSelectable = true;
+            this.btnFilaDelete.Click += new System.EventHandler(this.btnFilaDelete_Click);
+            // 
+            // btnFilaUpdate
+            // 
+            this.btnFilaUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilaUpdate.Image = global::Filament_Manager.Properties.Resources.restart;
+            this.btnFilaUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFilaUpdate.ImageSize = 50;
+            this.btnFilaUpdate.Location = new System.Drawing.Point(69, 184);
+            this.btnFilaUpdate.Name = "btnFilaUpdate";
+            this.btnFilaUpdate.NoFocusImage = global::Filament_Manager.Properties.Resources.restart;
+            this.btnFilaUpdate.Size = new System.Drawing.Size(50, 50);
+            this.btnFilaUpdate.TabIndex = 33;
+            this.btnFilaUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilaUpdate.UseSelectable = true;
+            this.btnFilaUpdate.Click += new System.EventHandler(this.btnFilaUpdate_Click);
+            // 
+            // btnFilaAdd
+            // 
+            this.btnFilaAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilaAdd.Image = global::Filament_Manager.Properties.Resources.plus;
+            this.btnFilaAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFilaAdd.ImageSize = 50;
+            this.btnFilaAdd.Location = new System.Drawing.Point(13, 184);
+            this.btnFilaAdd.Name = "btnFilaAdd";
+            this.btnFilaAdd.NoFocusImage = global::Filament_Manager.Properties.Resources.plus;
+            this.btnFilaAdd.Size = new System.Drawing.Size(50, 50);
+            this.btnFilaAdd.TabIndex = 32;
+            this.btnFilaAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFilaAdd.UseSelectable = true;
+            this.btnFilaAdd.Click += new System.EventHandler(this.btnFilaAdd_Click);
+            // 
+            // btnGenBarcode
+            // 
+            this.btnGenBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenBarcode.Image = global::Filament_Manager.Properties.Resources.barcode_adding;
+            this.btnGenBarcode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenBarcode.ImageSize = 50;
+            this.btnGenBarcode.Location = new System.Drawing.Point(185, 184);
+            this.btnGenBarcode.Name = "btnGenBarcode";
+            this.btnGenBarcode.NoFocusImage = global::Filament_Manager.Properties.Resources.barcode_adding;
+            this.btnGenBarcode.Size = new System.Drawing.Size(116, 50);
+            this.btnGenBarcode.TabIndex = 31;
+            this.btnGenBarcode.Text = "ERZEUGEN";
+            this.btnGenBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenBarcode.UseSelectable = true;
+            this.btnGenBarcode.Click += new System.EventHandler(this.btnGenBarcode_Click);
+            // 
+            // btnCancelPrint
+            // 
+            this.btnCancelPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelPrint.Image = global::Filament_Manager.Properties.Resources.cancel;
+            this.btnCancelPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelPrint.ImageSize = 50;
+            this.btnCancelPrint.Location = new System.Drawing.Point(172, 228);
+            this.btnCancelPrint.Name = "btnCancelPrint";
+            this.btnCancelPrint.NoFocusImage = global::Filament_Manager.Properties.Resources.cancel;
+            this.btnCancelPrint.Size = new System.Drawing.Size(50, 50);
+            this.btnCancelPrint.TabIndex = 37;
+            this.btnCancelPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelPrint.UseSelectable = true;
+            this.btnCancelPrint.Click += new System.EventHandler(this.btnCancelPrint_Click);
+            // 
+            // btnHoldPrint
+            // 
+            this.btnHoldPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHoldPrint.Image = global::Filament_Manager.Properties.Resources.pause;
+            this.btnHoldPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoldPrint.ImageSize = 50;
+            this.btnHoldPrint.Location = new System.Drawing.Point(116, 228);
+            this.btnHoldPrint.Name = "btnHoldPrint";
+            this.btnHoldPrint.NoFocusImage = global::Filament_Manager.Properties.Resources.pause;
+            this.btnHoldPrint.Size = new System.Drawing.Size(50, 50);
+            this.btnHoldPrint.TabIndex = 36;
+            this.btnHoldPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHoldPrint.UseSelectable = true;
+            this.btnHoldPrint.Click += new System.EventHandler(this.btnHoldPrint_Click);
+            // 
+            // btnRestartPrint
+            // 
+            this.btnRestartPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestartPrint.Image = global::Filament_Manager.Properties.Resources.restart;
+            this.btnRestartPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestartPrint.ImageSize = 50;
+            this.btnRestartPrint.Location = new System.Drawing.Point(60, 228);
+            this.btnRestartPrint.Name = "btnRestartPrint";
+            this.btnRestartPrint.NoFocusImage = global::Filament_Manager.Properties.Resources.restart;
+            this.btnRestartPrint.Size = new System.Drawing.Size(50, 50);
+            this.btnRestartPrint.TabIndex = 35;
+            this.btnRestartPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRestartPrint.UseSelectable = true;
+            this.btnRestartPrint.Click += new System.EventHandler(this.btnRestartPrint_Click);
+            // 
+            // btnStartPrint
+            // 
+            this.btnStartPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnStartPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStartPrint.Image = global::Filament_Manager.Properties.Resources.print;
+            this.btnStartPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStartPrint.ImageSize = 50;
+            this.btnStartPrint.Location = new System.Drawing.Point(4, 228);
+            this.btnStartPrint.Name = "btnStartPrint";
+            this.btnStartPrint.NoFocusImage = global::Filament_Manager.Properties.Resources.print;
+            this.btnStartPrint.Size = new System.Drawing.Size(50, 50);
+            this.btnStartPrint.TabIndex = 34;
+            this.btnStartPrint.Tag = "";
+            this.btnStartPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnStartPrint.UseCustomBackColor = true;
+            this.btnStartPrint.UseSelectable = true;
+            this.btnStartPrint.Click += new System.EventHandler(this.btnStartPrint_Click);
+            // 
+            // btnSetTemp
+            // 
+            this.btnSetTemp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSetTemp.Image = global::Filament_Manager.Properties.Resources.checkmark;
+            this.btnSetTemp.ImageSize = 37;
+            this.btnSetTemp.Location = new System.Drawing.Point(229, 417);
+            this.btnSetTemp.Name = "btnSetTemp";
+            this.btnSetTemp.NoFocusImage = global::Filament_Manager.Properties.Resources.checkmark;
+            this.btnSetTemp.Size = new System.Drawing.Size(37, 37);
+            this.btnSetTemp.TabIndex = 36;
+            this.btnSetTemp.UseSelectable = true;
+            this.btnSetTemp.Click += new System.EventHandler(this.btnSetTemp_Click);
+            // 
+            // metroLink4
+            // 
+            this.metroLink4.Image = global::Filament_Manager.Properties.Resources.temperature1;
+            this.metroLink4.ImageSize = 37;
+            this.metroLink4.Location = new System.Drawing.Point(74, 419);
+            this.metroLink4.Name = "metroLink4";
+            this.metroLink4.NoFocusImage = global::Filament_Manager.Properties.Resources.temperature1;
+            this.metroLink4.Size = new System.Drawing.Size(37, 37);
+            this.metroLink4.TabIndex = 34;
+            this.metroLink4.UseSelectable = true;
+            // 
+            // btnHomePosition
+            // 
+            this.btnHomePosition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomePosition.Image = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomePosition.ImageSize = 37;
+            this.btnHomePosition.Location = new System.Drawing.Point(113, 350);
+            this.btnHomePosition.Name = "btnHomePosition";
+            this.btnHomePosition.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomePosition.Size = new System.Drawing.Size(37, 37);
+            this.btnHomePosition.TabIndex = 29;
+            this.btnHomePosition.UseSelectable = true;
+            this.btnHomePosition.Click += new System.EventHandler(this.btnHomePosition_Click);
+            // 
+            // btnHomeZ
+            // 
+            this.btnHomeZ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeZ.Image = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomeZ.ImageSize = 37;
+            this.btnHomeZ.Location = new System.Drawing.Point(564, 178);
+            this.btnHomeZ.Name = "btnHomeZ";
+            this.btnHomeZ.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomeZ.Size = new System.Drawing.Size(37, 37);
+            this.btnHomeZ.TabIndex = 28;
+            this.btnHomeZ.UseSelectable = true;
+            this.btnHomeZ.Click += new System.EventHandler(this.btnHomeZ_Click);
+            // 
+            // btnHomeXY
+            // 
+            this.btnHomeXY.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeXY.Image = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomeXY.ImageSize = 37;
+            this.btnHomeXY.Location = new System.Drawing.Point(285, 178);
+            this.btnHomeXY.Name = "btnHomeXY";
+            this.btnHomeXY.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomeXY.Size = new System.Drawing.Size(37, 37);
+            this.btnHomeXY.TabIndex = 19;
+            this.btnHomeXY.UseSelectable = true;
+            this.btnHomeXY.Click += new System.EventHandler(this.btnHomeXY_Click);
+            // 
             // lnlClose
             // 
             this.lnlClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2471,6 +2542,10 @@
         private MetroFramework.Controls.MetroLink metroLink4;
         private MetroFramework.Controls.MetroTextBox txtSetTemp;
         private MetroFramework.Controls.MetroLink btnSetTemp;
+        private MetroFramework.Controls.MetroLink btnCancelPrint;
+        private MetroFramework.Controls.MetroLink btnHoldPrint;
+        private MetroFramework.Controls.MetroLink btnRestartPrint;
+        private MetroFramework.Controls.MetroLink btnStartPrint;
     }
 }
 

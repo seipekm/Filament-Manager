@@ -33,7 +33,7 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -179,11 +179,18 @@
     <None Include="Resources\barcode_scanner1.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\checkmark.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\cancel1.png" />
     <Content Include="Resources\mysqldump.exe" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\restart.png" />
     <None Include="Resources\saveing.png" />
     <None Include="Resources\search.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\print1.png" />
+    <None Include="Resources\restart1.png" />
+    <None Include="Resources\pause1.png" />
     <Content Include="Resources\shutdown.png" />
     <None Include="Resources\shutdown1.png" />
   </ItemGroup>
