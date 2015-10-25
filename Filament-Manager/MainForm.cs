@@ -17,6 +17,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using Newtonsoft.Json.Linq;
+using Filament_Manager.Class;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Filament_Manager
 {
@@ -359,6 +362,429 @@ namespace Filament_Manager
 
         }
 
+        private void btnSetTemp_Click(object sender, EventArgs e)
+        {
+
+            var targetTemp = new TargetTemp { command = "target" };
+            targetTemp.targets = new targets { tool0 = Int16.Parse(txtSetTemp.Text) };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(targetTemp, setting);
+
+            Console.WriteLine(data);
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/tool?apikey=" + txtApi.Text, data);
+
+            txtSetTemp.Text = "";
+        }
+
+        private void btnJogXneg01_Click(object sender, EventArgs e)
+        {
+            var jogXneg01 = new JogX { command = "jog", x = 0.1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogXneg01, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogXneg1_Click(object sender, EventArgs e)
+        {
+            var jogXneg1 = new JogX { command = "jog", x = 1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogXneg1, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogXneg10_Click(object sender, EventArgs e)
+        {
+            var jogXneg10 = new JogX { command = "jog", x = 10 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogXneg10, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogXneg100_Click(object sender, EventArgs e)
+        {
+            var jogXneg100 = new JogX { command = "jog", x = 100 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogXneg100, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnHomeXY_Click(object sender, EventArgs e)
+        {
+            var jogHomeXY = new Command { command = "G28 X Y" };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogHomeXY, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/command?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogXpos01_Click(object sender, EventArgs e)
+        {
+            var jogXpos01 = new JogX { command = "jog", x = -0.1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogXpos01, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogXpos1_Click(object sender, EventArgs e)
+        {
+            var jogXpos1 = new JogX { command = "jog", x = -1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogXpos1, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogXpos10_Click(object sender, EventArgs e)
+        {
+            var jogXpos10 = new JogX { command = "jog", x = -10 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogXpos10, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogXpos100_Click(object sender, EventArgs e)
+        {
+            var jogXpos100 = new JogX { command = "jog", x = -100 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogXpos100, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogYneg01_Click(object sender, EventArgs e)
+        {
+            var jogYneg01 = new JogY { command = "jog", y = -0.1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogYneg01, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogYneg1_Click(object sender, EventArgs e)
+        {
+            var jogYneg1 = new JogY { command = "jog", y = -1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogYneg1, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogYneg10_Click(object sender, EventArgs e)
+        {
+            var jogYneg10 = new JogY { command = "jog", y = -10 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogYneg10, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogYneg100_Click(object sender, EventArgs e)
+        {
+            var jogYneg100 = new JogY { command = "jog", y = -100 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogYneg100, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogYpos01_Click(object sender, EventArgs e)
+        {
+            var jogYpos01 = new JogY { command = "jog", y = 0.1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogYpos01, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogYpos1_Click(object sender, EventArgs e)
+        {
+            var jogYpos1 = new JogY { command = "jog", y = 1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogYpos1, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogYpos10_Click(object sender, EventArgs e)
+        {
+            var jogYpos10 = new JogY { command = "jog", y = 10 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogYpos10, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogYpos100_Click(object sender, EventArgs e)
+        {
+            var jogYpos100 = new JogY { command = "jog", y = 100 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogYpos100, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogZneg01_Click(object sender, EventArgs e)
+        {
+            var jogZneg01 = new JogZ { command = "jog", z = -0.1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogZneg01, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogZneg1_Click(object sender, EventArgs e)
+        {
+            var jogZneg1 = new JogZ { command = "jog", z = -1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogZneg1, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogZneg10_Click(object sender, EventArgs e)
+        {
+            var jogZneg10 = new JogZ { command = "jog", z = -10 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogZneg10, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogZneg100_Click(object sender, EventArgs e)
+        {
+            var jogZneg100 = new JogZ { command = "jog", z = -100 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogZneg100, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogZpos01_Click(object sender, EventArgs e)
+        {
+            var jogZpos01 = new JogZ { command = "jog", z = 0.1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogZpos01, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogZpos1_Click(object sender, EventArgs e)
+        {
+            var jogZpos1 = new JogZ { command = "jog", z = 1 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogZpos1, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogZpos10_Click(object sender, EventArgs e)
+        {
+            var jogZpos10 = new JogZ { command = "jog", z = 10 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogZpos10, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnJogZpos100_Click(object sender, EventArgs e)
+        {
+            var jogZpos100 = new JogZ { command = "jog", z = 100 };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogZpos100, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/printhead?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnHomePosition_Click(object sender, EventArgs e)
+        {
+            var jogHome = new Command { command = "G28 X0 Y0 Z0" };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogHome, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/command?apikey=" + txtApi.Text, data);
+        }
+
+        private void btnHomeZ_Click(object sender, EventArgs e)
+        {
+            var jogHome = new Command { command = "G28 Z0" };
+
+            JsonSerializerSettings setting = new JsonSerializerSettings();
+            setting.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var data = JsonConvert.SerializeObject(jogHome, setting);
+
+            Console.WriteLine(data);
+
+            WebClient client = new WebClient();
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.UploadString("http://" + txtIpOcto.Text + "/api/printer/command?apikey=" + txtApi.Text, data);
+        }
+
         private void SqlCon()
         {
             string ConnectionString = "server=" + txtHost.Text + ";user=" + txtUser.Text + ";database=" +
@@ -592,28 +1018,62 @@ namespace Filament_Manager
             JObject json = JObject.Parse(data);
 
             //File Name
-            txtFileName.Text = json["job"]["file"]["name"].ToString();
-
-            //calculation Print Weight with print length
-            string volumeStr = json["job"]["filament"]["tool0"]["length"].ToString();
-            double volume = double.Parse(volumeStr);
-            double calcWeight = 0.00121 * 0.875 * 0.875 * Math.PI * volume;
-            txtWeight.Text = calcWeight.ToString("0.#") + "g";
-
-            //Calc Print Time
-            if(json["job"]["lastPrintTime"].ToString()=="")
+            if(json["job"]["file"]["name"].ToString() == "")
             {
-                string calcTimeStr = json["job"]["estimatedPrintTime"].ToString();
-                double calcTime = double.Parse(calcTimeStr);
-                TimeSpan calct = TimeSpan.FromSeconds(calcTime);
-                txtCalcPrintTime.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", calct.Hours, calct.Minutes, calct.Seconds);
+                txtFileName.Text = "-";
             }
             else
+            {
+                txtFileName.Text = json["job"]["file"]["name"].ToString();
+            }
+            
+
+            //calculation Print Weight with print length
+            if(json["job"]["file"]["name"].ToString() != "")
+            {
+                try
+                {
+                    if (json["job"]["filament"]["tool0"]["length"].ToString() == "")
+                    {
+                        txtWeight.Text = "-";
+                    }
+                    else
+                    {
+                        string volumeStr = json["job"]["filament"]["tool0"]["length"].ToString();
+                        double volume = double.Parse(volumeStr);
+                        double calcWeight = 0.00121 * 0.875 * 0.875 * Math.PI * volume;
+                        txtWeight.Text = calcWeight.ToString("0.#") + "g";
+                    }
+                }
+                catch
+                {
+                    txtWeight.Text = "-";
+                }
+            }
+            else
+            {
+                txtWeight.Text = "-";
+            }
+            
+
+            //Calc Print Time
+            if (json["job"]["lastPrintTime"].ToString() == "" && json["job"]["estimatedPrintTime"].ToString() != "")
+            {
+                string calcNewTimeStr = json["job"]["estimatedPrintTime"].ToString();
+                double calcNewTime = double.Parse(calcNewTimeStr);
+                TimeSpan calcnewt = TimeSpan.FromSeconds(calcNewTime);
+                txtCalcPrintTime.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", calcnewt.Hours, calcnewt.Minutes, calcnewt.Seconds);
+            }
+            else if(json["job"]["lastPrintTime"].ToString() != "")
             {
                 string calcNewTimeStr = json["job"]["lastPrintTime"].ToString();
                 double calcNewTime = double.Parse(calcNewTimeStr);
                 TimeSpan calcnewt = TimeSpan.FromSeconds(calcNewTime);
                 txtCalcPrintTime.Text = string.Format("{0:D2}:{1:D2}:{2:D2}", calcnewt.Hours, calcnewt.Minutes, calcnewt.Seconds);
+            }
+            else
+            {
+                txtCalcPrintTime.Text = "-";
             }
 
             //Print Time
@@ -650,10 +1110,7 @@ namespace Filament_Manager
             pbProcess.Value = ProgressBar;
         }
 
-        private void metroLink5_Click(object sender, EventArgs e)
-        {
-            txtSetTemp.Text = "";
-        }
+        
     }
     
 }

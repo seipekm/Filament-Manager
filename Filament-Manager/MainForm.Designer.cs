@@ -66,38 +66,40 @@
             this.btnCamDisCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.btnCamCon = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
+            this.btnSetTemp = new MetroFramework.Controls.MetroLink();
+            this.txtSetTemp = new MetroFramework.Controls.MetroTextBox();
             this.metroLink4 = new MetroFramework.Controls.MetroLink();
             this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
-            this.metroLink3 = new MetroFramework.Controls.MetroLink();
-            this.metroLink2 = new MetroFramework.Controls.MetroLink();
-            this.metroTextButton5 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton18 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton19 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton20 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton21 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton22 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton23 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton24 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.metroTextButton17 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton16 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton15 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton14 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton13 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton12 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton11 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton9 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton8 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton7 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton6 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton4 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton3 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton2 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
-            this.metroTextButton1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnHomePosition = new MetroFramework.Controls.MetroLink();
+            this.btnHomeZ = new MetroFramework.Controls.MetroLink();
+            this.btnJogZneg100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogZneg10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogZneg1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogZneg01 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogZpos01 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogZpos1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogZpos10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogZpos100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnHomeXY = new MetroFramework.Controls.MetroLink();
+            this.btnJogXpos100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogYneg100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogXneg100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogXpos10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogYneg10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogXneg10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogXpos1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogYneg1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogXneg1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogXpos01 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogXneg01 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogYneg01 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogYpos01 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogYpos1 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogYpos10 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
+            this.btnJogYpos100 = new MetroFramework.Controls.MetroTextBox.MetroTextButton();
             this.pbProcess = new MetroFramework.Controls.MetroProgressBar();
             this.txtPrintTimeEnd = new MetroFramework.Controls.MetroLabel();
             this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
@@ -166,8 +168,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
             this.lnlClose = new MetroFramework.Controls.MetroLink();
-            this.txtSetTemp = new MetroFramework.Controls.MetroTextBox();
-            this.metroLink5 = new MetroFramework.Controls.MetroLink();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvFilament)).BeginInit();
@@ -797,7 +797,7 @@
             this.metroTabControl2.Controls.Add(this.metroTabPage7);
             this.metroTabControl2.Location = new System.Drawing.Point(589, 3);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.SelectedIndex = 1;
             this.metroTabControl2.Size = new System.Drawing.Size(612, 510);
             this.metroTabControl2.TabIndex = 25;
             this.metroTabControl2.UseSelectable = true;
@@ -853,40 +853,40 @@
             // 
             // metroTabPage7
             // 
-            this.metroTabPage7.Controls.Add(this.metroLink5);
+            this.metroTabPage7.Controls.Add(this.btnSetTemp);
             this.metroTabPage7.Controls.Add(this.txtSetTemp);
             this.metroTabPage7.Controls.Add(this.metroLink4);
             this.metroTabPage7.Controls.Add(this.metroLabel28);
             this.metroTabPage7.Controls.Add(this.metroLabel27);
             this.metroTabPage7.Controls.Add(this.metroLabel26);
             this.metroTabPage7.Controls.Add(this.metroLabel20);
-            this.metroTabPage7.Controls.Add(this.metroLink3);
-            this.metroTabPage7.Controls.Add(this.metroLink2);
-            this.metroTabPage7.Controls.Add(this.metroTextButton5);
-            this.metroTabPage7.Controls.Add(this.metroTextButton18);
-            this.metroTabPage7.Controls.Add(this.metroTextButton19);
-            this.metroTabPage7.Controls.Add(this.metroTextButton20);
-            this.metroTabPage7.Controls.Add(this.metroTextButton21);
-            this.metroTabPage7.Controls.Add(this.metroTextButton22);
-            this.metroTabPage7.Controls.Add(this.metroTextButton23);
-            this.metroTabPage7.Controls.Add(this.metroTextButton24);
-            this.metroTabPage7.Controls.Add(this.metroLink1);
-            this.metroTabPage7.Controls.Add(this.metroTextButton17);
-            this.metroTabPage7.Controls.Add(this.metroTextButton16);
-            this.metroTabPage7.Controls.Add(this.metroTextButton15);
-            this.metroTabPage7.Controls.Add(this.metroTextButton14);
-            this.metroTabPage7.Controls.Add(this.metroTextButton13);
-            this.metroTabPage7.Controls.Add(this.metroTextButton12);
-            this.metroTabPage7.Controls.Add(this.metroTextButton11);
-            this.metroTabPage7.Controls.Add(this.metroTextButton10);
-            this.metroTabPage7.Controls.Add(this.metroTextButton9);
-            this.metroTabPage7.Controls.Add(this.metroTextButton8);
-            this.metroTabPage7.Controls.Add(this.metroTextButton7);
-            this.metroTabPage7.Controls.Add(this.metroTextButton6);
-            this.metroTabPage7.Controls.Add(this.metroTextButton4);
-            this.metroTabPage7.Controls.Add(this.metroTextButton3);
-            this.metroTabPage7.Controls.Add(this.metroTextButton2);
-            this.metroTabPage7.Controls.Add(this.metroTextButton1);
+            this.metroTabPage7.Controls.Add(this.btnHomePosition);
+            this.metroTabPage7.Controls.Add(this.btnHomeZ);
+            this.metroTabPage7.Controls.Add(this.btnJogZneg100);
+            this.metroTabPage7.Controls.Add(this.btnJogZneg10);
+            this.metroTabPage7.Controls.Add(this.btnJogZneg1);
+            this.metroTabPage7.Controls.Add(this.btnJogZneg01);
+            this.metroTabPage7.Controls.Add(this.btnJogZpos01);
+            this.metroTabPage7.Controls.Add(this.btnJogZpos1);
+            this.metroTabPage7.Controls.Add(this.btnJogZpos10);
+            this.metroTabPage7.Controls.Add(this.btnJogZpos100);
+            this.metroTabPage7.Controls.Add(this.btnHomeXY);
+            this.metroTabPage7.Controls.Add(this.btnJogXpos100);
+            this.metroTabPage7.Controls.Add(this.btnJogYneg100);
+            this.metroTabPage7.Controls.Add(this.btnJogXneg100);
+            this.metroTabPage7.Controls.Add(this.btnJogXpos10);
+            this.metroTabPage7.Controls.Add(this.btnJogYneg10);
+            this.metroTabPage7.Controls.Add(this.btnJogXneg10);
+            this.metroTabPage7.Controls.Add(this.btnJogXpos1);
+            this.metroTabPage7.Controls.Add(this.btnJogYneg1);
+            this.metroTabPage7.Controls.Add(this.btnJogXneg1);
+            this.metroTabPage7.Controls.Add(this.btnJogXpos01);
+            this.metroTabPage7.Controls.Add(this.btnJogXneg01);
+            this.metroTabPage7.Controls.Add(this.btnJogYneg01);
+            this.metroTabPage7.Controls.Add(this.btnJogYpos01);
+            this.metroTabPage7.Controls.Add(this.btnJogYpos1);
+            this.metroTabPage7.Controls.Add(this.btnJogYpos10);
+            this.metroTabPage7.Controls.Add(this.btnJogYpos100);
             this.metroTabPage7.HorizontalScrollbarBarColor = true;
             this.metroTabPage7.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage7.HorizontalScrollbarSize = 10;
@@ -898,6 +898,50 @@
             this.metroTabPage7.VerticalScrollbarBarColor = true;
             this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage7.VerticalScrollbarSize = 10;
+            // 
+            // btnSetTemp
+            // 
+            this.btnSetTemp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSetTemp.Image = global::Filament_Manager.Properties.Resources.checkmark;
+            this.btnSetTemp.ImageSize = 37;
+            this.btnSetTemp.Location = new System.Drawing.Point(229, 417);
+            this.btnSetTemp.Name = "btnSetTemp";
+            this.btnSetTemp.NoFocusImage = global::Filament_Manager.Properties.Resources.checkmark;
+            this.btnSetTemp.Size = new System.Drawing.Size(37, 37);
+            this.btnSetTemp.TabIndex = 36;
+            this.btnSetTemp.UseSelectable = true;
+            this.btnSetTemp.Click += new System.EventHandler(this.btnSetTemp_Click);
+            // 
+            // txtSetTemp
+            // 
+            // 
+            // 
+            // 
+            this.txtSetTemp.CustomButton.Image = null;
+            this.txtSetTemp.CustomButton.Location = new System.Drawing.Point(72, 1);
+            this.txtSetTemp.CustomButton.Name = "";
+            this.txtSetTemp.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.txtSetTemp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSetTemp.CustomButton.TabIndex = 1;
+            this.txtSetTemp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSetTemp.CustomButton.UseSelectable = true;
+            this.txtSetTemp.CustomButton.Visible = false;
+            this.txtSetTemp.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtSetTemp.Lines = new string[0];
+            this.txtSetTemp.Location = new System.Drawing.Point(117, 419);
+            this.txtSetTemp.MaxLength = 32767;
+            this.txtSetTemp.Name = "txtSetTemp";
+            this.txtSetTemp.PasswordChar = '\0';
+            this.txtSetTemp.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSetTemp.SelectedText = "";
+            this.txtSetTemp.SelectionLength = 0;
+            this.txtSetTemp.SelectionStart = 0;
+            this.txtSetTemp.Size = new System.Drawing.Size(106, 35);
+            this.txtSetTemp.TabIndex = 35;
+            this.txtSetTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSetTemp.UseSelectable = true;
+            this.txtSetTemp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSetTemp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLink4
             // 
@@ -954,353 +998,380 @@
             this.metroLabel20.TabIndex = 26;
             this.metroLabel20.Text = "X";
             // 
-            // metroLink3
+            // btnHomePosition
             // 
-            this.metroLink3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink3.Image = global::Filament_Manager.Properties.Resources.home;
-            this.metroLink3.ImageSize = 37;
-            this.metroLink3.Location = new System.Drawing.Point(113, 350);
-            this.metroLink3.Name = "metroLink3";
-            this.metroLink3.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
-            this.metroLink3.Size = new System.Drawing.Size(37, 37);
-            this.metroLink3.TabIndex = 29;
-            this.metroLink3.UseSelectable = true;
+            this.btnHomePosition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomePosition.Image = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomePosition.ImageSize = 37;
+            this.btnHomePosition.Location = new System.Drawing.Point(113, 350);
+            this.btnHomePosition.Name = "btnHomePosition";
+            this.btnHomePosition.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomePosition.Size = new System.Drawing.Size(37, 37);
+            this.btnHomePosition.TabIndex = 29;
+            this.btnHomePosition.UseSelectable = true;
+            this.btnHomePosition.Click += new System.EventHandler(this.btnHomePosition_Click);
             // 
-            // metroLink2
+            // btnHomeZ
             // 
-            this.metroLink2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink2.Image = global::Filament_Manager.Properties.Resources.home;
-            this.metroLink2.ImageSize = 37;
-            this.metroLink2.Location = new System.Drawing.Point(564, 178);
-            this.metroLink2.Name = "metroLink2";
-            this.metroLink2.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
-            this.metroLink2.Size = new System.Drawing.Size(37, 37);
-            this.metroLink2.TabIndex = 28;
-            this.metroLink2.UseSelectable = true;
+            this.btnHomeZ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeZ.Image = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomeZ.ImageSize = 37;
+            this.btnHomeZ.Location = new System.Drawing.Point(564, 178);
+            this.btnHomeZ.Name = "btnHomeZ";
+            this.btnHomeZ.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomeZ.Size = new System.Drawing.Size(37, 37);
+            this.btnHomeZ.TabIndex = 28;
+            this.btnHomeZ.UseSelectable = true;
+            this.btnHomeZ.Click += new System.EventHandler(this.btnHomeZ_Click);
             // 
-            // metroTextButton5
+            // btnJogZneg100
             // 
-            this.metroTextButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton5.Image = null;
-            this.metroTextButton5.Location = new System.Drawing.Point(564, 350);
-            this.metroTextButton5.Name = "metroTextButton5";
-            this.metroTextButton5.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton5.TabIndex = 27;
-            this.metroTextButton5.Text = "100";
-            this.metroTextButton5.UseCompatibleTextRendering = true;
-            this.metroTextButton5.UseSelectable = true;
-            this.metroTextButton5.UseVisualStyleBackColor = true;
+            this.btnJogZneg100.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogZneg100.Image = null;
+            this.btnJogZneg100.Location = new System.Drawing.Point(564, 350);
+            this.btnJogZneg100.Name = "btnJogZneg100";
+            this.btnJogZneg100.Size = new System.Drawing.Size(37, 37);
+            this.btnJogZneg100.TabIndex = 27;
+            this.btnJogZneg100.Text = "100";
+            this.btnJogZneg100.UseCompatibleTextRendering = true;
+            this.btnJogZneg100.UseSelectable = true;
+            this.btnJogZneg100.UseVisualStyleBackColor = true;
+            this.btnJogZneg100.Click += new System.EventHandler(this.btnJogZneg100_Click);
             // 
-            // metroTextButton18
+            // btnJogZneg10
             // 
-            this.metroTextButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton18.Image = null;
-            this.metroTextButton18.Location = new System.Drawing.Point(564, 307);
-            this.metroTextButton18.Name = "metroTextButton18";
-            this.metroTextButton18.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton18.TabIndex = 26;
-            this.metroTextButton18.Text = "10";
-            this.metroTextButton18.UseCompatibleTextRendering = true;
-            this.metroTextButton18.UseSelectable = true;
-            this.metroTextButton18.UseVisualStyleBackColor = true;
+            this.btnJogZneg10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogZneg10.Image = null;
+            this.btnJogZneg10.Location = new System.Drawing.Point(564, 307);
+            this.btnJogZneg10.Name = "btnJogZneg10";
+            this.btnJogZneg10.Size = new System.Drawing.Size(37, 37);
+            this.btnJogZneg10.TabIndex = 26;
+            this.btnJogZneg10.Text = "10";
+            this.btnJogZneg10.UseCompatibleTextRendering = true;
+            this.btnJogZneg10.UseSelectable = true;
+            this.btnJogZneg10.UseVisualStyleBackColor = true;
+            this.btnJogZneg10.Click += new System.EventHandler(this.btnJogZneg10_Click);
             // 
-            // metroTextButton19
+            // btnJogZneg1
             // 
-            this.metroTextButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton19.Image = null;
-            this.metroTextButton19.Location = new System.Drawing.Point(564, 264);
-            this.metroTextButton19.Name = "metroTextButton19";
-            this.metroTextButton19.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton19.TabIndex = 25;
-            this.metroTextButton19.Text = "1";
-            this.metroTextButton19.UseCompatibleTextRendering = true;
-            this.metroTextButton19.UseSelectable = true;
-            this.metroTextButton19.UseVisualStyleBackColor = true;
+            this.btnJogZneg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogZneg1.Image = null;
+            this.btnJogZneg1.Location = new System.Drawing.Point(564, 264);
+            this.btnJogZneg1.Name = "btnJogZneg1";
+            this.btnJogZneg1.Size = new System.Drawing.Size(37, 37);
+            this.btnJogZneg1.TabIndex = 25;
+            this.btnJogZneg1.Text = "1";
+            this.btnJogZneg1.UseCompatibleTextRendering = true;
+            this.btnJogZneg1.UseSelectable = true;
+            this.btnJogZneg1.UseVisualStyleBackColor = true;
+            this.btnJogZneg1.Click += new System.EventHandler(this.btnJogZneg1_Click);
             // 
-            // metroTextButton20
+            // btnJogZneg01
             // 
-            this.metroTextButton20.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton20.Image = null;
-            this.metroTextButton20.Location = new System.Drawing.Point(564, 221);
-            this.metroTextButton20.Name = "metroTextButton20";
-            this.metroTextButton20.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton20.TabIndex = 24;
-            this.metroTextButton20.Text = "0.1";
-            this.metroTextButton20.UseCompatibleTextRendering = true;
-            this.metroTextButton20.UseSelectable = true;
-            this.metroTextButton20.UseVisualStyleBackColor = true;
+            this.btnJogZneg01.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogZneg01.Image = null;
+            this.btnJogZneg01.Location = new System.Drawing.Point(564, 221);
+            this.btnJogZneg01.Name = "btnJogZneg01";
+            this.btnJogZneg01.Size = new System.Drawing.Size(37, 37);
+            this.btnJogZneg01.TabIndex = 24;
+            this.btnJogZneg01.Text = "0.1";
+            this.btnJogZneg01.UseCompatibleTextRendering = true;
+            this.btnJogZneg01.UseSelectable = true;
+            this.btnJogZneg01.UseVisualStyleBackColor = true;
+            this.btnJogZneg01.Click += new System.EventHandler(this.btnJogZneg01_Click);
             // 
-            // metroTextButton21
+            // btnJogZpos01
             // 
-            this.metroTextButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton21.Image = null;
-            this.metroTextButton21.Location = new System.Drawing.Point(564, 135);
-            this.metroTextButton21.Name = "metroTextButton21";
-            this.metroTextButton21.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton21.TabIndex = 23;
-            this.metroTextButton21.Text = "0.1";
-            this.metroTextButton21.UseCompatibleTextRendering = true;
-            this.metroTextButton21.UseSelectable = true;
-            this.metroTextButton21.UseVisualStyleBackColor = true;
+            this.btnJogZpos01.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogZpos01.Image = null;
+            this.btnJogZpos01.Location = new System.Drawing.Point(564, 135);
+            this.btnJogZpos01.Name = "btnJogZpos01";
+            this.btnJogZpos01.Size = new System.Drawing.Size(37, 37);
+            this.btnJogZpos01.TabIndex = 23;
+            this.btnJogZpos01.Text = "0.1";
+            this.btnJogZpos01.UseCompatibleTextRendering = true;
+            this.btnJogZpos01.UseSelectable = true;
+            this.btnJogZpos01.UseVisualStyleBackColor = true;
+            this.btnJogZpos01.Click += new System.EventHandler(this.btnJogZpos01_Click);
             // 
-            // metroTextButton22
+            // btnJogZpos1
             // 
-            this.metroTextButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton22.Image = null;
-            this.metroTextButton22.Location = new System.Drawing.Point(564, 92);
-            this.metroTextButton22.Name = "metroTextButton22";
-            this.metroTextButton22.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton22.TabIndex = 22;
-            this.metroTextButton22.Text = "1";
-            this.metroTextButton22.UseCompatibleTextRendering = true;
-            this.metroTextButton22.UseSelectable = true;
-            this.metroTextButton22.UseVisualStyleBackColor = true;
+            this.btnJogZpos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogZpos1.Image = null;
+            this.btnJogZpos1.Location = new System.Drawing.Point(564, 92);
+            this.btnJogZpos1.Name = "btnJogZpos1";
+            this.btnJogZpos1.Size = new System.Drawing.Size(37, 37);
+            this.btnJogZpos1.TabIndex = 22;
+            this.btnJogZpos1.Text = "1";
+            this.btnJogZpos1.UseCompatibleTextRendering = true;
+            this.btnJogZpos1.UseSelectable = true;
+            this.btnJogZpos1.UseVisualStyleBackColor = true;
+            this.btnJogZpos1.Click += new System.EventHandler(this.btnJogZpos1_Click);
             // 
-            // metroTextButton23
+            // btnJogZpos10
             // 
-            this.metroTextButton23.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton23.Image = null;
-            this.metroTextButton23.Location = new System.Drawing.Point(564, 49);
-            this.metroTextButton23.Name = "metroTextButton23";
-            this.metroTextButton23.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton23.TabIndex = 21;
-            this.metroTextButton23.Text = "10";
-            this.metroTextButton23.UseCompatibleTextRendering = true;
-            this.metroTextButton23.UseSelectable = true;
-            this.metroTextButton23.UseVisualStyleBackColor = true;
+            this.btnJogZpos10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogZpos10.Image = null;
+            this.btnJogZpos10.Location = new System.Drawing.Point(564, 49);
+            this.btnJogZpos10.Name = "btnJogZpos10";
+            this.btnJogZpos10.Size = new System.Drawing.Size(37, 37);
+            this.btnJogZpos10.TabIndex = 21;
+            this.btnJogZpos10.Text = "10";
+            this.btnJogZpos10.UseCompatibleTextRendering = true;
+            this.btnJogZpos10.UseSelectable = true;
+            this.btnJogZpos10.UseVisualStyleBackColor = true;
+            this.btnJogZpos10.Click += new System.EventHandler(this.btnJogZpos10_Click);
             // 
-            // metroTextButton24
+            // btnJogZpos100
             // 
-            this.metroTextButton24.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton24.Image = null;
-            this.metroTextButton24.Location = new System.Drawing.Point(564, 6);
-            this.metroTextButton24.Name = "metroTextButton24";
-            this.metroTextButton24.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton24.TabIndex = 20;
-            this.metroTextButton24.Text = "100";
-            this.metroTextButton24.UseCompatibleTextRendering = true;
-            this.metroTextButton24.UseSelectable = true;
-            this.metroTextButton24.UseVisualStyleBackColor = true;
+            this.btnJogZpos100.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogZpos100.Image = null;
+            this.btnJogZpos100.Location = new System.Drawing.Point(564, 6);
+            this.btnJogZpos100.Name = "btnJogZpos100";
+            this.btnJogZpos100.Size = new System.Drawing.Size(37, 37);
+            this.btnJogZpos100.TabIndex = 20;
+            this.btnJogZpos100.Text = "100";
+            this.btnJogZpos100.UseCompatibleTextRendering = true;
+            this.btnJogZpos100.UseSelectable = true;
+            this.btnJogZpos100.UseVisualStyleBackColor = true;
+            this.btnJogZpos100.Click += new System.EventHandler(this.btnJogZpos100_Click);
             // 
-            // metroLink1
+            // btnHomeXY
             // 
-            this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink1.Image = global::Filament_Manager.Properties.Resources.home;
-            this.metroLink1.ImageSize = 37;
-            this.metroLink1.Location = new System.Drawing.Point(285, 178);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
-            this.metroLink1.Size = new System.Drawing.Size(37, 37);
-            this.metroLink1.TabIndex = 19;
-            this.metroLink1.UseSelectable = true;
+            this.btnHomeXY.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeXY.Image = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomeXY.ImageSize = 37;
+            this.btnHomeXY.Location = new System.Drawing.Point(285, 178);
+            this.btnHomeXY.Name = "btnHomeXY";
+            this.btnHomeXY.NoFocusImage = global::Filament_Manager.Properties.Resources.home;
+            this.btnHomeXY.Size = new System.Drawing.Size(37, 37);
+            this.btnHomeXY.TabIndex = 19;
+            this.btnHomeXY.UseSelectable = true;
+            this.btnHomeXY.Click += new System.EventHandler(this.btnHomeXY_Click);
             // 
-            // metroTextButton17
+            // btnJogXpos100
             // 
-            this.metroTextButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton17.Image = null;
-            this.metroTextButton17.Location = new System.Drawing.Point(113, 178);
-            this.metroTextButton17.Name = "metroTextButton17";
-            this.metroTextButton17.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton17.TabIndex = 18;
-            this.metroTextButton17.Text = "100";
-            this.metroTextButton17.UseCompatibleTextRendering = true;
-            this.metroTextButton17.UseSelectable = true;
-            this.metroTextButton17.UseVisualStyleBackColor = true;
+            this.btnJogXpos100.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogXpos100.Image = null;
+            this.btnJogXpos100.Location = new System.Drawing.Point(113, 178);
+            this.btnJogXpos100.Name = "btnJogXpos100";
+            this.btnJogXpos100.Size = new System.Drawing.Size(37, 37);
+            this.btnJogXpos100.TabIndex = 18;
+            this.btnJogXpos100.Text = "100";
+            this.btnJogXpos100.UseCompatibleTextRendering = true;
+            this.btnJogXpos100.UseSelectable = true;
+            this.btnJogXpos100.UseVisualStyleBackColor = true;
+            this.btnJogXpos100.Click += new System.EventHandler(this.btnJogXpos100_Click);
             // 
-            // metroTextButton16
+            // btnJogYneg100
             // 
-            this.metroTextButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton16.Image = null;
-            this.metroTextButton16.Location = new System.Drawing.Point(285, 350);
-            this.metroTextButton16.Name = "metroTextButton16";
-            this.metroTextButton16.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton16.TabIndex = 17;
-            this.metroTextButton16.Text = "100";
-            this.metroTextButton16.UseCompatibleTextRendering = true;
-            this.metroTextButton16.UseSelectable = true;
-            this.metroTextButton16.UseVisualStyleBackColor = true;
+            this.btnJogYneg100.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogYneg100.Image = null;
+            this.btnJogYneg100.Location = new System.Drawing.Point(285, 350);
+            this.btnJogYneg100.Name = "btnJogYneg100";
+            this.btnJogYneg100.Size = new System.Drawing.Size(37, 37);
+            this.btnJogYneg100.TabIndex = 17;
+            this.btnJogYneg100.Text = "100";
+            this.btnJogYneg100.UseCompatibleTextRendering = true;
+            this.btnJogYneg100.UseSelectable = true;
+            this.btnJogYneg100.UseVisualStyleBackColor = true;
+            this.btnJogYneg100.Click += new System.EventHandler(this.btnJogYneg100_Click);
             // 
-            // metroTextButton15
+            // btnJogXneg100
             // 
-            this.metroTextButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton15.Image = null;
-            this.metroTextButton15.Location = new System.Drawing.Point(457, 178);
-            this.metroTextButton15.Name = "metroTextButton15";
-            this.metroTextButton15.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton15.TabIndex = 16;
-            this.metroTextButton15.Text = "100";
-            this.metroTextButton15.UseCompatibleTextRendering = true;
-            this.metroTextButton15.UseSelectable = true;
-            this.metroTextButton15.UseVisualStyleBackColor = true;
+            this.btnJogXneg100.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogXneg100.Image = null;
+            this.btnJogXneg100.Location = new System.Drawing.Point(457, 178);
+            this.btnJogXneg100.Name = "btnJogXneg100";
+            this.btnJogXneg100.Size = new System.Drawing.Size(37, 37);
+            this.btnJogXneg100.TabIndex = 16;
+            this.btnJogXneg100.Text = "100";
+            this.btnJogXneg100.UseCompatibleTextRendering = true;
+            this.btnJogXneg100.UseSelectable = true;
+            this.btnJogXneg100.UseVisualStyleBackColor = true;
+            this.btnJogXneg100.Click += new System.EventHandler(this.btnJogXneg100_Click);
             // 
-            // metroTextButton14
+            // btnJogXpos10
             // 
-            this.metroTextButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton14.Image = null;
-            this.metroTextButton14.Location = new System.Drawing.Point(156, 178);
-            this.metroTextButton14.Name = "metroTextButton14";
-            this.metroTextButton14.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton14.TabIndex = 15;
-            this.metroTextButton14.Text = "10";
-            this.metroTextButton14.UseCompatibleTextRendering = true;
-            this.metroTextButton14.UseSelectable = true;
-            this.metroTextButton14.UseVisualStyleBackColor = true;
+            this.btnJogXpos10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogXpos10.Image = null;
+            this.btnJogXpos10.Location = new System.Drawing.Point(156, 178);
+            this.btnJogXpos10.Name = "btnJogXpos10";
+            this.btnJogXpos10.Size = new System.Drawing.Size(37, 37);
+            this.btnJogXpos10.TabIndex = 15;
+            this.btnJogXpos10.Text = "10";
+            this.btnJogXpos10.UseCompatibleTextRendering = true;
+            this.btnJogXpos10.UseSelectable = true;
+            this.btnJogXpos10.UseVisualStyleBackColor = true;
+            this.btnJogXpos10.Click += new System.EventHandler(this.btnJogXpos10_Click);
             // 
-            // metroTextButton13
+            // btnJogYneg10
             // 
-            this.metroTextButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton13.Image = null;
-            this.metroTextButton13.Location = new System.Drawing.Point(285, 307);
-            this.metroTextButton13.Name = "metroTextButton13";
-            this.metroTextButton13.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton13.TabIndex = 14;
-            this.metroTextButton13.Text = "10";
-            this.metroTextButton13.UseCompatibleTextRendering = true;
-            this.metroTextButton13.UseSelectable = true;
-            this.metroTextButton13.UseVisualStyleBackColor = true;
+            this.btnJogYneg10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogYneg10.Image = null;
+            this.btnJogYneg10.Location = new System.Drawing.Point(285, 307);
+            this.btnJogYneg10.Name = "btnJogYneg10";
+            this.btnJogYneg10.Size = new System.Drawing.Size(37, 37);
+            this.btnJogYneg10.TabIndex = 14;
+            this.btnJogYneg10.Text = "10";
+            this.btnJogYneg10.UseCompatibleTextRendering = true;
+            this.btnJogYneg10.UseSelectable = true;
+            this.btnJogYneg10.UseVisualStyleBackColor = true;
+            this.btnJogYneg10.Click += new System.EventHandler(this.btnJogYneg10_Click);
             // 
-            // metroTextButton12
+            // btnJogXneg10
             // 
-            this.metroTextButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton12.Image = null;
-            this.metroTextButton12.Location = new System.Drawing.Point(414, 178);
-            this.metroTextButton12.Name = "metroTextButton12";
-            this.metroTextButton12.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton12.TabIndex = 13;
-            this.metroTextButton12.Text = "10";
-            this.metroTextButton12.UseCompatibleTextRendering = true;
-            this.metroTextButton12.UseSelectable = true;
-            this.metroTextButton12.UseVisualStyleBackColor = true;
+            this.btnJogXneg10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogXneg10.Image = null;
+            this.btnJogXneg10.Location = new System.Drawing.Point(414, 178);
+            this.btnJogXneg10.Name = "btnJogXneg10";
+            this.btnJogXneg10.Size = new System.Drawing.Size(37, 37);
+            this.btnJogXneg10.TabIndex = 13;
+            this.btnJogXneg10.Text = "10";
+            this.btnJogXneg10.UseCompatibleTextRendering = true;
+            this.btnJogXneg10.UseSelectable = true;
+            this.btnJogXneg10.UseVisualStyleBackColor = true;
+            this.btnJogXneg10.Click += new System.EventHandler(this.btnJogXneg10_Click);
             // 
-            // metroTextButton11
+            // btnJogXpos1
             // 
-            this.metroTextButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton11.Image = null;
-            this.metroTextButton11.Location = new System.Drawing.Point(199, 178);
-            this.metroTextButton11.Name = "metroTextButton11";
-            this.metroTextButton11.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton11.TabIndex = 12;
-            this.metroTextButton11.Text = "1";
-            this.metroTextButton11.UseCompatibleTextRendering = true;
-            this.metroTextButton11.UseSelectable = true;
-            this.metroTextButton11.UseVisualStyleBackColor = true;
+            this.btnJogXpos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogXpos1.Image = null;
+            this.btnJogXpos1.Location = new System.Drawing.Point(199, 178);
+            this.btnJogXpos1.Name = "btnJogXpos1";
+            this.btnJogXpos1.Size = new System.Drawing.Size(37, 37);
+            this.btnJogXpos1.TabIndex = 12;
+            this.btnJogXpos1.Text = "1";
+            this.btnJogXpos1.UseCompatibleTextRendering = true;
+            this.btnJogXpos1.UseSelectable = true;
+            this.btnJogXpos1.UseVisualStyleBackColor = true;
+            this.btnJogXpos1.Click += new System.EventHandler(this.btnJogXpos1_Click);
             // 
-            // metroTextButton10
+            // btnJogYneg1
             // 
-            this.metroTextButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton10.Image = null;
-            this.metroTextButton10.Location = new System.Drawing.Point(285, 264);
-            this.metroTextButton10.Name = "metroTextButton10";
-            this.metroTextButton10.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton10.TabIndex = 11;
-            this.metroTextButton10.Text = "1";
-            this.metroTextButton10.UseCompatibleTextRendering = true;
-            this.metroTextButton10.UseSelectable = true;
-            this.metroTextButton10.UseVisualStyleBackColor = true;
+            this.btnJogYneg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogYneg1.Image = null;
+            this.btnJogYneg1.Location = new System.Drawing.Point(285, 264);
+            this.btnJogYneg1.Name = "btnJogYneg1";
+            this.btnJogYneg1.Size = new System.Drawing.Size(37, 37);
+            this.btnJogYneg1.TabIndex = 11;
+            this.btnJogYneg1.Text = "1";
+            this.btnJogYneg1.UseCompatibleTextRendering = true;
+            this.btnJogYneg1.UseSelectable = true;
+            this.btnJogYneg1.UseVisualStyleBackColor = true;
+            this.btnJogYneg1.Click += new System.EventHandler(this.btnJogYneg1_Click);
             // 
-            // metroTextButton9
+            // btnJogXneg1
             // 
-            this.metroTextButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton9.Image = null;
-            this.metroTextButton9.Location = new System.Drawing.Point(371, 178);
-            this.metroTextButton9.Name = "metroTextButton9";
-            this.metroTextButton9.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton9.TabIndex = 10;
-            this.metroTextButton9.Text = "1";
-            this.metroTextButton9.UseCompatibleTextRendering = true;
-            this.metroTextButton9.UseSelectable = true;
-            this.metroTextButton9.UseVisualStyleBackColor = true;
+            this.btnJogXneg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogXneg1.Image = null;
+            this.btnJogXneg1.Location = new System.Drawing.Point(371, 178);
+            this.btnJogXneg1.Name = "btnJogXneg1";
+            this.btnJogXneg1.Size = new System.Drawing.Size(37, 37);
+            this.btnJogXneg1.TabIndex = 10;
+            this.btnJogXneg1.Text = "1";
+            this.btnJogXneg1.UseCompatibleTextRendering = true;
+            this.btnJogXneg1.UseSelectable = true;
+            this.btnJogXneg1.UseVisualStyleBackColor = true;
+            this.btnJogXneg1.Click += new System.EventHandler(this.btnJogXneg1_Click);
             // 
-            // metroTextButton8
+            // btnJogXpos01
             // 
-            this.metroTextButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton8.Image = null;
-            this.metroTextButton8.Location = new System.Drawing.Point(242, 178);
-            this.metroTextButton8.Name = "metroTextButton8";
-            this.metroTextButton8.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton8.TabIndex = 9;
-            this.metroTextButton8.Text = "0.1";
-            this.metroTextButton8.UseCompatibleTextRendering = true;
-            this.metroTextButton8.UseSelectable = true;
-            this.metroTextButton8.UseVisualStyleBackColor = true;
+            this.btnJogXpos01.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogXpos01.Image = null;
+            this.btnJogXpos01.Location = new System.Drawing.Point(242, 178);
+            this.btnJogXpos01.Name = "btnJogXpos01";
+            this.btnJogXpos01.Size = new System.Drawing.Size(37, 37);
+            this.btnJogXpos01.TabIndex = 9;
+            this.btnJogXpos01.Text = "0.1";
+            this.btnJogXpos01.UseCompatibleTextRendering = true;
+            this.btnJogXpos01.UseSelectable = true;
+            this.btnJogXpos01.UseVisualStyleBackColor = true;
+            this.btnJogXpos01.Click += new System.EventHandler(this.btnJogXpos01_Click);
             // 
-            // metroTextButton7
+            // btnJogXneg01
             // 
-            this.metroTextButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton7.Image = null;
-            this.metroTextButton7.Location = new System.Drawing.Point(328, 178);
-            this.metroTextButton7.Name = "metroTextButton7";
-            this.metroTextButton7.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton7.TabIndex = 8;
-            this.metroTextButton7.Text = "0.1";
-            this.metroTextButton7.UseCompatibleTextRendering = true;
-            this.metroTextButton7.UseSelectable = true;
-            this.metroTextButton7.UseVisualStyleBackColor = true;
+            this.btnJogXneg01.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogXneg01.Image = null;
+            this.btnJogXneg01.Location = new System.Drawing.Point(328, 178);
+            this.btnJogXneg01.Name = "btnJogXneg01";
+            this.btnJogXneg01.Size = new System.Drawing.Size(37, 37);
+            this.btnJogXneg01.TabIndex = 8;
+            this.btnJogXneg01.Text = "0.1";
+            this.btnJogXneg01.UseCompatibleTextRendering = true;
+            this.btnJogXneg01.UseSelectable = true;
+            this.btnJogXneg01.UseVisualStyleBackColor = true;
+            this.btnJogXneg01.Click += new System.EventHandler(this.btnJogXneg01_Click);
             // 
-            // metroTextButton6
+            // btnJogYneg01
             // 
-            this.metroTextButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton6.Image = null;
-            this.metroTextButton6.Location = new System.Drawing.Point(285, 221);
-            this.metroTextButton6.Name = "metroTextButton6";
-            this.metroTextButton6.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton6.TabIndex = 7;
-            this.metroTextButton6.Text = "0.1";
-            this.metroTextButton6.UseCompatibleTextRendering = true;
-            this.metroTextButton6.UseSelectable = true;
-            this.metroTextButton6.UseVisualStyleBackColor = true;
+            this.btnJogYneg01.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogYneg01.Image = null;
+            this.btnJogYneg01.Location = new System.Drawing.Point(285, 221);
+            this.btnJogYneg01.Name = "btnJogYneg01";
+            this.btnJogYneg01.Size = new System.Drawing.Size(37, 37);
+            this.btnJogYneg01.TabIndex = 7;
+            this.btnJogYneg01.Text = "0.1";
+            this.btnJogYneg01.UseCompatibleTextRendering = true;
+            this.btnJogYneg01.UseSelectable = true;
+            this.btnJogYneg01.UseVisualStyleBackColor = true;
+            this.btnJogYneg01.Click += new System.EventHandler(this.btnJogYneg01_Click);
             // 
-            // metroTextButton4
+            // btnJogYpos01
             // 
-            this.metroTextButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton4.Image = null;
-            this.metroTextButton4.Location = new System.Drawing.Point(285, 135);
-            this.metroTextButton4.Name = "metroTextButton4";
-            this.metroTextButton4.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton4.TabIndex = 5;
-            this.metroTextButton4.Text = "0.1";
-            this.metroTextButton4.UseCompatibleTextRendering = true;
-            this.metroTextButton4.UseSelectable = true;
-            this.metroTextButton4.UseVisualStyleBackColor = true;
+            this.btnJogYpos01.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogYpos01.Image = null;
+            this.btnJogYpos01.Location = new System.Drawing.Point(285, 135);
+            this.btnJogYpos01.Name = "btnJogYpos01";
+            this.btnJogYpos01.Size = new System.Drawing.Size(37, 37);
+            this.btnJogYpos01.TabIndex = 5;
+            this.btnJogYpos01.Text = "0.1";
+            this.btnJogYpos01.UseCompatibleTextRendering = true;
+            this.btnJogYpos01.UseSelectable = true;
+            this.btnJogYpos01.UseVisualStyleBackColor = true;
+            this.btnJogYpos01.Click += new System.EventHandler(this.btnJogYpos01_Click);
             // 
-            // metroTextButton3
+            // btnJogYpos1
             // 
-            this.metroTextButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton3.Image = null;
-            this.metroTextButton3.Location = new System.Drawing.Point(285, 92);
-            this.metroTextButton3.Name = "metroTextButton3";
-            this.metroTextButton3.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton3.TabIndex = 4;
-            this.metroTextButton3.Text = "1";
-            this.metroTextButton3.UseCompatibleTextRendering = true;
-            this.metroTextButton3.UseSelectable = true;
-            this.metroTextButton3.UseVisualStyleBackColor = true;
+            this.btnJogYpos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogYpos1.Image = null;
+            this.btnJogYpos1.Location = new System.Drawing.Point(285, 92);
+            this.btnJogYpos1.Name = "btnJogYpos1";
+            this.btnJogYpos1.Size = new System.Drawing.Size(37, 37);
+            this.btnJogYpos1.TabIndex = 4;
+            this.btnJogYpos1.Text = "1";
+            this.btnJogYpos1.UseCompatibleTextRendering = true;
+            this.btnJogYpos1.UseSelectable = true;
+            this.btnJogYpos1.UseVisualStyleBackColor = true;
+            this.btnJogYpos1.Click += new System.EventHandler(this.btnJogYpos1_Click);
             // 
-            // metroTextButton2
+            // btnJogYpos10
             // 
-            this.metroTextButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton2.Image = null;
-            this.metroTextButton2.Location = new System.Drawing.Point(285, 49);
-            this.metroTextButton2.Name = "metroTextButton2";
-            this.metroTextButton2.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton2.TabIndex = 3;
-            this.metroTextButton2.Text = "10";
-            this.metroTextButton2.UseCompatibleTextRendering = true;
-            this.metroTextButton2.UseSelectable = true;
-            this.metroTextButton2.UseVisualStyleBackColor = true;
+            this.btnJogYpos10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogYpos10.Image = null;
+            this.btnJogYpos10.Location = new System.Drawing.Point(285, 49);
+            this.btnJogYpos10.Name = "btnJogYpos10";
+            this.btnJogYpos10.Size = new System.Drawing.Size(37, 37);
+            this.btnJogYpos10.TabIndex = 3;
+            this.btnJogYpos10.Text = "10";
+            this.btnJogYpos10.UseCompatibleTextRendering = true;
+            this.btnJogYpos10.UseSelectable = true;
+            this.btnJogYpos10.UseVisualStyleBackColor = true;
+            this.btnJogYpos10.Click += new System.EventHandler(this.btnJogYpos10_Click);
             // 
-            // metroTextButton1
+            // btnJogYpos100
             // 
-            this.metroTextButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextButton1.Image = null;
-            this.metroTextButton1.Location = new System.Drawing.Point(285, 6);
-            this.metroTextButton1.Name = "metroTextButton1";
-            this.metroTextButton1.Size = new System.Drawing.Size(37, 37);
-            this.metroTextButton1.TabIndex = 2;
-            this.metroTextButton1.Text = "100";
-            this.metroTextButton1.UseCompatibleTextRendering = true;
-            this.metroTextButton1.UseSelectable = true;
-            this.metroTextButton1.UseVisualStyleBackColor = true;
+            this.btnJogYpos100.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJogYpos100.Image = null;
+            this.btnJogYpos100.Location = new System.Drawing.Point(285, 6);
+            this.btnJogYpos100.Name = "btnJogYpos100";
+            this.btnJogYpos100.Size = new System.Drawing.Size(37, 37);
+            this.btnJogYpos100.TabIndex = 2;
+            this.btnJogYpos100.Text = "100";
+            this.btnJogYpos100.UseCompatibleTextRendering = true;
+            this.btnJogYpos100.UseSelectable = true;
+            this.btnJogYpos100.UseVisualStyleBackColor = true;
+            this.btnJogYpos100.Click += new System.EventHandler(this.btnJogYpos100_Click);
             // 
             // pbProcess
             // 
@@ -2222,50 +2293,6 @@
             this.lnlClose.UseSelectable = true;
             this.lnlClose.Click += new System.EventHandler(this.lnlClose_Click);
             // 
-            // txtSetTemp
-            // 
-            // 
-            // 
-            // 
-            this.txtSetTemp.CustomButton.Image = null;
-            this.txtSetTemp.CustomButton.Location = new System.Drawing.Point(72, 1);
-            this.txtSetTemp.CustomButton.Name = "";
-            this.txtSetTemp.CustomButton.Size = new System.Drawing.Size(33, 33);
-            this.txtSetTemp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSetTemp.CustomButton.TabIndex = 1;
-            this.txtSetTemp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSetTemp.CustomButton.UseSelectable = true;
-            this.txtSetTemp.CustomButton.Visible = false;
-            this.txtSetTemp.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtSetTemp.Lines = new string[0];
-            this.txtSetTemp.Location = new System.Drawing.Point(117, 419);
-            this.txtSetTemp.MaxLength = 32767;
-            this.txtSetTemp.Name = "txtSetTemp";
-            this.txtSetTemp.PasswordChar = '\0';
-            this.txtSetTemp.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSetTemp.SelectedText = "";
-            this.txtSetTemp.SelectionLength = 0;
-            this.txtSetTemp.SelectionStart = 0;
-            this.txtSetTemp.Size = new System.Drawing.Size(106, 35);
-            this.txtSetTemp.TabIndex = 35;
-            this.txtSetTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSetTemp.UseSelectable = true;
-            this.txtSetTemp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSetTemp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLink5
-            // 
-            this.metroLink5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink5.Image = global::Filament_Manager.Properties.Resources.checkmark;
-            this.metroLink5.ImageSize = 37;
-            this.metroLink5.Location = new System.Drawing.Point(229, 417);
-            this.metroLink5.Name = "metroLink5";
-            this.metroLink5.NoFocusImage = global::Filament_Manager.Properties.Resources.checkmark;
-            this.metroLink5.Size = new System.Drawing.Size(37, 37);
-            this.metroLink5.TabIndex = 36;
-            this.metroLink5.UseSelectable = true;
-            this.metroLink5.Click += new System.EventHandler(this.metroLink5_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2410,40 +2437,40 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage6;
         private WebEye.StreamPlayerControl streamPlayerControl;
         private MetroFramework.Controls.MetroTabPage metroTabPage7;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton3;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton2;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton1;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton4;
-        private MetroFramework.Controls.MetroLink metroLink1;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton17;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton16;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton15;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton14;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton13;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton12;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton11;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton10;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton9;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton8;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton7;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton6;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogYpos1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogYpos10;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogYpos100;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogYpos01;
+        private MetroFramework.Controls.MetroLink btnHomeXY;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogXpos100;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogYneg100;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogXneg100;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogXpos10;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogYneg10;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogXneg10;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogXpos1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogYneg1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogXneg1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogXpos01;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogXneg01;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogYneg01;
         private MetroFramework.Controls.MetroLabel metroLabel28;
         private MetroFramework.Controls.MetroLabel metroLabel27;
         private MetroFramework.Controls.MetroLabel metroLabel26;
         private MetroFramework.Controls.MetroLabel metroLabel20;
-        private MetroFramework.Controls.MetroLink metroLink3;
-        private MetroFramework.Controls.MetroLink metroLink2;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton5;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton18;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton19;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton20;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton21;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton22;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton23;
-        private MetroFramework.Controls.MetroTextBox.MetroTextButton metroTextButton24;
+        private MetroFramework.Controls.MetroLink btnHomePosition;
+        private MetroFramework.Controls.MetroLink btnHomeZ;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogZneg100;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogZneg10;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogZneg1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogZneg01;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogZpos01;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogZpos1;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogZpos10;
+        private MetroFramework.Controls.MetroTextBox.MetroTextButton btnJogZpos100;
         private MetroFramework.Controls.MetroLink metroLink4;
         private MetroFramework.Controls.MetroTextBox txtSetTemp;
-        private MetroFramework.Controls.MetroLink metroLink5;
+        private MetroFramework.Controls.MetroLink btnSetTemp;
     }
 }
 
