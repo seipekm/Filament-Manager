@@ -1109,10 +1109,18 @@ namespace Filament_Manager
             }
             
             //Processbar
-            string ProcessStr = json["progress"]["completion"].ToString();
-            double ProcessDouble = double.Parse(ProcessStr);
-            int ProgressBar = Convert.ToInt32(ProcessDouble);
-            pbProcess.Value = ProgressBar;
+            if(json["progress"]["completion"].ToString()=="")
+            {
+                pbProcess.Value = 0;
+            }
+            else
+            {
+                string ProcessStr = json["progress"]["completion"].ToString();
+                double ProcessDouble = double.Parse(ProcessStr);
+                int ProgressBar = Convert.ToInt32(ProcessDouble);
+                pbProcess.Value = ProgressBar;
+            }
+            
         }
 
         private void printCheck(string state)
@@ -1127,7 +1135,7 @@ namespace Filament_Manager
             else if(state == "Operational")
             {
                 btnStartPrint.Visible = true;
-                btnRestartPrint.Visible = true;
+                btnRestartPrint.Visible = false;
                 btnHoldPrint.Visible = false;
                 btnCancelPrint.Visible = false;
             }
